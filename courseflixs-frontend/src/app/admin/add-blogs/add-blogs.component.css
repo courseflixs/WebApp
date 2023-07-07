@@ -1,0 +1,171 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: wheat;
+    overflow-x: hidden !important;
+    
+  }
+  
+  .box {
+    min-height: 120px;
+    background: black;
+    margin: 0 -1rem;
+    font-size: 36px;
+  
+  }
+  
+  .content {
+    min-height: calc(200vh - 0px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black !important;
+    font-size: 1rem;
+    line-height: normal;
+    border-top: 1rem solid #dd3333;
+  
+  }
+  
+  .data {
+    margin-top: 1rem;
+    margin: 1rem;
+    /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+  }
+  
+  /* Form Area CSS */
+  .my-card {
+    border-top: 0.2rem solid #dd3333;
+    overflow-x: scroll;
+
+  }
+  
+  .my-form {
+    margin-top: 1rem;
+  
+  }
+  .group-label-feild {
+    margin-bottom: 1rem !important;
+  }
+  
+  
+  .my-form mat-form-field {
+    width: 50%;
+  }
+  
+  .my-form .upload-file {
+    width: 50%;
+  
+  }
+  
+  .add-pro-btn {
+    background-color: #dd3333;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .add-pro-btn:hover {
+    background-color: black;
+  }
+  .view-btn {
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+  
+  .view-btn:hover {
+    background-color: black;
+    color: white;
+  
+  }
+  .modal-body {
+    text-align: center;
+  }
+  
+  .img-dialogue {
+    max-width: 100%;
+  }
+  
+  .progress {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    display: flex;
+    font-size: 1.2rem;
+    height: 2rem;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  /* ==========================================Media  query============================================== */
+  /* X-Small devices (portrait phones, less than 576px,mobile) */
+  @media (max-width: 575.98px) {
+  
+    .my-form mat-form-field {
+      width: 100%;
+    }
+  
+    .my-form .upload-file {
+      width: 100%;
+  
+    }
+    .view-btn {
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+    }
+  
+  }
+  
+  /* Small devices (landscape phones, less than 768px,ipad) */
+  @media (max-width: 767.98px) {
+    .my-form mat-form-field {
+      width: 100%;
+    }
+  
+    .my-form .upload-file {
+      width: 100%;
+  
+    }
+    .view-btn {
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+    }
+  
+   
+  }
+  
+  /* Medium devices (tablets, less than 992px,surface pro) */
+  @media (max-width: 991.98px) {
+    .my-form mat-form-field {
+      width: 100%;
+    }
+  
+    .my-form .upload-file {
+      width: 100%;
+  
+    }
+    .view-btn {
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+    }
+  
+   
+  
+  }
+  
+  /* // Large devices (desktops=my laptop, less than 1200px) */
+  @media (max-width: 1199.98px) {}
+  
+  /* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+  @media (max-width: 1399.98px) {}
+  
+  /* ==================================={{END}}================================================= */
+  /*======================================={{END}}==================================================  */

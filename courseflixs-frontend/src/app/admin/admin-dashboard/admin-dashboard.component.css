@@ -1,0 +1,133 @@
+/* Backside container css */
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: wheat;
+  overflow-x: hidden !important;
+}
+.box {
+  min-height: 120px;
+  background: black;
+  margin: 0 -1rem;
+  font-size: 36px;
+  
+}
+.content {
+  min-height: calc(200vh - 178px);
+  border-radius: 10px;
+  margin-top: -2rem;
+  background: white;
+  color: black !important;
+  font-size: 1rem;
+  line-height: normal;    
+  border-top: 1rem solid #dd3333;
+
+}
+
+.data {
+  margin-top: 1rem;
+  margin: 1rem;
+
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  overflow-x: hidden;
+}
+
+/* ============================{{END}}=============================================== */
+/* Card displayed at dashboard Area   */
+mat-card {
+  width: 95%;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: black;
+}
+
+.cart-image {
+  margin-left: 1rem;
+  margin-top: 1.2rem;
+  padding: 0rem !important;
+}
+
+.icon-display {
+  transform: scale(3);
+}
+
+.cart-text {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+padding: 0rem !important;
+}
+
+.cart-title {
+  font-size: 1.2rem;
+  font-weight: 100;
+  padding: 0rem !important;
+}
+
+.cart-quantity {
+  margin-top: 0.5rem;
+
+}
+
+/* cart color */
+.cart-icon-orange {
+  color: #eb7130;
+}
+
+.cart-icon-sky {
+  color: #5ab6ae;
+}
+
+.cart-icon-green {
+  color: #b5cc18;
+}
+
+.cart-icon-violet {
+  color: #6b5bc9;
+}
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+
+  .icon-display {
+    transform: scale(2);
+    margin-bottom: 0.5rem;
+  }
+  .cart-text {
+  
+    margin-left: 0rem;
+  
+  }
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+
+  .icon-display {
+    transform: scale(2);
+  }
+  .cart-text {
+  
+    margin-left: 0rem;
+  
+  }
+}
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+
+  .cart-image {
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+    margin-right: 4rem;
+  }
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* ==================================={{END}}================================================= */

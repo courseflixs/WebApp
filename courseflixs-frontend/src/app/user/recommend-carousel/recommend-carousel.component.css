@@ -1,0 +1,231 @@
+/* =======================TOP RECOMMENDED COUSRSE SECTION CSS========================== */
+.main-top-course {
+    padding: 2rem 0rem;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+.top-course-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    line-height: 2.5rem;
+
+}
+
+.top-course-title::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40%;
+    height: 3px;
+    background-color: #FF3A2D;
+}
+
+owl-carousel-o {
+    position: relative;
+}
+
+::ng-deep .owl-prev,
+::ng-deep .owl-next {
+    position: absolute;
+    top: 30%;
+    background-color: #e1474d !important;
+    border-radius: 50% !important;
+    font-size: 2rem !important;
+    padding: 0rem 0.7rem !important;
+
+}
+
+::ng-deep .owl-prev {
+    left: -2.5rem;
+}
+
+::ng-deep .owl-next {
+    right: -2.5rem;
+
+}
+
+
+.main-pro-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+.pro-image-container{
+    padding: 1rem;
+}
+.pro-image-container:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(47, 46, 46, 0);
+}
+
+.pro-image-container:hover::before {
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.pro-image-container img {
+    display: block;
+}
+
+.pro-image-container .view-pro {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    border-radius: 0.4rem;
+    background-color: white;
+    color: black;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.pro-image-container .shop-pro {
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    border-radius: 0.4rem;
+    background-color: white;
+    color: black;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.pro-image-container .view-pro:hover {
+    background-color: #e1474d;
+    color: #eee;
+}
+
+.pro-image-container .shop-pro:hover {
+    background-color: #e1474d;
+    color: #eee;
+}
+
+.pro-image-container a mat-icon {
+    font-size: 1.5rem;
+}
+
+.pro-image-container:hover a {
+    opacity: 1;
+    vertical-align: middle;
+}
+
+
+.product-details {
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.product-name a {
+    text-decoration: none;
+    float: left;
+    padding: 2rem;
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.product-name a:hover {
+    color: #e1474d;
+}
+
+
+.price-tag {
+    background: #eee;
+    color: black;
+    font-size: 1rem;
+
+    border-radius: 3px 0 0 3px;
+    display: inline-block;
+    height: 1.6rem;
+    line-height: 26px;
+    padding: 0 10px 0 22px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+}
+
+.price-tag::before {
+    background: #e1474d;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 14px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+}
+
+.price-tag::after {
+    background: black;
+    border-bottom: 14px solid transparent;
+    border-right: 14px solid #eee;
+    border-top: 14px solid transparent;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.price-tag:hover {
+    color: #e1474d;
+}
+
+
+
+/* =======================TOP RECOMMENDED COUSRSE SECTION CSS{{END}}========================== */
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+
+@media (max-width: 575.98px) {
+    ::ng-deep .owl-prev {
+        left: -1rem;
+    }
+    
+    ::ng-deep .owl-next {
+        right: -1rem;
+    
+    }
+  
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+   
+
+}
+
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/* ==================================={{END}}================================================= */

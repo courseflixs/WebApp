@@ -1,0 +1,225 @@
+/* Top Menu bar css  */
+.top-header {
+    background-color: #dd3333;
+    padding: 0.5rem 0rem;
+}
+
+.top-header-link a {
+    margin: 1rem 1.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+}
+
+.top-header-Social-link a {
+    text-decoration: none;
+    margin: 1rem 0.5rem;
+    overflow-x: hidden;
+
+}
+
+.top-header-Social-link a mat-icon {
+    transform: scale(1);
+    color: white;
+}
+
+.top-header-link a mat-icon {
+    transform: scale(0.8);
+    vertical-align: bottom;
+}
+
+/* ===================================================={{END}}=========================================== */
+
+/* Main Menu Styling */
+.fixed-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Adjust the z-index as needed */
+  }
+.main-menu {
+    display: flex;
+}
+
+.main-menu a {
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 0.8rem;
+
+}
+
+.main-menu a mat-icon {
+    vertical-align: middle;
+    transform: scale(1.2);
+    transform: rotate(90deg);
+    margin-right: 0.5rem;
+
+
+}
+
+
+.user-logo {
+    object-fit: contain;
+}
+
+.navbar {
+    border-bottom: 1px solid #dd3333;
+    background-image: url('../../../assets/user-main-menu-bg.gif');
+    object-fit: contain;
+    margin: 0rem !important;
+}
+
+.main-menu .list-item-active {
+    background: #dd3333 !important;
+    border-radius: 0.2rem;
+}
+
+/* dropdown menu */
+.main-menu .dropdown-menu {
+    background-color: #dd3333;
+    overflow-y: scroll;
+    max-height: 40rem;
+}
+
+.main-menu .dropdown-item {
+    color: white !important;
+    margin: 0rem !important;
+    background-color: #212529 !important;
+    border-bottom: 1px solid #a2a5a9;
+}
+
+.main-menu .dropdown-item:hover {
+    background-color: #dd3333 !important;
+}
+
+/* sidebar  on mobile */
+.offcanvas {
+    width: 20rem;
+}
+
+.offcanvas-header {
+    background-color: #dd3333;
+}
+
+.offcanvas-body {
+    background-color: #212529;
+}
+
+.btn-close {
+    background-color: white !important;
+}
+
+.offcanvas-body .nav-item {
+    border-bottom: 1px solid #a2a5a9;
+}
+
+.offcanvas-body .nav-link {
+    font-size: 1.5rem !important;
+    padding: 1.5rem 0rem;
+    color: white;
+    font-weight: 500;
+}
+
+.offcanvas-body .dropdown-menu {
+    background-color: #dd3333;
+    overflow-y: scroll;
+    max-height: 20rem;
+}
+
+.offcanvas-body .dropdown-item {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 0.4rem;
+}
+.offcanvas-body mat-icon{
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+.offcanvas-body .dropdown-item:hover {
+    background-color: #dd3333 !important;
+}
+
+.offcanvas-body .list-item-active {
+    color: #dd3333 !important;
+    border-radius: 0.2rem;
+}
+
+.navbar-toggler {
+    background-color: #dd3333;
+    display: none;
+}
+
+/*
+/* ===================================================={{END}}============================================ */
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+    .top-header-link a {
+        display: none;
+    }
+
+    .top-header-Social-link {
+        text-align: center;
+    }
+
+    .main-menu {
+        display: none;
+    }
+
+    .user-logo {
+        width: 13rem;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+    .top-header-link a {
+        display: none;
+    }
+    .main-menu {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+}
+
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    .top-header-link a {
+        display: none;
+    }
+    .main-menu {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/* ==================================={{END}}================================================= */

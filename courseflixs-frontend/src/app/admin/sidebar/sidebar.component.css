@@ -1,0 +1,45 @@
+:host {
+    .mat-icon {
+      vertical-align: middle;
+      margin-right: 1rem ; 
+      color: white !important;
+    }
+    
+  }
+  .logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+   
+  }
+  .logo  img {
+    width: 200px;
+  }
+  .mat-divider {
+    border-top-width: 2px;
+    border-color: white;
+  }
+  .mat-list-item {
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+    
+  }
+  .list-item-active {
+     background: #dd3333 !important;
+    border-radius: 0 2rem 2rem 0;    
+  }
+  .list-item-active{
+    background: blue;
+  }
+  .mat-subheader {
+    color: #818cf8;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  mat-nav-list a{
+    margin-bottom: 1rem;
+  }
+  .item-color{
+    color: white !important;
+  }

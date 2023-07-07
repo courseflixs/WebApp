@@ -1,0 +1,9 @@
+
+<div *ngIf="changeHeader==='admin'">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="changeHeader==='user'">
+  <app-user-header></app-user-header>
+  <router-outlet></router-outlet>
+  <app-user-footer></app-user-footer>
+</div>

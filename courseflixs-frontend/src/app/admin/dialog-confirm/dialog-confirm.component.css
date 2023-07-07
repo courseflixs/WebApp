@@ -1,0 +1,15 @@
+.btn-container{
+    float: right;
+}
+.yes-btn{
+    background-color: #dd3333;
+    color: white;
+}
+.yes-btn:hover{
+    background-color: black;
+    color: white;
+}
+.no-btn:hover{
+    background-color: black;
+    color: white;
+}

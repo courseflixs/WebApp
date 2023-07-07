@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="row top-header">
+        <div class="col-xl-8 col-lg-8 ">
+            <div class="top-header-link">
+                <a href="#"><mat-icon>lock</mat-icon> LOGIN/REGISTER</a>
+                <a href="#"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                <a href="#"><mat-icon>book</mat-icon>BLOG</a>
+                <a href="#"><mat-icon>quiz</mat-icon>FAQ</a>
+                <a href="#"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                <a href="#"><mat-icon>info</mat-icon>About Us</a>
+
+
+
+
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 "></div>
+        <div class="col-xl-2 col-lg-2">
+            <div class="top-header-Social-link">
+                <a href="#"><mat-icon >reddit</mat-icon></a>
+                <a href="#"><mat-icon>telegram</mat-icon></a>
+                <a href="#"><mat-icon>email</mat-icon></a>
+                <a href="#"><mat-icon>search</mat-icon></a>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row " [ngClass]="{ 'fixed-menu ': isMenuFixed }">
+        <nav class="navbar navbar-dark bg-dark" style="padding: 0px;">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="../../../assets/user-logo.png" alt="user-logo"  class="user-logo"></a>
+
+                <div class="main-menu">
+                    <a routerLink="/" routerLinkActive="list-item-active">HOME</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CATEGORY
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item">Action</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                            <li><a class="dropdown-item">Another action</a></li>
+                            <li><a class="dropdown-item">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <a routerLink="/mad" routerLinkActive="list-item-active">WHY US?</a>
+                    <a routerLink="/src" routerLinkActive="list-item-active">REQUEST</a>
+                    <a routerLink="/product" routerLinkActive="list-item-active">CONTACT US</a>
+                    <a href="#"><mat-icon>search</mat-icon>SEARCH</a>
+                    
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <!-- <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5> -->
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" >
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="list-item-active"><mat-icon>home</mat-icon>HOME</a>
+                            </li>   
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" routerLink="/category" routerLinkActive="list-item-active" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false"><mat-icon>category</mat-icon>CATEGORY</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/blog" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/Testimonial" routerLinkActive="list-item-active"><mat-icon>accessible</mat-icon>REQUEST</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/contact" routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a  class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a  class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>favorite</mat-icon>WISHLIST</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a  class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+
+                            </li>
+                            <li class="nav-item"> 
+                                <a class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>info</mat-icon>ABOUT US</a>
+                            </li>
+                        </ul>
+                        <!-- <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

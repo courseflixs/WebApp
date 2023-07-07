@@ -1,0 +1,105 @@
+<div class="container-fluid page">
+  <div class="d-flex  box p-3 mt-2">{{getSingleDelivery?'Update':'Add'}}  Delivery</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+      <form class="my-form" [formGroup]="deliveryForm" (submit)="addDelivery()">
+
+        <mat-card class="my-card">
+          <mat-card-header>
+            <mat-card-title>Delivery Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <!-- Form fields here -->
+            <table cellspacing="50">
+              <tr>
+                <td>
+                  <div class="group-label-feild">
+                    <p>
+                      <em>Search username</em>
+                    </p>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>UserName</mat-label>
+                      <input type="text" matInput [formControl]="myControlUser" [matAutocomplete]="autoUser" required >
+                      <mat-autocomplete #autoUser="matAutocomplete" (optionSelected)='selectOptionUser($event)'
+                        [displayWith]="displayFnUser">
+                        <mat-option *ngFor="let option of filteredOptionsUser | async" [value]="option" >
+                          {{option.name}}<{{option.email}}>
+                        </mat-option>
+                      </mat-autocomplete>
+                      <mat-error>{{"Choose valid user"}}</mat-error>
+
+                    </mat-form-field>
+                  </div>
+
+
+                  <div class="group-label-feild">
+                    <p>
+                      <em>Search product</em>
+                    </p>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Product Name</mat-label>
+                      <input type="text" matInput [formControl]="myControlProduct" [matAutocomplete]="autoProduct"
+                        required>
+                      <mat-autocomplete #autoProduct="matAutocomplete" (optionSelected)='selectOptionProduct($event)'
+                        [displayWith]="displayFnProduct">
+                        <mat-option *ngFor="let option of filteredOptionsProduct | async" [value]="option">
+                          {{option.product_name}}
+                        </mat-option>
+                      </mat-autocomplete>
+                      <mat-error>{{"Choose ordered product"}}</mat-error>
+                    </mat-form-field>
+                  </div>
+
+
+                  <div class="group-label-feild">
+                    <p>
+                      <em>Enter final price</em>
+                    </p>
+                    <mat-form-field floatLabel="always">
+                      <mat-label>Enter original price</mat-label>
+                      <input matInput type="number" placeholder="0" formControlName="finalPrice" required [ngModel]="getSingleDelivery?getSingleDelivery.bargain_price:''">
+                      <span matTextPrefix>{{ '₹'}}&nbsp;</span>
+                      <span matTextSuffix>.00</span>
+                      <mat-error>{{"Enter valid price"}}</mat-error>
+                    </mat-form-field>
+                  </div>
+
+
+                  <div class="group-label-feild">
+                    <p>
+                      <em>Enter product link</em>
+                    </p>
+                    <mat-form-field>
+                      <mat-label>Link</mat-label>
+                      <input matInput placeholder="Link" formControlName="productLink" required [ngModel]="getSingleDelivery?getSingleDelivery.product_link:''">
+                      <mat-error>{{"Enter product link"}}</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="group-label-feild">
+                    <p>
+                      <em>Enter Points</em>
+                    </p>
+                    <mat-form-field>
+                      <mat-label>Points</mat-label>
+                      <input matInput placeholder="points" formControlName="points" required [ngModel]="getSingleDelivery?getSingleDelivery.points:''">
+                      <mat-error>{{"Enter points"}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </mat-card-content>
+          <!-- Actions go here -->
+          <mat-card-actions>
+            <button mat-raised-button class="add-pro-btn btn-disabled"  [disabled]="deliveryForm.invalid"  *ngIf="!getSingleDelivery">Add Delivery</button>
+            <button mat-raised-button type="button" class="add-pro-btn btn-disabled"
+            *ngIf="getSingleDelivery" [disabled]="deliveryForm.invalid" (click)="updateOrders(getSingleDelivery?getSingleDelivery._id:'')" >Update Delivery</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+
+    </div>
+  </div>
+</div>

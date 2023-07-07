@@ -1,0 +1,255 @@
+<div class="container-fluid page">
+  <div class="d-flex box p-3 mt-2">Dashboard</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-sky">category</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Category</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCat}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">money</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Revenue</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.orderPriceSum | currency:'INR'}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">inventory</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Total_Products</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalPro}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-orange">person</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Customers</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCustomer}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+        <!-- </div><br><br> -->
+
+        <!-- <div class="row"> -->
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-orange">subscriptions</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Subscriber</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfSubscriber}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">moped</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Delivered_order</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.numOfOrder}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">recommended</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Recommend_item</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfRecommendPro}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-sky">slideshow</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Slider_product</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfShowSlider}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+        <!-- </div><br><br> -->
+
+
+        <!-- <div class="row"> -->
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">quiz</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Testimonial</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTestimonial}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-green">book</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Total_blog</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalBlog}}</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display  cart-icon-orange">recommended</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Recommend_item</mat-card-title>
+                      <mat-card-title class="cart-quantity">40</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+            <mat-card>
+              <mat-card-header>
+                <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                    <div class="cart-image">
+                      <mat-icon class="icon-display cart-icon-violet">slideshow</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                    <div class="cart-text">
+                      <mat-card-title class="cart-title">Slider_product</mat-card-title>
+                      <mat-card-title class="cart-quantity">20</mat-card-title>
+                    </div>
+                  </div>
+                </div>
+              </mat-card-header>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,248 @@
+/* =======================HERO SECTION CSS========================== */
+.main-hero {
+    background: linear-gradient(rgba(5, 4, 4, 0.5), rgba(9, 8, 8, 0.5)), url('../../../assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0rem;
+}
+
+.carousel {
+    margin: auto !important;
+    width: 60% !important;
+
+
+}
+
+.carousel-item img {
+    height: 25rem;
+    margin: auto;
+    padding: 4rem;
+    object-fit: cover;
+
+}
+
+.carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    opacity: 1;
+}
+
+.right-hero {
+    color: #ffffff;
+    margin-left: 0rem;
+    text-align: center;
+}
+
+.right-hero .item-text-subtitle {
+    font-weight: 500;
+    font-size: 2rem;
+    color: #FF3A2D;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+
+}
+
+.right-hero .item-text-title {
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+
+}
+
+.right-hero .item-text-desc {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buy-btn {
+    border-radius: 0rem;
+    color: white;
+    padding: 0.9rem 3rem;
+    background-color: #FF3A2D;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 3rem;
+
+
+}
+
+.hero-buy-btn:hover {
+    background-color: white;
+    color: #e97e2f;
+}
+
+.hero-about-btn {
+    background: none;
+    color: #FF3A2D;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 0.2rem solid #e97e2f;
+    border-radius: 0rem;
+    margin-left: 1rem;
+
+}
+
+.hero-about-btn:hover {
+    color: white;
+    border-color: white;
+}
+
+/* =======================HERO SECTION CSS {{END}}========================== */
+
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+
+    /* =======================HERO SECTION CSS========================== */
+    .row-1 {
+        flex-direction: column-reverse;
+    }
+
+    .main-hero {
+        padding: 3rem 0rem;
+    }
+
+    .carousel {
+        width: 100% !important;
+
+    }
+
+    .carousel-item img {
+        padding: 4rem;
+    }
+
+    .right-hero .item-text-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #e97e2f;
+
+    }
+
+    .right-hero .item-text-title {
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+
+    }
+
+    .right-hero .item-text-desc {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        line-height: 1.1rem;
+
+    }
+
+    .hero-buy-btn {
+        padding: 0.8rem 3rem;
+        font-size: 0.6rem;
+        margin-left: 1.5rem;
+
+    }
+
+    .hero-about-btn {
+        padding: 0.6rem 2rem;
+        font-size: 0.6rem;
+        margin-left: 0rem;
+
+    }
+
+    /* =======================HERO SECTION CSS {{END}}========================== */
+
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+    .row-1 {
+        flex-direction: column-reverse;
+    }
+
+    .carousel {
+        width: 100% !important;
+
+    }
+
+    .carousel-item img {
+        padding: 3rem;
+    }
+
+}
+
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    /* =======================HERO SECTION CSS========================== */
+
+    .main-hero {
+        padding: 3rem 0rem;
+    }
+
+    .carousel {
+        width: 100% !important;
+
+    }
+
+    .carousel-item img {
+        padding: 4rem;
+        height: 25rem;
+
+    }
+
+    .right-hero .item-text-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #e97e2f;
+
+    }
+
+    .right-hero .item-text-title {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+
+    }
+
+    .right-hero .item-text-desc {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        line-height: 1.1rem;
+
+    }
+
+    .hero-buy-btn {
+        padding: 0.8rem 3rem;
+        font-size: 0.7rem;
+        margin-left: 1.5rem;
+
+    }
+
+    .hero-about-btn {
+        padding: 0.6rem 2rem;
+        font-size: 0.7rem;
+        margin-left: 0rem;
+
+    }
+
+    /* =======================HERO SECTION CSS {{END}}========================== */
+
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/* ==================================={{END}}================================================= */

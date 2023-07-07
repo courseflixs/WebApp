@@ -1,0 +1,22 @@
+<div class="container-fluid page">
+  <div class="d-flex  box p-3 mt-2">Subscribed User</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+
+      <table datatable [dtOptions]="dtOptions" class="row-border angular-table hover" *ngIf="getAllSubsUserData">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Subscribed email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subsUser of getAllSubsUserData">
+            <td>{{subsUser._id}}</td>
+            <td>{{subsUser.email}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>

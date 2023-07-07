@@ -1,0 +1,102 @@
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: wheat;
+  overflow-x: hidden !important;
+}
+
+.box {
+  min-height: 120px;
+  background: black;
+  margin: 0 -1rem;
+  font-size: 36px;
+
+}
+
+.content {
+  min-height: calc(200vh - 0px);
+  border-radius: 10px;
+  margin-top: -2rem;
+  background: white;
+  color: black !important;
+  font-size: 1rem;
+  line-height: normal;
+  border-top: 1rem solid #dd3333;
+
+}
+
+.data {
+  margin-top: 1rem;
+  margin: 1rem;
+  /* top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+}
+
+/* Form Area CSS */
+.my-card {
+  border-top: 0.2rem solid #dd3333;
+}
+
+.my-form {
+  margin-top: 1rem;
+}
+
+.group-label-feild {
+  margin-bottom: 1rem !important;
+}
+
+.my-form table {
+  width: 100%;
+}
+
+.my-form mat-form-field {
+  width: 50%;
+}
+
+.add-pro-btn {
+  background-color: #dd3333;
+  color: white;
+  font-size: 1rem;
+}
+
+.add-pro-btn:hover {
+  background-color: black;
+}
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+
+  .my-form mat-form-field {
+    width: 100%;
+  }
+
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+  .my-form mat-form-field {
+    width: 100%;
+  }
+
+
+}
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+  .my-form mat-form-field {
+    width: 100%;
+  }
+
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* ==================================={{END}}================================================= */
+/*======================================={{END}}==================================================  */

@@ -1,0 +1,34 @@
+ .main-login-form {
+     background-color: #1e293b;
+     margin: 1rem;
+     padding: 1rem;
+     border-radius: 1rem;
+     margin-top: 30%;
+     text-align: center;
+ }
+
+ .main-login-form h2 {
+     color: white;
+     margin-bottom: 3rem;
+ }
+
+ .admin-login-logo {
+     width: 10;
+     margin-bottom: 2rem;
+     text-align: center;
+     overflow-x: hidden;
+ }
+
+ .admin-login-btn {
+     margin-top: 1rem;
+     font-size: 40px;
+ }
+ .admin-login-btn .btn{
+    background-color: brown;
+    width: 8rem;
+    font-size: 1.5rem;
+ }
+ 
+ mat-form-field {
+     width: 90%;
+ }

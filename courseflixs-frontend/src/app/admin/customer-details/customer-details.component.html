@@ -1,0 +1,22 @@
+<div class="container-fluid page">
+  <div class="d-flex  box p-3 mt-2">Customer Details</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+
+      <table datatable [dtOptions]="dtOptions" class="row-border angular-table hover" *ngIf="getAllEnduserData">
+        <thead>
+          <tr>
+            <th>User name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of getAllEnduserData">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,96 @@
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: wheat;
+  overflow-x: hidden !important;
+}
+
+.box {
+  min-height: 120px;
+  background: black;
+  margin: 0 -1rem;
+  font-size: 36px;
+
+}
+
+.content {
+  min-height: calc(200vh - 178px);
+  border-radius: 10px;
+  margin-top: -2rem;
+  background: white;
+  color: black !important;
+  font-size: 1rem;
+  line-height: normal;
+  border-top: 1rem solid #dd3333;
+
+}
+
+.data {
+  margin-top: 1rem;
+  margin: 1rem;
+ 
+ 
+
+
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+/* Resposive table CSS */
+.angular-table{
+  width: 100% !important;
+}
+.add-btn-container {
+  float: right;
+  margin: 0rem 0rem 2rem 1rem;
+  color: #dd3333;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+}
+
+.add-btn-container .add-btn {
+  color: #dd3333;
+}
+.add-svg-color{
+  fill: #dd3333;
+}
+.add-btn-container .add-btn:hover {
+  background-color: black !important;
+  color: white;
+  border: 1px solid black;
+
+
+}
+
+.delete-btn {
+  background-color: #dd3333;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+
+}
+
+.edit-btn {
+  background-color: black;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+
+
+}
+
+.lock-btn {
+  background-color: rgb(37, 161, 210);
+  margin-top: 0.5rem;
+
+}
+
+.row-border mat-icon {
+  color: white;
+  transform: scale(0.8);
+}
+.row-border img{
+  width: 6rem;
+  height: 6rem;
+}
+
+/* ========================================================{{END}}========================================= */

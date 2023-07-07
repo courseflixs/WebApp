@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+
+.modal-backdrop.show {
+  opacity: 0;
+}
+
+.modal-backdrop {
+  z-index: 0 !important;
+
+}
+
+.alert-msg {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-disabled:disabled {
+  cursor: not-allowed !important;
+  pointer-events: all !important;
+
+}
