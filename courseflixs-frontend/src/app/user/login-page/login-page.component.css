@@ -1,0 +1,93 @@
+.myaccount-container {
+    background-color: black;
+}
+
+.myaccount-title {
+    font-size: 1.5rem;
+    border-bottom: 0.3rem dashed #FF3A2D;
+    color: white;
+    text-align: center;
+    padding: 2rem 0rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+.title {
+    color: white;
+    font-size: 1.5rem;
+    padding: 3rem 3rem 0rem 3rem;
+    font-weight: 500;
+}
+
+.login-container {
+    border: #FF3A2D solid 0.1rem;
+    margin-bottom: 3rem;
+}
+
+.login-form {
+    padding: 3rem;
+    padding-bottom: 8rem;
+
+}
+
+.login-form p {
+    color: white;
+    font-weight: 500;
+}
+
+.login-form mat-form-field {
+    width: 100%;
+}
+
+.login-form mat-label {
+    color: #e1474d;
+}
+
+.user-login-btn button {
+    background-color: #e1474d;
+}
+
+.user-login-btn .form-check-input {
+    background-color: #e1474d;
+    width: 20px;
+    height: 20px;
+    margin-left: 1.5rem;
+    margin-top: 0.4rem;
+}
+
+.user-login-btn a {
+    color: white;
+    float: right;
+}
+
+
+.register-container {
+    border: #FF3A2D solid 0.1rem;
+    margin-bottom: 3rem;
+
+}
+.register-form {
+    padding: 3rem;
+
+}
+
+.register-form  p {
+    color: white;
+    font-weight: 500;
+}
+
+.register-form  mat-form-field {
+    width: 100%;
+}
+
+.register-form  mat-label {
+    color: #e1474d;
+}
+
+.user-register-btn button {
+    background-color: #e1474d;
+}
+.register-policy{
+    color: white;
+    margin-bottom: 1rem;
+}

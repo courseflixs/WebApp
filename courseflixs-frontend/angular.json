@@ -77,8 +77,7 @@
               "browserTarget": "courseflixs:build:production"
             },
             "development": {
-              "browserTarget": "courseflixs:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "courseflixs:build:development"
             }
           },
           "defaultConfiguration": "development"

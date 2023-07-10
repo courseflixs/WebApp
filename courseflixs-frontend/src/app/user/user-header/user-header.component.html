@@ -30,13 +30,13 @@
     <div class="row " [ngClass]="{ 'fixed-menu ': isMenuFixed }">
         <nav class="navbar navbar-dark bg-dark" style="padding: 0px;">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="../../../assets/user-logo.png" alt="user-logo"  class="user-logo"></a>
+                <!-- <a class="navbar-brand" href="#"><img src="../../../assets/user-logo.png" alt="user-logo"  class="user-logo"></a> -->
 
                 <div class="main-menu">
                     <a routerLink="/" routerLinkActive="list-item-active">HOME</a>
                     <div class="dropdown">
                         <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            CATEGORY
+                            <mat-icon>category</mat-icon> CATEGORY
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item">Action</a></li>
@@ -69,9 +69,9 @@
                             <li><a class="dropdown-item">Something else here</a></li>
                         </ul>
                     </div>
-                    <a routerLink="/mad" routerLinkActive="list-item-active">WHY US?</a>
-                    <a routerLink="/src" routerLinkActive="list-item-active">REQUEST</a>
-                    <a routerLink="/product" routerLinkActive="list-item-active">CONTACT US</a>
+                    <a routerLink="/mad" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
+                    <a routerLink="/src" routerLinkActive="list-item-active"><mat-icon>accessible</mat-icon>REQUEST</a>
+                    <a routerLink="/product" routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
                     <a href="#"><mat-icon>search</mat-icon>SEARCH</a>
                     
                 </div>

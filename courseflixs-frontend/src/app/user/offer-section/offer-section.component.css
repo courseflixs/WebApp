@@ -1,0 +1,424 @@
+.main-offer-container {
+  background: linear-gradient(rgba(5, 4, 4, 0.5), rgba(9, 8, 8, 0.5)), url('../../../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+
+}
+
+.main-offer-section {
+  padding: 4rem 0rem;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+}
+
+.offer-title {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5rem;
+  line-height: 2.5rem;
+
+}
+
+.offer-title::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40%;
+  height: 3px;
+  background-color: #FF3A2D;
+}
+
+/* Type writer text with animation  */
+
+/* Typewriter effect 1 */
+@keyframes typing {
+
+  0.0000%,
+  27.3488% {
+    content: "";
+  }
+
+  1.1395%,
+  26.2093% {
+    content: "n";
+  }
+
+  2.2791%,
+  25.0698% {
+    content: "ne";
+  }
+
+  3.4186%,
+  23.9302% {
+    content: "nev";
+  }
+
+  4.5581%,
+  22.7907% {
+    content: "neve";
+  }
+
+  5.6977%,
+  21.6512% {
+    content: "never";
+  }
+
+  6.8372%,
+  20.5116% {
+    content: "never ";
+  }
+
+  7.9767%,
+  19.3721% {
+    content: "never l";
+  }
+
+  9.1163%,
+  18.2326% {
+    content: "never le";
+  }
+
+  10.2558%,
+  17.3230% {
+    content: "never lea";
+  }
+
+  11.2558%,
+  16.5330% {
+    content: "never leav";
+  }
+
+  12.2558%,
+  15.5430% {
+    content: "never leave";
+  }
+
+
+
+
+  30.7674%,
+  51.2791% {
+    content: "";
+  }
+
+  31.9070%,
+  50.1395% {
+    content: "s";
+  }
+
+  33.0465%,
+  49.0000% {
+    content: "st";
+  }
+
+  34.1860%,
+  47.8605% {
+    content: "sta";
+  }
+
+  35.3256%,
+  46.7209% {
+    content: "stay";
+  }
+
+  36.4651%,
+  45.5814% {
+    content: "stay ";
+  }
+
+  37.6047%,
+  44.4419% {
+    content: "stay h";
+  }
+
+  38.8047%,
+  43.2419% {
+    content: "stay he";
+  }
+
+  39.8047%,
+  42.5419% {
+    content: "stay her";
+  }
+
+  40.1047%,
+  41.8819% {
+    content: "stay here";
+  }
+
+
+  50.6977%,
+  99.2093% {
+    content: "";
+  }
+
+  51.8372%,
+  98.0698% {
+    content: "b";
+  }
+
+  52.9767%,
+  97.9302% {
+    content: "be";
+  }
+
+  53.1163%,
+  96.7907% {
+    content: "be ";
+  }
+
+  54.2558%,
+  95.6512% {
+    content: "be a";
+  }
+
+  55.3953%,
+  94.5116% {
+    content: "be a ";
+  }
+
+  56.5349%,
+  93.3721% {
+    content: "be a p";
+  }
+
+  57.4635%,
+  92.5676% {
+    content: "be a pa";
+  }
+
+  58.3845%,
+  91.7426% {
+    content: "be a par";
+  }
+
+  59.5422%,
+  90.1351% {
+    content: "be a part";
+  }
+
+  60.8978%,
+  89.5621% {
+    content: "be a part ";
+  }
+
+  61.1234%,
+  88.3443% {
+    content: "be a part o";
+  }
+
+  62.4435%,
+  87.6766% {
+    content: "be a part of";
+  }
+
+  63.7756%,
+  86.8923% {
+    content: "be a part of ";
+  }
+
+  64.5678%,
+  85.1432% {
+    content: "be a part of o";
+  }
+
+  65.3434%,
+  84.3241% {
+    content: "be a part of ou";
+  }
+
+  66.9348%,
+  83.4132% {
+    content: "be a part of our";
+  }
+
+  67.3473%,
+  82.2341% {
+    content: "be a part of our ";
+  }
+
+  68.6945%,
+  81.8978% {
+    content: "be a part of our c";
+  }
+
+  69.6563%,
+  80.7867% {
+    content: "be a part of our co";
+  }
+
+  70.9876%,
+  79.5634% {
+    content: "be a part of our com";
+  }
+
+  71.8776%,
+  78.3376% {
+    content: "be a part of our comm";
+  }
+
+  72.6567%,
+  77.1243% {
+    content: "be a part of our commu";
+  }
+
+  73.4543%,
+  76.1132% {
+    content: "be a part of our commun";
+  }
+
+  74.5475%,
+  75.3244% {
+    content: "be a part of our communi";
+  }
+
+  75.2314%,
+  74.3661% {
+    content: "be a part of our communit";
+  }
+
+  76.1111%,
+  73.6541% {
+    content: "be a part of our community";
+  }
+
+
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 4px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+
+    0%,
+    100% {
+      content: "developer";
+    }
+
+    25% {
+      content: "writer";
+    }
+
+    50% {
+      content: "reader";
+    }
+
+    75% {
+      content: "human";
+    }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/*offer box css*/
+.offer-box-red {
+  border: #FF3A2D solid 0.2rem;
+  height: 27rem;
+  margin-bottom: 1rem;
+}
+
+.offer-box-white {
+  height: 27rem;
+  background-color: white;
+  border: white solid 3px;
+  margin-bottom: 1rem;
+}
+
+.offer-icon {
+  border-radius: 50%;
+  border: #e1474d solid 0.1rem;
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem auto;
+}
+
+.offer-icon .icon {
+  color: #e1474d;
+  font-size: 2rem;
+  margin-top: 1.4rem;
+}
+
+.offer-box-red .offer-box-title {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.offer-box-white .offer-box-title {
+  color: black;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.offer-box-red .offer-box-description {
+  font-size: 0.9rem;
+  padding: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.offer-box-white .offer-box-description {
+  color: black;
+  font-size: 0.9rem;
+  padding: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.offer-box-description::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 30%;
+  height: 3px;
+  background-color: #e1474d;
+}

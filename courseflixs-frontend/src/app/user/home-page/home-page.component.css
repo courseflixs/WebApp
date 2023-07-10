@@ -1,4 +1,5 @@
 /* =======================HERO SECTION CSS========================== */
+
 .main-hero {
     background: linear-gradient(rgba(5, 4, 4, 0.5), rgba(9, 8, 8, 0.5)), url('../../../assets/hero-bg.jpg');
     background-size: cover;

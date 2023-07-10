@@ -1,0 +1,140 @@
+.main-new-course {
+    padding: 5rem 0rem;
+    color: white;
+    font-weight: bolder;
+    position: relative;
+}
+
+.new-course-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5rem;
+    line-height: 2.5rem;
+
+}
+
+.new-course-title::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40%;
+    height: 3px;
+    background-color: #FF3A2D;
+}
+
+.order-steps {
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.hex {
+    margin-top: 30px;
+    width: 60px;
+    height: 40px;
+    background-color: #FF3A2D;
+    border-color: #FF3A2D;
+    position: relative;
+    display: inline-block;
+    margin: 0px !important;
+
+}
+
+.hex:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-bottom: 16px solid;
+    border-color: inherit;
+    border-left: 35px solid transparent;
+    border-right: 26px solid transparent;
+    position: absolute;
+    top: -15px;
+}
+
+.hex:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -14px;
+    border-top: 15px solid;
+    border-color: inherit;
+    border-left: 35px solid transparent;
+    border-right: 26px solid transparent;
+    margin: 0px !important;
+
+}
+
+.step-details {
+    margin-left: 2rem;
+}
+
+.step-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    line-height: 2rem;
+}
+
+.step-subtitle {
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.verticle-line {
+    border-left: #FF3A2D dotted 2px;
+    position: absolute;
+    height: 9.5rem;
+    margin-left: 2rem;
+    margin-top: -6.5rem;
+}
+
+.social-container {
+    display: flex;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+}
+
+.social-icon-box {
+    border: #e1474d solid 2px;
+    padding: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contact-details {
+    margin-left: 2rem;
+}
+
+.contact-title {
+    font-size: 1.3rem;
+}
+
+.contact-subtitle {
+    color: #e1474d;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-container {
+    margin-top: 4rem;
+}
+
+.contact-form-container mat-form-field {
+    width: 100%;
+}
+
+.contact-form-container mat-label {
+    color: #e1474d;
+}
+
+.send-msg-btn {
+    color: white !important;
+    background-color: #e1474d;
+}

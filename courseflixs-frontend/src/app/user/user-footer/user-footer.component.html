@@ -1,1 +1,111 @@
-<p>user-footer works!</p>
+<div class="container-fluid footer-container">
+    <div class="container">
+        <div class="top-footer">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="footer-logo">
+                        <a routerLink="/" ><img src="../../../assets/logo.svg"></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="newsletter-info">
+                        <div class="newsletter-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="newsletter-title">
+                            SUBSCRIBE TO OUR NEWSLETTER
+                        </div>
+                        <div class="newsletter-subtitle">
+                            Get all the latest information on Events, Sales and Offers.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="newsletter-form">
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput placeholder="Ex. pat@example.com">
+                                <mat-error
+                                    *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                    Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-button class="subscribe-btn">SUBSCRIBE <i
+                                    class="fa fa-arrow-right"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mid-footer">
+            <div class="row">
+                <div class="col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="mid-left-contact-info">
+                        <div class="mid-left-subtitle">
+                            Got Question? Contact Us
+                        </div>
+                        <div class="mid-left-title"> 
+                            Support@courseflix.io
+                        </div>
+                        <div class="mid-left-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, quidem est dolorum ratione nemo doloribus necessitatibus velit aliquid. Alias eum at eveniet earum enim distinctio ipsam officiis neque doloremque totam!
+                        </div>
+                        <div>Social Media</div>
+                        <div class="social-media-icon">
+                            <div class="facebook-icon"><i class="fa fa-facebook-f"></i></div>
+                            <div class="instagram-icon"><i class="fa fa-instagram"></i></div>
+                            <div class="twitter-icon"><i class="fa fa-twitter"></i></div>
+                            <div class="reddit-icon"><i class="fa fa-reddit-alien"></i></div>
+                            <div class="discord-icon"><i class="fa fa-discord"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+                    <div class="mid-title">COMPANY</div>
+                    <div class="link">
+                        <div><a routerLink="#" class="link">About Us</a></div>
+                        <div><a routerLink="#" class="link">FAQs</a></div>
+                        <div><a routerLink="#" class="link">Contact Us</a></div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
+                    <div class="mid-title">MY ACCOUNT</div>
+                    <div class="link">
+                        <div><a routerLink="#" class="link">My Order</a></div>
+                        <div><a routerLink="#" class="link">My Wishlist</a></div>
+                       <div><a routerLink="#" class="link">Login/Register</a></div> 
+
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
+                    <div class="mid-title">CUSTOMER SERVICE</div>
+                    <div class="link">
+                        <div><a routerLink="#" class="link">Privacy Policy</a></div> 
+                        <div><a routerLink="#" class="link">Terms and Condition</a></div> 
+ 
+                     </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="container-fluid bottom-footer">
+    <div class="copyright">
+        Copyright @ 2023 Amazing Liberary. All Rights Reserved.
+    </div>
+    <!-- <div class="payment-mode">
+        We'r using safe payment for 
+    </div> -->
+</div>

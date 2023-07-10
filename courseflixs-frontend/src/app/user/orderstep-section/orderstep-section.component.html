@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="main-new-course">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="new-course-title">
+                    How To Make An Order?
+                </div>
+                <div class="order-steps">
+                    <div class="hex-icon">
+                        <span class="hex"></span>
+
+                    </div>
+                    <div class="step-details">
+                        <div class="step-title">1. Select your courses</div>
+                        <div class="step-subtitle">Find the right course for you from DIC library</div>
+
+                    </div>
+                </div>
+                <div class="verticle-line"></div>
+                <div class="order-steps">
+                    <div class="hex-icon">
+                        <span class="hex"></span>
+
+                    </div>
+                    <div class="step-details">
+                        <div class="step-title">2. Add it to the shopping cart </div>
+                        <div class="step-subtitle">After found the course you love, just click “add to cart”. Don’t
+                            forget if You buy 3 courses or more at the same time, you will get 30% off</div>
+
+                    </div>
+                </div>
+                <div class="verticle-line"></div>
+                <div class="order-steps">
+                    <div class="hex-icon">
+                        <span class="hex"></span>
+
+                    </div>
+                    <div class="step-details">
+                        <div class="step-title">3. Complete the checkout form</div>
+                        <div class="step-subtitle">Full fill the form and complete checkout. You can pay with paypal or
+                            bitcoin.</div>
+
+                    </div>
+                </div>
+                <div class="verticle-line"></div>
+                <div class="order-steps">
+                    <div class="hex-icon">
+                        <span class="hex"></span>
+
+                    </div>
+                    <div class="step-details">
+                        <div class="step-title">4. Enter your email</div>
+                        <div class="step-subtitle">Your email is important. So, pls register with your real email to
+                            make sure you will get the download links after payment</div>
+
+                    </div>
+                </div>
+                <div class="verticle-line"></div>
+                <div class="order-steps">
+                    <div class="hex-icon">
+                        <span class="hex"></span>
+
+                    </div>
+                    <div class="step-details">
+                        <div class="step-title">5. Receive your course & enjoy!</div>
+                        <div class="step-subtitle">Done. You can check email to get the download link immediately or
+                            click to your order history in your dashboard.</div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Contact</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+           
+           
+            </div>
+            <div class="modal-footer">
+              <button type="button" #closebutton class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="new-course-title">
+                    Have Any Questions?
+                </div>
+                <div class="social-container" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="social-icon-box">
+                        <i class="fa fa-envelope-open social-icon"></i>
+                    </div>
+                    <div class="contact-details" >
+                        <div class="contact-subtitle">Mail Us!</div>
+                        <div class="contact-title">testcourseflix@gmail.com</div>
+                    </div>
+                </div>
+                <div class="social-container" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="social-icon-box">
+                        <i class="fa fa-envelope-open social-icon"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-subtitle">Connect With Discord!</div>
+                        <div class="contact-title">56374384328234</div>
+                    </div>
+                </div>
+                <div class="social-container">
+                    <div class="social-icon-box">
+                        <i class="fa fa-envelope-open social-icon"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-subtitle">Chat with us!</div>
+                        <div class="contact-title">Chat with us</div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter name</mat-label>
+                        <input matInput placeholder="Name">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Ex. pat@example.com">
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter contact</mat-label>
+                        <input matInput placeholder="Number">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Message</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button class="send-msg-btn">Send Message</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

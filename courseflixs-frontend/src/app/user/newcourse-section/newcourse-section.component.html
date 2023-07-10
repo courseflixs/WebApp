@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="main-new-course">
+        <div class="new-course-title">
+            NEWEST COURSES
+        </div>
+        <div class="row" >
+                <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3" *ngFor="let slide of products" >
+                    <div class="product-item">
+                        <div class="product-image-container">
+                            <img [src]="slide.imageUrl" [title]="slide.name" class="main-pro-image">
+                            <a routerLink="#" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                            <a routerLink="#" class="shop-pro"><mat-icon>shop</mat-icon></a>
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">
+                                <a href="">{{ slide.description }} </a>
+                            </div>
+                            <div>
+                                <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="browse-pro-container">
+                <button class="btn btn-danger">Browse All Products </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+.footer-container {
+    background-image: url('../../../assets/user-main-menu-bg.gif');
+
+    background-position: center;
+    color: white;
+    border-top: 0.2rem white solid;
+    padding: 2rem;
+}
+
+.top-footer {
+    padding-bottom: 2rem;
+    border-bottom: #9a9495 1px solid;
+
+}
+
+.footer-logo img {
+    width: 90%;
+}
+
+.newsletter-icon {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.newsletter-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    line-height: 2rem;
+
+
+}
+
+.newsletter-form {
+    vertical-align: middle;
+    width: 100%;
+}
+
+.newsletter-form mat-form-field {
+    width: 100%
+}
+
+.newsletter-form mat-label {
+    color: #e1474d;
+}
+
+.subscribe-btn {
+    color: white !important;
+    background-color: #e1474d;
+    vertical-align: middle;
+    font-size: 1rem;
+    padding: 1.5rem !important;
+}
+
+.mid-footer {
+    padding-top: 2rem;
+
+}
+
+.mid-left-subtitle {
+    margin-bottom: 0.5rem;
+    color: #e1474d;
+}
+
+.mid-left-title {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+}
+
+.mid-left-desc {
+    margin-bottom: 1rem;
+}
+
+.social-media-icon {
+    display: flex;
+}
+
+.social-media-icon div {
+    margin: 0.4rem;
+}
+
+.facebook-icon {
+    background-color: darkblue;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.instagram-icon {
+    background-color: red;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.twitter-icon {
+    background-color: skyblue;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.reddit-icon {
+    background-color: rgb(234, 86, 33);
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+.mid-title {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    color: #e1474d;
+}
+
+.link {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #e1474d;
+}
+
+.link div {
+    margin-bottom: 0.7rem;
+}
+.bottom-footer{
+    background-color: black;
+    padding: 1.5rem;
+}
+.copyright{
+    color: white;
+    font-size: 1rem;
+    text-align: center !important;
+}
+.payment-mode{
+    color: white;
+    font-size: 1rem;
+    align-items: end;
+}
