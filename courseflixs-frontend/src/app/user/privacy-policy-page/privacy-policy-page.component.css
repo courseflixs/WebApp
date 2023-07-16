@@ -1,0 +1,71 @@
+.main-privacy-container {
+    background-color: black;
+    color: white;
+    font-weight: 800 !important;
+    padding: 2rem 0rem;
+}
+
+.privacy-heading-container {
+    text-align: center;
+}
+
+.privacy-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    line-height: 2.5rem;
+    font-family: 'Roboto Slab' !important;
+}
+
+.privacy-title::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40%;
+    height: 3px;
+    background-color: #FF3A2D;
+
+}
+
+.privacy-subtitle {
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.3rem !important;
+    padding: 1rem 0rem;
+    margin-bottom: 1rem;
+
+}
+.privacy-content-container{
+    background-color:white ;
+    padding: 2rem;
+    color: black;
+    border-radius: 1rem;
+}
+.privacy-content{
+    margin: 1rem 0rem;
+
+}
+.privacy-start, .privacy-end{
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    line-height: 1.7rem;
+}
+.privacy-question{
+    font-family: 'Roboto Slab' !important;
+    padding: 0.8rem 0rem;
+    font-size: 1.3rem;
+
+}
+.privacy-answer{
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    line-height: 1.7rem;
+}
+.privacy-content-container span{
+    font-weight: 600;
+    color: #FF3A2D;
+}

@@ -1,0 +1,255 @@
+.pro-details-main-container {
+    background-color: black;
+    color: white;
+}
+
+.pro-title {
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1rem 0rem;
+    line-height: 5rem;
+    font-family: 'Roboto Slab' !important;
+
+}
+
+.pro-main-image {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0rem;
+}
+
+.puchase-btn-container {
+    text-align: center;
+}
+
+.purchase-title {
+    color: #FF3A2D;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem 0rem;
+    font-family: 'Open Sans'!important;
+
+}
+
+.purchase-btn {
+    font-size: 2rem;
+    background-color: #FF3A2D;
+    margin: 1.5rem 0rem;
+    font-weight: 600;
+    font-family: 'Roboto Slab' !important;
+
+}
+
+.purchase-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #FF3A2D;
+}
+
+.gif-img {
+    padding: 2rem 1rem;
+}
+
+.gif-img-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Roboto Slab' !important;
+
+}
+
+.gif-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.social-engagement-link {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 10rem;
+
+}
+
+.social-engagement-link .title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #FF3A2D;
+
+}
+
+.social-engagement-link img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.course-details {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+
+.course-details div {
+    padding: 1rem 0rem;
+}
+
+.course-details span {
+    color: #FF3A2D;
+}
+
+.prev-column {
+    border-right: 1px solid rgb(80, 78, 78);
+}
+
+.pro-prev-container,
+.pro-next-container {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0rem;
+}
+
+.pro-next-container:hover {
+    border: #FF3A2D 1px dotted;
+
+}
+
+.pro-prev-container:hover {
+    border: #FF3A2D 1px dotted;
+
+}
+
+.pro-prev-container {
+    text-align: start;
+}
+
+.pro-next-container {
+    text-align: end;
+}
+
+.prev-course-img img,
+.next-course-img img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+
+}
+
+.prev-left-icon,
+.next-right-icon {
+    font-size: 1.5rem;
+    padding: 0rem 1rem;
+}
+
+.prev-course-title,
+.next-course-title {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+
+.prev-course-title a,
+.next-course-title a {
+    text-decoration: none;
+    color: white;
+}
+
+.prev-course-title {
+    margin-left: -4rem;
+}
+
+.next-course-title {
+    margin-right: -4rem;
+}
+
+.cat-tag-list-container {
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.cat-list-title,
+.tag-list-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 0rem;
+}
+
+.cat-list,
+.tag-list {
+    margin-left: 1rem;
+}
+
+.tag-list button,
+.cat-list button {
+    margin: 0.5rem 0.5rem;
+}
+
+.tag-list .btn-primary,
+.cat-list .btn-primary {
+    background-color: #cceaff;
+    color:#FF3A2D;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 2px;
+}
+
+.tag-list .btn-primary:hover,
+.cat-list .btn-primary:hover {
+    background-color: #FF3A2D;
+    color: white;
+}
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+    .prev-column {
+        border-right: none
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+    .prev-column {
+        border-right: none
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* ==================================={{END}}================================================= */

@@ -15,6 +15,8 @@
 
 .footer-logo img {
     width: 90%;
+    margin-bottom: 1rem;
+
 }
 
 .newsletter-icon {
@@ -26,7 +28,14 @@
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     line-height: 2rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
 
+
+}
+
+.newsletter-subtitle {
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    margin-bottom: 1rem;
 
 }
 
@@ -36,7 +45,7 @@
 }
 
 .newsletter-form mat-form-field {
-    width: 100%
+    width: 100%;
 }
 
 .newsletter-form mat-label {
@@ -47,8 +56,10 @@
     color: white !important;
     background-color: #e1474d;
     vertical-align: middle;
-    font-size: 1rem;
-    padding: 1.5rem !important;
+    font-size: 0.8rem;
+    padding: 1.2rem !important;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 600;
 }
 
 .mid-footer {
@@ -59,16 +70,23 @@
 .mid-left-subtitle {
     margin-bottom: 0.5rem;
     color: #e1474d;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 700;
+
 }
 
 .mid-left-title {
     margin-bottom: 1rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .mid-left-desc {
     margin-bottom: 1rem;
+    font-family: 'Open Sans' !important;
+
 }
 
 .social-media-icon {
@@ -113,12 +131,16 @@
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     color: #e1474d;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 700;
 }
 
 .link {
     color: white;
     font-size: 1rem;
     text-decoration: none;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .link:hover {
@@ -128,16 +150,19 @@
 .link div {
     margin-bottom: 0.7rem;
 }
-.bottom-footer{
+
+.bottom-footer {
     background-color: black;
     padding: 1.5rem;
 }
-.copyright{
+
+.copyright {
     color: white;
     font-size: 1rem;
     text-align: center !important;
 }
-.payment-mode{
+
+.payment-mode {
     color: white;
     font-size: 1rem;
     align-items: end;

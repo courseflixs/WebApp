@@ -2,10 +2,10 @@
     <div class="row top-header">
         <div class="col-xl-8 col-lg-8 ">
             <div class="top-header-link">
-                <a href="#"><mat-icon>lock</mat-icon> LOGIN/REGISTER</a>
+                <a routerLink="/login"><mat-icon>lock</mat-icon> LOGIN/REGISTER</a>
                 <a href="#"><mat-icon>favorite</mat-icon>WISHLIST</a>
-                <a href="#"><mat-icon>book</mat-icon>BLOG</a>
-                <a href="#"><mat-icon>quiz</mat-icon>FAQ</a>
+                <a href="/blogs"><mat-icon>book</mat-icon>BLOG</a>
+                <a href="/faqs"><mat-icon>quiz</mat-icon>FAQ</a>
                 <a href="#"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                 <a href="#"><mat-icon>info</mat-icon>About Us</a>
 
@@ -29,8 +29,8 @@
     </div>
     <div class="row " [ngClass]="{ 'fixed-menu ': isMenuFixed }">
         <nav class="navbar navbar-dark bg-dark" style="padding: 0px;">
-            <div class="container">
-                <!-- <a class="navbar-brand" href="#"><img src="../../../assets/user-logo.png" alt="user-logo"  class="user-logo"></a> -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../../../assets/user-logo.png" alt="user-logo"  class="user-logo"></a>
 
                 <div class="main-menu">
                     <a routerLink="/" routerLinkActive="list-item-active">HOME</a>
@@ -46,27 +46,7 @@
                             <li><a class="dropdown-item">Something else here</a></li>
                             <li><a class="dropdown-item">Another action</a></li>
                             <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
-                            <li><a class="dropdown-item">Another action</a></li>
-                            <li><a class="dropdown-item">Something else here</a></li>
+                        
                         </ul>
                     </div>
                     <a routerLink="/mad" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
@@ -117,7 +97,7 @@
                             </li>
                            
                             <li class="nav-item">
-                                <a  class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
+                                <a  class="nav-link" routerLink="/login" routerLinkActive="list-item-active"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
 
                             </li>
                             <li class="nav-item">
@@ -125,11 +105,11 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
+                                <a class="nav-link" routerLink="/blogs" routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
 
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link" routerLink="/about-us" routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
+                                <a  class="nav-link" routerLink="/faqs" routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
 
                             </li>
                             <li class="nav-item">

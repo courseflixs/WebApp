@@ -1,0 +1,103 @@
+.main-testimo-container {
+    background-color: black;
+    margin: 0rem 0rem;
+}
+
+.tetimo-container {
+    padding: 3rem 0rem;
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: bold !important;
+
+}
+
+.testimo-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    /* margin-bottom: 2rem; */
+    line-height: 2.5rem;
+    font-weight: bold !important;
+    color: #f2f2f2;
+
+}
+
+.testimo-title::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40%;
+    height: 3px;
+    background-color: #FF3A2D;
+}
+.testo-subtitle{
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.3rem !important;
+    padding: 1rem 0rem;
+    margin-bottom: 2rem;
+
+}
+
+.tetimo-container .carousel-inner {
+    padding: 0rem 10rem;
+}
+
+.tetimo-container .carousel-control-prev {
+    color: #FF3A2D !important;
+}
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+@media (max-width: 575.98px) {
+  
+
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+    .tetimo-container .carousel-inner {
+        padding: 0rem 0rem !important;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+  
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+    .tetimo-container .carousel-inner{
+        padding: 0rem 0rem !important;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+    .tetimo-container .carousel-inner{
+        padding: 0rem 6rem !important;
+    }
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* ==================================={{END}}================================================= */

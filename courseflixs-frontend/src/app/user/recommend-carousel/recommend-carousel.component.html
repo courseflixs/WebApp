@@ -1,5 +1,5 @@
 <div class="container">
-        
+
     <div class="main-top-course">
 
         <div class="top-course-title">
@@ -7,26 +7,26 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <owl-carousel-o [options]="customOptions" >
-                  
+                <owl-carousel-o [options]="customOptions">
+
                     <ng-container *ngFor="let slide of products">
                         <ng-template carouselSlide [id]="slide.id" class="product-item">
                             <div class="pro-image-container">
                                 <img [src]="slide.imageUrl" [title]="slide.name" class="main-pro-image">
-                                    <a routerLink="#" class="view-pro" ><mat-icon>visibility</mat-icon></a>
-                                    <a routerLink="#" class="shop-pro"><mat-icon>shop</mat-icon></a>
+                                <a routerLink="#" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                                <a routerLink="#" class="shop-pro"><mat-icon>shop</mat-icon></a>
                             </div>
                             <div class="product-details">
                                 <div class="product-name">
-                                    <a href="">{{ slide.description }}   </a>
+                                    <a href="">{{ slide.description| slice:1:30 }}.. </a>
                                 </div>
-                             <div>
-                                <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>
-                             </div>
+                                <div>
+                                    <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>
+                                </div>
                             </div>
                         </ng-template>
                     </ng-container>
-                   
+
                 </owl-carousel-o>
             </div>
         </div>

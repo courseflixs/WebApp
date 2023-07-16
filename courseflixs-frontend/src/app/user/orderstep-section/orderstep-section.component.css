@@ -1,8 +1,9 @@
 .main-new-course {
-    padding: 5rem 0rem;
+    padding-top: 5rem ;
     color: white;
-    font-weight: bolder;
     position: relative;
+    font-weight: 800 !important;
+
 }
 
 .new-course-title {
@@ -12,6 +13,8 @@
     display: inline-block;
     margin-bottom: 5rem;
     line-height: 2.5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
 
 }
 
@@ -76,11 +79,15 @@
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     line-height: 2rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .step-subtitle {
     font-weight: 400;
     line-height: normal;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 
 }
 
@@ -115,11 +122,15 @@
 
 .contact-title {
     font-size: 1.3rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .contact-subtitle {
     color: #e1474d;
     margin-bottom: 0.5rem;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .contact-form-container {
@@ -137,4 +148,7 @@
 .send-msg-btn {
     color: white !important;
     background-color: #e1474d;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 800;
+
 }

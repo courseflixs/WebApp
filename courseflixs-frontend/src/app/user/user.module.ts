@@ -16,8 +16,16 @@ import { RecommendCarouselComponent } from './recommend-carousel/recommend-carou
 import { NewcourseSectionComponent } from './newcourse-section/newcourse-section.component';
 import { OfferSectionComponent } from './offer-section/offer-section.component';
 import { OrderstepSectionComponent } from './orderstep-section/orderstep-section.component';
-import {MatInputModule} from '@angular/material/input';
-
+import { MatInputModule } from '@angular/material/input';
+import { ProductsPageComponent } from './products-page/products-page.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductDetailsPageComponent } from './product-details-page/product-details-page.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { TestimonialSectionComponent } from './testimonial-section/testimonial-section.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
+import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,14 @@ import {MatInputModule} from '@angular/material/input';
     NewcourseSectionComponent,
     OfferSectionComponent,
     OrderstepSectionComponent,
-    
+    ProductsPageComponent,
+    ProductDetailsPageComponent,
+    TestimonialSectionComponent,
+    FaqPageComponent,
+    PrivacyPolicyPageComponent,
+    BlogPageComponent,
+    BlogDetailsPageComponent,
+
   ],
   imports: [
     CommonModule,
@@ -41,15 +56,17 @@ import {MatInputModule} from '@angular/material/input';
     CarouselModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    AngularEditorModule
   ],
-  exports:[
+  exports: [
     UserHeaderComponent,
     UserFooterComponent,
     HomePageComponent,
-    
+
   ],
-  providers: [    
+  providers: [
   ]
 
 })

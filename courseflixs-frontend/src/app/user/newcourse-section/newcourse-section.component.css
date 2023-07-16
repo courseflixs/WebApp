@@ -1,5 +1,5 @@
 .main-new-course {
-    padding: 1rem 0rem;
+    padding: 0rem 0rem;
     text-align: center;
     color: white;
     font-weight: bolder;
@@ -12,6 +12,8 @@
     display: inline-block;
     margin-bottom: 2rem;
     line-height: 2.5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
 
 }
 
@@ -39,6 +41,7 @@
 
 .product-image-container {
     padding: 1rem;
+   
 }
 
 .product-image-container:before {
@@ -50,6 +53,7 @@
     left: 0;
     right: 0;
     background-color: rgba(47, 46, 46, 0);
+    border-radius: 0.5rem;
 }
 
 .product-image-container:hover::before {
@@ -63,7 +67,7 @@
 .product-image-container .view-pro {
     position: absolute;
     top: 35%;
-    left: 40%;
+    left: 38%;
     padding: 0.5rem 1rem 0.2rem 1rem;
     border-radius: 0.4rem;
     background-color: white;
@@ -76,7 +80,7 @@
 .product-image-container .shop-pro {
     position: absolute;
     top: 35%;
-    left: 60%;
+    left: 61%;
     padding: 0.5rem 1rem 0.2rem 1rem;
     border-radius: 0.4rem;
     background-color: white;
@@ -115,7 +119,8 @@
 .product-name a {
     text-decoration: none;
     float: left;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 0rem;
+
     color: #ffffff;
     font-size: 1rem;
     text-align: left;
@@ -137,7 +142,7 @@
     line-height: 26px;
     padding: 0 10px 0 22px;
     position: relative;
-    margin: 0 10px 10px 0;
+    margin: 0 0 10px 0;
     text-decoration: none;
 }
 
@@ -170,7 +175,7 @@
 
 .browse-pro-container{
    text-align: center;
-   margin-bottom: 1rem;
+   margin-bottom: 2rem;
 }
 .btn-danger{
     font-weight: 500;

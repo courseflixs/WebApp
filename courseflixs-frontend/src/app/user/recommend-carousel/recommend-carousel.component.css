@@ -3,7 +3,9 @@
     padding: 1rem 0rem;
     text-align: center;
     color: white;
-    font-weight: bolder;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: bold !important;
+
 }
 
 .top-course-title {
@@ -13,6 +15,8 @@
     display: inline-block;
     margin-bottom: 2rem;
     line-height: 2.5rem;
+    font-weight: bold !important;
+    color: #f2f2f2;
 
 }
 
@@ -70,6 +74,8 @@ owl-carousel-o {
     left: 0;
     right: 0;
     background-color: rgba(47, 46, 46, 0);
+    border-radius: 0.5rem;
+
 }
 
 .pro-image-container:hover::before {
@@ -83,7 +89,7 @@ owl-carousel-o {
 .pro-image-container .view-pro {
     position: absolute;
     top: 35%;
-    left: 40%;
+    left: 38%;
     padding: 0.5rem 1rem 0.2rem 1rem;
     border-radius: 0.4rem;
     background-color: white;
@@ -96,7 +102,7 @@ owl-carousel-o {
 .pro-image-container .shop-pro {
     position: absolute;
     top: 35%;
-    left: 60%;
+    left: 61%;
     padding: 0.5rem 1rem 0.2rem 1rem;
     border-radius: 0.4rem;
     background-color: white;
@@ -135,7 +141,7 @@ owl-carousel-o {
 .product-name a {
     text-decoration: none;
     float: left;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 0rem;
     color: #ffffff;
     font-size: 1rem;
     text-align: left;
@@ -175,7 +181,7 @@ owl-carousel-o {
 
 .price-tag::after {
     background: black;
-    border-bottom: 13px solid transparent;
+    border-bottom: 12px solid transparent;
     border-right: 14px solid #eee;
     border-top: 14px solid transparent;
     content: '';

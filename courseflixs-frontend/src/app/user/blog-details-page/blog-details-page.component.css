@@ -1,0 +1,201 @@
+.main-blog-details-container{
+       background-color: black;
+       margin: 0 !important;
+    
+}
+.title-container{
+    background-color: #dd3333;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+.blog-detail-title{
+    font-size: 2rem;
+    position: relative;
+    line-height: 2.5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.blog-details{
+width: 100%;
+}
+.blog-img img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem 1rem 0rem 0rem;
+
+}
+.blog-cat-date{
+    display: flex;
+    padding: 1rem 0rem;
+    font-weight:bold;
+    font-size: 0.9rem;
+    color: rgb(224, 219, 219);
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+
+}
+.blog-cat-date .blog-cat{
+   margin-right: auto;
+   padding: 0rem 1rem;
+}
+.blog-cat-date .blog-date{
+   margin-left: auto;
+   padding: 0rem 1rem;
+
+}
+
+.blog-title{
+    font-size: 2rem;
+    font-family: 'Roboto Slab' !important;
+    line-height: 2.5rem;
+    font-weight: bold;
+    color: #dd3333;
+}
+.blog-desc{
+    color: white !important;
+    font-size: 1rem;
+    padding: 1rem 0rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    line-height: 1.5rem;
+}
+.tags{
+    display: flex;
+    padding: 2rem 0rem;
+
+}
+.tags .tag-title{       
+    color: #dd3333;
+    font-family: 'Roboto Slab' !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    
+}
+
+.tag{
+      font-size: 0.8rem;
+      color: white;
+      padding:0rem 1rem!important;
+      margin: 0rem 0.5rem;
+      border: purple 0.2rem solid;
+      border-radius: 1rem;
+}
+.social-icon {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.social-icon .icon-facebook{
+    color: white;
+    background-color: blue;
+    font-size: 0.8;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+.social-icon .icon-facebook:hover{
+    border: 0.2rem solid blue;
+    background-color: white;
+    color: black;
+}
+.social-icon .icon-twitter{
+    color: white;
+    background-color: rgb(43, 153, 197);
+    font-size: 0.8;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+
+}
+.social-icon .icon-twitter:hover{
+    border: 0.2rem solid rgb(43, 153, 197);
+    background-color: white;
+    color: black;
+}
+
+.social-icon .icon-instagram{
+    color: white;
+    background-color: red;
+    font-size: 0.8;
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    margin-right: 1rem;
+    font-weight: 500;
+
+}
+.social-icon .icon-instagram:hover{
+    border: 0.2rem solid #dd3333;
+    background-color: white;
+    color: black;
+}
+
+/* blog-details right-side css */
+.category-container{
+    background-color: #dd3333;
+    border-radius: 0.8rem;
+    width: 100%;
+    padding: 0rem 1rem;
+
+}
+.category-title{
+    padding: 1.5rem 0rem;
+    font-size: 1.3rem;
+    font-family: 'Roboto Slab' !important;
+    line-height: 1.8rem;
+    font-weight: bold;
+    color: white;
+
+}
+
+.category-item a{
+    font-size: 1rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.top-post-container{
+    background-color:#dd3333 ;
+    border-radius: 0.8rem;
+    width: 100%;
+    padding: 0rem 1rem;  
+}
+.top-post-title{
+    padding: 1.5rem 0rem;
+    font-size: 1.3rem;
+    font-family: 'Roboto Slab' !important;
+    line-height: 1.8rem;
+    font-weight: bold;
+    color: white;
+
+}
+.top-bolg{
+    display: flex;
+}
+.blog-post-num{
+    color: white;
+    font-weight: bold;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 2rem;
+    margin: auto;
+}
+.blog-post-title{
+    font-size: 1rem;
+    font-family: 'Roboto Slab' !important;
+    line-height: 1.2rem;
+    font-weight: bold;
+    padding: 0rem 1rem;
+}
+
+.blog-date-cat{
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: rgb(106, 110, 114);
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    padding: 0.5rem 0rem;
+}

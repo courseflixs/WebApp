@@ -16,7 +16,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Category</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCat}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCat?getAllDashboardDetailsData?.countOfCat:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Revenue</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.orderPriceSum | currency:'INR'}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.orderPriceSum?getAllDashboardDetailsData?.orderPriceSum:0 | currency:'INR'}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Total_Products</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalPro}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalPro?getAllDashboardDetailsData?.countOfTotalPro:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Customers</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCustomer}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfCustomer?getAllDashboardDetailsData?.countOfCustomer:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Subscriber</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfSubscriber}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfSubscriber?getAllDashboardDetailsData?.countOfSubscriber:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Delivered_order</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.numOfOrder}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.numOfOrder?getAllDashboardDetailsData?.numOfOrder:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -137,7 +137,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Recommend_item</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfRecommendPro}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfRecommendPro?getAllDashboardDetailsData?.countOfRecommendPro:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -157,7 +157,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Slider_product</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfShowSlider}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfShowSlider?getAllDashboardDetailsData?.countOfShowSlider:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -180,7 +180,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Testimonial</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTestimonial}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTestimonial?getAllDashboardDetailsData?.countOfTestimonial:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>
@@ -200,7 +200,7 @@
                   <div class="col-lg-8 col-md-8">
                     <div class="cart-text">
                       <mat-card-title class="cart-title">Total_blog</mat-card-title>
-                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalBlog}}</mat-card-title>
+                      <mat-card-title class="cart-quantity">{{getAllDashboardDetailsData?.countOfTotalBlog?getAllDashboardDetailsData?.countOfTotalBlog:0}}</mat-card-title>
                     </div>
                   </div>
                 </div>

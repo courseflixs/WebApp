@@ -10,6 +10,8 @@
     padding: 2rem 0rem;
     font-weight: 700;
     margin-bottom: 5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 900;
 }
 
 .title {
@@ -17,6 +19,8 @@
     font-size: 1.5rem;
     padding: 3rem 3rem 0rem 3rem;
     font-weight: 500;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: 700;
 }
 
 .login-container {
@@ -33,6 +37,8 @@
 .login-form p {
     color: white;
     font-weight: 500;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .login-form mat-form-field {
@@ -41,6 +47,7 @@
 
 .login-form mat-label {
     color: #e1474d;
+
 }
 
 .user-login-btn button {
@@ -74,6 +81,8 @@
 .register-form  p {
     color: white;
     font-weight: 500;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+
 }
 
 .register-form  mat-form-field {

@@ -13,7 +13,7 @@
                         </div>
                         <div class="product-details">
                             <div class="product-name">
-                                <a href="">{{ slide.description }} </a>
+                                <a href="">{{ slide.description | slice:1:30 }}.. </a>
                             </div>
                             <div>
                                 <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>

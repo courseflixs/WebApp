@@ -1,0 +1,40 @@
+<div class="container-fluid pro-main-container">
+  <div class="page-title">All Products</div>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid" style="margin-top: 0.5rem;">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="#">All Products</a></li>
+                </ol>
+              </nav>
+            </div>
+          </nav>
+    <div class="container">
+        
+          <div class="page-subtitle">showing 10999 <b>Result(s)</b></div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4" *ngFor="let slide of products | paginate: { itemsPerPage: 2, currentPage: p }">
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img [src]="slide.imageUrl" [title]="slide.name" class="main-pro-image">
+                        <a routerLink="#" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                        <a routerLink="#" class="shop-pro"><mat-icon>shop</mat-icon></a>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-name">
+                            <a href="">{{ slide.description }} </a>
+                        </div>
+                        <div>
+                            <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+          
+                         
+              <pagination-controls (pageChange)="p = $event" class="my-pagination" ></pagination-controls> 
+            
+        </div>
+    </div>
+</div>
