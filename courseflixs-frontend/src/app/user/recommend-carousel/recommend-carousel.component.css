@@ -156,7 +156,6 @@ owl-carousel-o {
     background: #eee;
     color: black;
     font-size: 1rem;
-
     border-radius: 3px 0 0 3px;
     display: inline-block;
     height: 1.6rem;
@@ -181,7 +180,7 @@ owl-carousel-o {
 
 .price-tag::after {
     background: black;
-    border-bottom: 12px solid transparent;
+    border-bottom: 13px solid transparent;
     border-right: 14px solid #eee;
     border-top: 14px solid transparent;
     content: '';

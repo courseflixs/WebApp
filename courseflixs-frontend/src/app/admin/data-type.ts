@@ -8,18 +8,19 @@ export interface Category {
   categoryName: String
 }
 export interface Product {
-  proMainImg: String,
-  proName: String,
-  catName: String,
-  proFileSize: String,
-  proOriginalPrice: String,
-  proSalePrice: String,
-  selePageLink: String,
-  salePage: String,
-  gifImage: String,
-  sliderProVisiblity: String,
-  recomProvisiblity: String,
-  seoKeywordList: String,
+  _id:String,
+  main_product_image: String,
+  product_name: String,
+  category_name: String,
+  file_size: String,
+  original_price: Number,
+  sale_price: Number,
+  sale_page_link: String,
+  sale_page: String,
+  gif_image: String,
+  show_slider: String,
+  recommended: String,
+  tags: String,
 
 }
 export interface Blog {

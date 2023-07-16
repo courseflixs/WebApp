@@ -4,19 +4,19 @@
             NEWEST COURSES
         </div>
         <div class="row" >
-                <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3" *ngFor="let slide of products" >
+                <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-3" *ngFor="let pro of newPro" >
                     <div class="product-item">
                         <div class="product-image-container">
-                            <img [src]="slide.imageUrl" [title]="slide.name" class="main-pro-image">
-                            <a routerLink="#" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                            <img [src]="getProImageUrl(pro?.main_product_image)" [title]="pro?.product_name" class="main-pro-image">
+                            <a [routerLink]="['product-details',pro._id]" class="view-pro"><mat-icon>visibility</mat-icon></a>
                             <a routerLink="#" class="shop-pro"><mat-icon>shop</mat-icon></a>
                         </div>
                         <div class="product-details">
                             <div class="product-name">
-                                <a href="">{{ slide.description | slice:1:30 }}.. </a>
+                                <a [routerLink]="['product-details',pro._id]" >{{ pro?.product_name | slice:0:30 }}.. </a>
                             </div>
                             <div>
-                                <a href="#" class="price-tag">{{"300" | currency:'$'}}</a>
+                                <a [routerLink]="['product-details',pro._id]"  class="price-tag">{{pro?.sale_price | currency:'USD'}}</a>
                             </div>
                         </div>
                     </div>  

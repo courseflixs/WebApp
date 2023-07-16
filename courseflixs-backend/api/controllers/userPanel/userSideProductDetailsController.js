@@ -1,0 +1,43 @@
+const productSchema = require('../../models/productDetailsSchema');
+//############################################################################################//
+//<|========================= Product GET method code  ======================|>
+//############################################################################################//
+exports.retreiveProducts = (req, res, next) => {
+
+    var typeOfPro = req.params.typeOfPro;
+    if (typeOfPro == "Recommended" || typeOfPro == "Show") {
+        productSchema.find({ $or: [{ recommended: typeOfPro }, { show_slider: typeOfPro }] }).then((data) => {
+            // console.log(data);
+            res.status(200).send(data);
+        });
+
+
+    } else if (typeOfPro == "New") {
+        productSchema.find({}).sort({ _id: -1 }).limit(8).exec().then((newProData) => {
+            res.status(200).send(newProData);
+        })
+
+    } else {
+        //<|========================= Retreiving Total Product Details Data ======================|>
+
+        productSchema.find().then((data) => {
+            res.status(200).send(data);
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
+    //<|========================= Retreiving Single Product Details Data{END} ======================|>
+}
+
+//<|========================= Retreive Product Data {END}======================|>
+
+
+exports.getSinglePro = (req, res, next) => {
+    var proID = req.params.proID;
+    if (proID) {
+        productSchema.findById(proID).then((data) => {
+            // console.log(data);
+            res.status(200).send(data);
+        });
+    }
+}

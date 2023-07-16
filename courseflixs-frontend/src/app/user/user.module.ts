@@ -26,6 +26,7 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.component';
+import { AddToWishlistPageComponent } from './add-to-wishlist-page/add-to-wishlist-page.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.
     PrivacyPolicyPageComponent,
     BlogPageComponent,
     BlogDetailsPageComponent,
+    AddToWishlistPageComponent,
 
   ],
   imports: [

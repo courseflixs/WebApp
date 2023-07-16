@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var connection = require('./connection');
 var cors=require('cors');
+// ================================{{Admin Routers}}===========================================
 var categoryRouter = require("./api/routes/adminPanel/categoryRoute");
 var getImageRouter=require('./api/routes/getAllImages')
 var productRouter=require("./api/routes/adminPanel/productRoute");
@@ -15,6 +16,13 @@ var deliveryOrderRouter=require('./api/routes/adminPanel/deliveryRoute');
 var userRouter=require('./api/routes/userPanel/endUserRoute')
 var subscribedUserRouter=require('./api/routes/userPanel/subscribedUserRouter');
 var dashboardRouter=require('./api/routes/adminPanel/dashboardRouter')
+// ================================{{[END] Of Admin Routers}}===========================================
+
+// ===================================={EndUser Router}===================================================
+var endUserProductsRouter=require('./api/routes/userPanel/endUserProductDetailsRoute')
+
+// ===================================={{[END] Of EndUser Routers}}=======================================
+
 var app = express();
 //importing database connection
 (async () => await connection())();
@@ -30,6 +38,7 @@ app.use("/images", express.static(path.join("public/images/products")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+// ================================{{Admin Routers}}===========================================
 app.use('/api/category', categoryRouter);
 app.use('/api/image',getImageRouter);
 app.use('/api/product', productRouter);
@@ -39,6 +48,11 @@ app.use('/api/delivery',deliveryOrderRouter);
 app.use('/api/user',userRouter);
 app.use('/api/subscribed',subscribedUserRouter);
 app.use('/api/dashboard',dashboardRouter);
+// ================================{{[END] Of Admin Routers}}===========================================
+
+// ===================================={EndUser Router}===================================================
+app.use('/api/end-user/products',endUserProductsRouter)
+// ===================================={{[END] Of EndUser Routers}}=======================================
 
 app.listen(process.env.PORT | '3000', () => console.log(`App Listning on ${process.env.PORT || '3000'}`))
 

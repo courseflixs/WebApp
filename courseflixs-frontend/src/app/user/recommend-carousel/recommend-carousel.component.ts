@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ProductService } from '../../services/product.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-recommend-carousel',
   templateUrl: './recommend-carousel.component.html',
   styleUrls: ['./recommend-carousel.component.css']
 })
-export class RecommendCarouselComponent {
+export class RecommendCarouselComponent implements OnInit{
+  recomProducts:any;
+  constructor(private endUserProService:ProductService){}
+  ngOnInit(): void {
+    this.endUserProService.getAllRecommendedProServices().subscribe((result)=>{
+      this.recomProducts=result
+      console.log(result)
+    })
+  }
   customOptions: OwlOptions = {
     loop: true,
     navSpeed: 100,
@@ -31,16 +41,8 @@ export class RecommendCarouselComponent {
     },
     nav: true
   }
-
-  products = [
-    // Define your product data here
-    { id:"1",imageUrl: '../../../assets/pro1.png', name: 'Product 1', description: 'Lorem ipsum dolor sit amet' },
-    { id:"2",imageUrl: '../../../assets/pro3.png', name: 'Product 2', description: 'Consectetur adipiscing elit' },
-    { id:"3",imageUrl: '../../../assets/pro3.png', name: 'Product 3', description: 'Sed do eiusmod tempor incididunt' },
-    { id:"4",imageUrl: '../../../assets/pro1.png', name: 'Product 3', description: 'Sed do eiusmod tempor incididunt' },
-    { id:"5",imageUrl: '../../../assets/pro3.png', name: 'Product 3', description: 'Sed do eiusmod tempor incididunt' },
-    { id:"6",imageUrl: '../../../assets/pro3.png', name: 'Product 3', description: 'Sed do eiusmod tempor incididunt' },
-
-    // Add more products as needed
-  ];
+  getSliderImageUrl(imageName: string) {
+    return `${environment.apiUrl}/image/product/${imageName}`;
+  }
+ 
 }
