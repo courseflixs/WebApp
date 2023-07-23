@@ -1,0 +1,104 @@
+.main-myorder-section {
+    background-color: black;
+}
+
+.title-container {
+    background-color: #dd3333;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.myorder-heading {
+    font-size: 2rem !important;
+    position: relative;
+    line-height: 2.5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    color: white !important;
+    text-align: center;
+    font-weight: bold !important;
+}
+
+.myorder-heading::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 5%;
+    height: 3px;
+    background-color: black;
+}
+
+.myorder-subtitle {
+    color: white;
+    text-align: center;
+    padding: 2rem 0rem !important;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    line-height: 1.7rem;
+}
+.leader-board{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-weight: bold;
+    background-color: #dd3333;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 20% 0% 20% 0%;
+}
+
+::ng-deep .dataTables_wrapper .dataTables_length select {
+    background-color: white !important;
+}
+
+::ng-deep .dataTables_wrapper .dataTables_length,
+::ng-deep .dataTables_wrapper .dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+::ng-deep .dataTables_wrapper .dataTables_filter input {
+    background-color: white !important;
+
+}
+
+::ng-deep .dataTables_wrapper .dataTables_length,
+::ng-deep .dataTables_wrapper .dataTables_filter,
+::ng-deep .dataTables_wrapper .dataTables_info,
+::ng-deep .dataTables_wrapper .dataTables_processing,
+::ng-deep .dataTables_wrapper .dataTables_paginate {
+    color: #dd3333 !important;
+    margin: 1rem 0rem;
+}
+
+.order-image img {
+    width: 12rem;
+  
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+
+    .order-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+   
+
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* ==================================={{END}}================================================= */

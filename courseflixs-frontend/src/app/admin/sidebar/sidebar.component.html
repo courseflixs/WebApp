@@ -12,11 +12,13 @@
         <mat-icon>dashboard</mat-icon> <span class="item-color">Dashboard</span>
       </a>
       <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/category"> <mat-icon>category</mat-icon> <span class="item-color">Categories</span></a>
-      <a  mat-list-item  routerLinkActive="list-item-active" routerLink="/admin/home/products"> <mat-icon>inventory</mat-icon>  <span class="item-color">Products</span> </a>
-      <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/blogs"> <mat-icon>book</mat-icon> <span class="item-color">Blog</span> </a>
-      <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/testimonial"> <mat-icon>quiz</mat-icon> <span class="item-color">Testimonial</span> </a>
+      <a  mat-list-item  routerLinkActive="list-item-active" [routerLink]="['/admin/home/products']" (click)="reloadSamePageURL('/admin/home/products')"> <mat-icon>inventory</mat-icon>  <span class="item-color">Products</span> </a>
+      <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/blogs" (click)="reloadSamePageURL('/admin/home/blogs')"> <mat-icon>book</mat-icon> <span class="item-color">Blog</span> </a>
+      <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/testimonial" > <mat-icon>quiz</mat-icon> <span class="item-color">Testimonial</span> </a>
 
-      <a  mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/home/delivered-orders"> <mat-icon>moped</mat-icon> <span class="item-color">Deliver Product</span> </a>
+      <a  mat-list-item routerLinkActive="list-item-active"  routerLink="/admin/home/delivered-orders" (click)="reloadSamePageURL('/admin/home/delivered-orders')"> <mat-icon>moped</mat-icon> <span class="item-color">Deliver Product</span> </a>
+      <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/request-course"> <mat-icon>article</mat-icon> <span class="item-color">Course Request</span> </a>
+
       <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/subscribed-users"> <mat-icon>subscriptions</mat-icon> <span class="item-color">Subscribed User</span> </a>
 
       <a  mat-list-item routerLinkActive="list-item-active" routerLink="/admin/home/customer-details"> <mat-icon>people</mat-icon> <span class="item-color">Customer Details</span> </a>

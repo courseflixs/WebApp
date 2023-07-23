@@ -27,6 +27,15 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.component';
 import { AddToWishlistPageComponent } from './add-to-wishlist-page/add-to-wishlist-page.component';
+import { RequestPageComponent } from './request-page/request-page.component';
+import { MyOrderPageComponent } from './my-order-page/my-order-page.component';
+import { DataTablesModule } from 'angular-datatables';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { FourOfourComponent } from './four-ofour/four-ofour.component';
+import { TawkToComponent } from './tawk.to/tawk.to.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { GetInTouchDialogueComponent } from './get-in-touch-dialogue/get-in-touch-dialogue.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -46,6 +55,13 @@ import { AddToWishlistPageComponent } from './add-to-wishlist-page/add-to-wishli
     BlogPageComponent,
     BlogDetailsPageComponent,
     AddToWishlistPageComponent,
+    RequestPageComponent,
+    MyOrderPageComponent,
+    AboutusPageComponent,
+    FourOfourComponent,
+    TawkToComponent,
+    ForgotPasswordComponent,
+    GetInTouchDialogueComponent,
 
   ],
   imports: [
@@ -60,7 +76,10 @@ import { AddToWishlistPageComponent } from './add-to-wishlist-page/add-to-wishli
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    AngularEditorModule
+    AngularEditorModule,
+    DataTablesModule,
+    MatCardModule
+
   ],
   exports: [
     UserHeaderComponent,

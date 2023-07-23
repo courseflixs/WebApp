@@ -26,5 +26,8 @@ export class ProductService {
     return this.http.get<Product[]>(`${environment.apiUrl}/end-user/products/get-singlepro/${proID}`)
 
   }
+getCategoryWiseProService(category:String | null){
+  return this.http.get<Product[]>(`${environment.apiUrl}/end-user/products/get-cat-pro/${category}`)
 
+}
 }

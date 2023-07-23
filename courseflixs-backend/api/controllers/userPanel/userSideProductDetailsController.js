@@ -13,7 +13,7 @@ exports.retreiveProducts = (req, res, next) => {
 
 
     } else if (typeOfPro == "New") {
-        productSchema.find({}).sort({ _id: -1 }).limit(8).exec().then((newProData) => {
+        productSchema.find({}).sort({ _id: -1 }).exec().then((newProData) => {
             res.status(200).send(newProData);
         })
 
@@ -39,5 +39,14 @@ exports.getSinglePro = (req, res, next) => {
             // console.log(data);
             res.status(200).send(data);
         });
+    }
+}
+
+exports.getCategoryWisePro=(req,res,next)=>{
+    const {category}=req.params;
+    if(category){
+        productSchema.find({category_name:category}).then((result)=>{
+            res.status(200).send(result)
+        })
     }
 }

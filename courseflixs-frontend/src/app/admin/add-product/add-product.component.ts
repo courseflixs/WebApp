@@ -177,10 +177,12 @@ export class AddProductComponent implements OnInit {
           break;
         case HttpEventType.Response:
           console.log('User successfully created!', event.body.proMsg);
-          localStorage.setItem("isProCrudMsg", event.body.proMsg)
+          sessionStorage.setItem("isProCrudMsg", event.body.proMsg)
           setTimeout(() => {
             this.progress = 0;
-            this.router.navigate(['/home/products'])
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/admin/home/products']) // Navigate to the same URL
+            })
           }, 1500);
       }
     })
@@ -218,10 +220,12 @@ export class AddProductComponent implements OnInit {
           break;
         case HttpEventType.Response:
           console.log('User successfully created!', event.body.proMsg);
-          localStorage.setItem("isProCrudMsg", event.body.proMsg)
+          sessionStorage.setItem("isProCrudMsg", event.body.proMsg)
           setTimeout(() => {
             this.progress = 0;
-            this.router.navigate(['/home/products'])
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/admin/home/products']) // Navigate to the same URL
+            })          
           }, 1500);
       }
     })

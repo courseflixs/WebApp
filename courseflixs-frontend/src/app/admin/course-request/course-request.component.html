@@ -1,0 +1,46 @@
+<div class="container-fluid page">
+  <div class="d-flex  box p-3 mt-2">Course Request</div>
+  <div class="content shadow p-3 position-relative">
+    <div class="data">
+      <!-- To give the operation confirmation Msg -->
+      <div class="alert alert-success d-flex align-items-center" role="alert" *ngIf="reqCourseSuccMsg!=undefined">
+        <svg style="fill: #042b03;" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+        </svg>
+        <div class="alert-msg">
+          {{reqCourseSuccMsg}}
+        </div>
+      </div>
+      <!-- {{End}} -->
+      <table datatable [dtOptions]="dtOptions" class="row-border angular-table hover" *ngIf="getAllCourseReqData">
+        <thead>
+          <tr>
+            <th>User name</th>
+            <th>Email</th>
+            <th>Author - Name of the course</th>
+            <th>Link Page in our site</th>
+            <th>Current Status</th>
+            <th>Change Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reqCourse of getAllCourseReqData">
+            <td>{{reqCourse.user_name}}</td>
+            <td>{{reqCourse.email}}</td>
+            <td>{{reqCourse.auther_name_of_course}}</td>
+            <td>{{reqCourse. ref_course_link}}</td>
+            <td>{{reqCourse. status=='0'?'Pending':'Completed'}}</td>
+            <td>
+              <button mat-button class="change-btn" *ngIf="reqCourse.status=='0'"
+                (click)="changeReqStatus(reqCourse._id)">
+                <mat-icon>verified</mat-icon> Complete
+
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>

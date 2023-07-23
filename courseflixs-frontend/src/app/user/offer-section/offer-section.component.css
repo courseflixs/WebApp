@@ -359,12 +359,12 @@
 /*offer box css*/
 .offer-box-red {
   border: #FF3A2D solid 0.2rem;
-  height: 27rem;
+  height: 97%;
   margin-bottom: 1rem;
 }
 
 .offer-box-white {
-  height: 27rem;
+  height: 97%;
   background-color: white;
   border: white solid 3px;
   margin-bottom: 1rem;
@@ -388,7 +388,7 @@
   font-size: 1.5rem;
   padding: 1rem;
   font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
-
+  line-height: 1.8rem;
 }
 
 .offer-box-white .offer-box-title {
@@ -396,6 +396,8 @@
   font-size: 1.5rem;
   padding: 1rem;
   font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+  line-height: 1.8rem;
+
 }
 
 .offer-box-red .offer-box-description {
@@ -407,6 +409,10 @@
   margin-bottom: 2rem;
   font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
 
+}
+.offer-box-description a{
+  text-decoration: none;
+  color: #e1474d;
 }
 
 .offer-box-white .offer-box-description {

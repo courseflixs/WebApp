@@ -42,13 +42,13 @@ export class ProductsComponent implements OnInit {
         }
       }
     })
-    if (localStorage.getItem("isProCrudMsg")) {
-      this.isProCrudMsg = localStorage.getItem("isProCrudMsg")?.toString();
+    if (sessionStorage.getItem("isProCrudMsg")) {
+      this.isProCrudMsg = sessionStorage.getItem("isProCrudMsg")?.toString();
     }
 
     setTimeout(() => {
       this.isProCrudMsg = undefined;
-      localStorage.removeItem("isProCrudMsg")
+      sessionStorage.removeItem("isProCrudMsg")
     }, 2000)
     setTimeout(() => {
       this.loadUpdatedPro()

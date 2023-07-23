@@ -14,8 +14,7 @@ export class BlogService {
     return this.http.get<Blog[]>(`${environment.apiUrl}/blog/get-blog`)
 
   }
-
-  getSingleBlogServices(id: String) {
+  getSingleBlogServices(id: String | null) {
     return this.http.get(`${environment.apiUrl}/blog/get-blog/${id}`)
 
   }
@@ -40,6 +39,14 @@ export class BlogService {
 
   deleteBlogService(id: String) {
     return this.http.delete(`${environment.apiUrl}/blog/delete-blog/${id}`)
+
+  }
+  getAllPublicAndCategoryBlog(catOrVisiblity:String){
+    return this.http.get<Blog[]>(`${environment.apiUrl}/blog/get-public-blog/${catOrVisiblity}`)
+
+  }
+  getTopBlog(){
+    return this.http.get<Blog[]>(`${environment.apiUrl}/blog/get-top-blog`)
 
   }
 }

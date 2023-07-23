@@ -26,5 +26,9 @@ export class DeliverService {
     return this.http.put(`${environment.apiUrl}/delivery/update-delivery/${id}`, data)
 
   }
+  getSpecificUserOrder(userID:String | null){
+    return this.http.get(`${environment.apiUrl}/delivery/get-user-order/${userID}`)
+
+  }
 
 }

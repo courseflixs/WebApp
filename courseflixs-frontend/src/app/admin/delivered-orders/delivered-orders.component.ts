@@ -43,13 +43,13 @@ export class DeliveredOrdersComponent implements OnInit{
       }
     }
   })
-   if (localStorage.getItem("isDeliverCrudMsg")) {
-     this.isDeliverCrudMsg = localStorage.getItem("isDeliverCrudMsg")?.toString();
+   if (sessionStorage.getItem("isDeliverCrudMsg")) {
+     this.isDeliverCrudMsg = sessionStorage.getItem("isDeliverCrudMsg")?.toString();
    }
 
    setTimeout(() => {
      this.isDeliverCrudMsg = undefined;
-     localStorage.removeItem("isDeliverCrudMsg")
+     sessionStorage.removeItem("isDeliverCrudMsg")
    }, 2000)
    setTimeout(() => {
      this.loadUpdatedPro()

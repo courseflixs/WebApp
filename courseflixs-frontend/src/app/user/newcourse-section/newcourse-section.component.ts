@@ -12,7 +12,7 @@ export class NewcourseSectionComponent implements OnInit{
   constructor(private endUserProService:ProductService){}
   ngOnInit(): void {
     this.endUserProService.getAllNewProServices().subscribe((result)=>{
-      this.newPro=result
+      this.newPro=result.slice(0,8)
     })
   }
   getProImageUrl(imageName: string) {

@@ -176,6 +176,7 @@ width: 100%;
 }
 .top-bolg{
     display: flex;
+    cursor: pointer;
 }
 .blog-post-num{
     color: white;

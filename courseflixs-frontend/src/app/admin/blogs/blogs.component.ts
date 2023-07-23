@@ -40,13 +40,13 @@ export class BlogsComponent {
         }
       }
     })
-    if (localStorage.getItem("isBlogCrudMsg")) {
-      this.isBlogCrudMsg = localStorage.getItem("isBlogCrudMsg")?.toString();
+    if (sessionStorage.getItem("isBlogCrudMsg")) {
+      this.isBlogCrudMsg = sessionStorage.getItem("isBlogCrudMsg")?.toString();
     }
 
     setTimeout(() => {
       this.isBlogCrudMsg = undefined;
-      localStorage.removeItem("isBlogCrudMsg")
+      sessionStorage.removeItem("isBlogCrudMsg")
     }, 2000)
     setTimeout(() => {
       this.loadUpdatedBlog()

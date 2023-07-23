@@ -17,7 +17,7 @@ export class AdminHeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    localStorage.getItem("adminLogin") ? this.adminLoggedInUser = "Admin" : "User Name";
+    sessionStorage.getItem("adminLogin") ? this.adminLoggedInUser = "Admin" : "User Name";
 
   }
   
@@ -26,8 +26,8 @@ export class AdminHeaderComponent implements OnInit {
     this.toggleSidebarForMe.emit();
   }
   adminUserLogout() {
-    if (localStorage.getItem("adminLogin")) {
-      localStorage.removeItem('adminLogin');
+    if (sessionStorage.getItem("adminLogin")) {
+      sessionStorage.removeItem('adminLogin');
       this.router.navigate(['/admin/login'])
     }
   }

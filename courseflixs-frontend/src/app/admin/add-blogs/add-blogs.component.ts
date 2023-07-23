@@ -150,10 +150,12 @@ export class AddBlogsComponent {
           break;
         case HttpEventType.Response:
           console.log('User successfully created!', event.body.blogMsg);
-          localStorage.setItem("isBlogCrudMsg", event.body.blogMsg)
+          sessionStorage.setItem("isBlogCrudMsg", event.body.blogMsg)
           setTimeout(() => {
             this.progress = 0;
-            this.router.navigate(['/home/blogs'])
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
+            })
           }, 1500);
       }
     })
@@ -184,11 +186,13 @@ export class AddBlogsComponent {
           break;
         case HttpEventType.Response:
           console.log('User successfully created!', event.body.blogMsg);
-          localStorage.setItem("isBlogCrudMsg", event.body.blogMsg)
+          sessionStorage.setItem("isBlogCrudMsg", event.body.blogMsg)
           setTimeout(() => {
             this.progress = 0;
-            this.router.navigate(['/home/blogs'])
-          }, 1500);
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
+            })
+            }, 1500);
       }
     })
 

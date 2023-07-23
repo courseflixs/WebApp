@@ -13,7 +13,7 @@
 
 }
 
-.pro-main-image {
+.pro-main-image img {
     text-align: center;
     width: 100%;
     height: 100%;
@@ -29,12 +29,14 @@
     font-size: 1.5rem;
     font-weight: 500;
     padding: 1rem 0rem;
-    font-family: 'Open Sans'!important;
+    font-family: 'Open Sans' !important;
 
 }
-.pro-details-btn{
+
+.pro-details-btn {
     text-align: center;
 }
+
 .purchase-btn {
     font-size: 2rem;
     background-color: #FF3A2D;
@@ -49,10 +51,11 @@
     color: black;
     border: 2px solid #FF3A2D;
 }
-.add-wishlist-btn{
+
+.add-wishlist-btn {
     font-size: 2rem;
-   color: black;
-   border: #FF3A2D solid 0.2rem;
+    color: black;
+    border: #FF3A2D solid 0.2rem;
     margin: 1.5rem 1rem;
     font-weight: 600;
     font-family: 'Roboto Slab' !important;
@@ -60,10 +63,12 @@
 
 
 }
-.add-wishlist-btn:hover{
+
+.add-wishlist-btn:hover {
     background-color: #FF3A2D;
     color: white;
 }
+
 .gif-img {
     padding: 2rem 1rem;
 }
@@ -127,6 +132,8 @@
     display: flex;
     align-items: center;
     padding: 2rem 0rem;
+    cursor: pointer;
+
 }
 
 .pro-next-container:hover {
@@ -145,6 +152,7 @@
 
 .pro-next-container {
     text-align: end;
+
 }
 
 .prev-course-img img,
@@ -152,6 +160,7 @@
     width: 60%;
     height: 60%;
     object-fit: contain;
+    cursor: pointer;
 
 }
 
@@ -174,14 +183,17 @@
 .next-course-title a {
     text-decoration: none;
     color: white;
+
 }
 
 .prev-course-title {
-    margin-left: -4rem;
+    margin-left: -10rem;
+
 }
 
 .next-course-title {
-    margin-right: -4rem;
+    margin-right: -10rem;
+
 }
 
 .cat-tag-list-container {
@@ -209,7 +221,7 @@
 .tag-list .btn-primary,
 .cat-list .btn-primary {
     background-color: #cceaff;
-    color:#FF3A2D;
+    color: #FF3A2D;
     font-size: 0.7rem;
     border: none;
     border-radius: 2px;

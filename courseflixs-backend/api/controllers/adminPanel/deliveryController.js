@@ -1,5 +1,5 @@
 const deliverySchema = require('../../models/deliveredOrderSchema');
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
 //############################################################################################//
 //<|========================= Delivery GET method code  ======================|>
@@ -66,8 +66,8 @@ exports.retreiveDelivery = async (req, res, next) => {
             if (data) {
                console.log(data);
                return res.status(200).send(data)
-               }
-               console.log("no record found")
+            }
+            console.log("no record found")
             return res.status(200).send({ data: "data not found" })
          })
          .catch((error) => {
@@ -85,20 +85,20 @@ exports.retreiveDelivery = async (req, res, next) => {
 //<|========================= Delivery POST method code  ======================|>
 //############################################################################################//
 exports.addDelivery = (req, res, next) => {
-   const { userID, productID,userName,productName, finalPrice, productLink, points } = req.body;
-   var userMongooseId=new mongoose.Types.ObjectId(userID)
-   var productMongooseId=new mongoose.Types.ObjectId(productID)
+   const { userID, productID, userName, productName, finalPrice, productLink, points } = req.body;
+   var userMongooseId = new mongoose.Types.ObjectId(userID)
+   var productMongooseId = new mongoose.Types.ObjectId(productID)
    console.log(req.body)
    console.log(userMongooseId)
 
    var insertDelivery = new deliverySchema({
-      user_id:userMongooseId,
-      product_id:productMongooseId,
-      user_name:userName,
-      product_name:productName,
-      bargain_price:parseInt(finalPrice),
+      user_id: userMongooseId,
+      product_id: productMongooseId,
+      user_name: userName,
+      product_name: productName,
+      bargain_price: parseInt(finalPrice),
       product_link: productLink.trim(),
-      points:parseInt(points),
+      points: parseInt(points),
    });
    console.log("request reached")
 
@@ -114,29 +114,29 @@ exports.addDelivery = (req, res, next) => {
 exports.updatingDelivery = (req, res, next) => {
    //<|========================= Updating particular Delivery by its id ======================|>
    console.log("updating project");
-   const { userID, productID,userName,productName, finalPrice, productLink, points } = req.body;
-   var userMongooseId=userID?new mongoose.Types.ObjectId(userID):''
-   var productMongooseId=productID?new mongoose.Types.ObjectId(productID):''
-    var id = req.params.id
+   const { userID, productID, userName, productName, finalPrice, productLink, points } = req.body;
+   var userMongooseId = userID ? new mongoose.Types.ObjectId(userID) : ''
+   var productMongooseId = productID ? new mongoose.Types.ObjectId(productID) : ''
+   var id = req.params.id
    console.log(req.params);
    // console.log(req.body);
-   deliverySchema.findById(id).then((data)=>{
+   deliverySchema.findById(id).then((data) => {
 
-   var findingAndUpdatingDelivery = deliverySchema.findOneAndUpdate({ _id: id }, {
-      user_id:userID?userMongooseId:data.user_id,
-      product_id:productID?productMongooseId:data.product_id,
-      user_name:userName?userName:data.user_name,
-      product_name:productName?productName:data.product_name,
-      bargain_price: parseInt(finalPrice),
-      product_link: productLink.trim(),
-      points: parseInt(points)
-   });
-   findingAndUpdatingDelivery.exec().then((singleData) => {
-      res.status(200).send({ deliverMsg: "Delivery details Updated Successfully!!!" });
-   })
-}).catch((error) => {
-   // if(error) throw error;
-   }).catch((err)=>{
+      var findingAndUpdatingDelivery = deliverySchema.findOneAndUpdate({ _id: id }, {
+         user_id: userID ? userMongooseId : data.user_id,
+         product_id: productID ? productMongooseId : data.product_id,
+         user_name: userName ? userName : data.user_name,
+         product_name: productName ? productName : data.product_name,
+         bargain_price: parseInt(finalPrice),
+         product_link: productLink.trim(),
+         points: parseInt(points)
+      });
+      findingAndUpdatingDelivery.exec().then((singleData) => {
+         res.status(200).send({ deliverMsg: "Delivery details Updated Successfully!!!" });
+      })
+   }).catch((error) => {
+      // if(error) throw error;
+   }).catch((err) => {
       // if(err) throw err;
    });
 
@@ -171,3 +171,51 @@ exports.deletingDelivery = (req, res, next) => {
 //############################################################################################//
    //<|========================= Delivery DELETE method code{END}  ======================|>
    //############################################################################################//
+
+
+exports.getSpecificUserDelivery=async(req,res,next)=>{
+   const { userID } = req.params;
+   let matchObj = {};
+   matchObj['user_id'] = new mongoose.Types.ObjectId(userID);
+
+      let args = {
+         query: [
+            {
+               $match: { ...matchObj }
+            },
+            {
+               $lookup: {
+                  from: "product_details",
+                  localField: "product_id",
+                  foreignField: "_id",
+                  as: "ProductData"
+               }
+            },
+            { $unwind: "$ProductData" },
+            {
+               $lookup: {
+                  from: "end_users",
+                  localField: "user_id",
+                  foreignField: "_id",
+                  as: "UserData"
+               }
+            },
+            { $unwind: "$UserData" },
+
+          
+         ],
+      }
+      await deliverySchema.aggregate(args.query)
+         .then((data) => {
+            if (data) {
+               console.log(data);
+               return res.status(200).send(data)
+            }
+            console.log("no record found")
+            return res.status(200).send({ data: "data not found" })
+         })
+         .catch((error) => {
+            console.log(error)
+         })
+   }
+

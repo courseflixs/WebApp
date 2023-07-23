@@ -1,10 +1,22 @@
 <div class="container-fluid footer-container">
+    <!-- To give the operation confirmation Msg -->
+    <div class="alert alert-success d-flex align-items-center" role="alert" *ngIf="subscribeSuccMsg!=undefined">
+        <svg style="fill: #042b03;" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+            <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+        </svg>
+        <div class="alert-msg">
+            {{subscribeSuccMsg}}
+        </div>
+    </div>
+
+    <!-- {{End}} -->
     <div class="container-fluid">
         <div class="top-footer">
             <div class="row">
                 <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                     <div class="footer-logo">
-                        <a routerLink="/" ><img src="../../../assets/logo.svg"></a>
+                        <a routerLink="/"><img src="../../../assets/logo.svg"></a>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
@@ -22,24 +34,27 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                     <div class="newsletter-form">
-                        <div>
-                            <mat-form-field>
-                                <mat-label>Email</mat-label>
-                                <input type="email" matInput placeholder="Ex. pat@example.com">
-                                <mat-error
-                                    *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                                    Please enter a valid email address
-                                </mat-error>
-                                <mat-error *ngIf="emailFormControl.hasError('required')">
-                                    Email is <strong>required</strong>
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div>
-                            <button mat-button class="subscribe-btn">SUBSCRIBE <i
-                                    class="fa fa-arrow-right"></i></button>
-                        </div>
-
+                        <form [formGroup]="subscribedForm" (submit)="addSubscriber()">
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Ex. pat@example.com"
+                                        formControlName="email">
+                                    <mat-error
+                                        *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                        Please enter a valid email address
+                                    </mat-error>
+                                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                                        Email is <strong>required</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <button mat-button class="subscribe-btn btn-disabled"
+                                    [disabled]="subscribedForm.invalid">SUBSCRIBE <i
+                                        class="fa fa-arrow-right"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -52,11 +67,13 @@
                         <div class="mid-left-subtitle">
                             Got Question? Contact Us
                         </div>
-                        <div class="mid-left-title"> 
+                        <div class="mid-left-title">
                             Support@courseflix.io
                         </div>
                         <div class="mid-left-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, quidem est dolorum ratione nemo doloribus necessitatibus velit aliquid. Alias eum at eveniet earum enim distinctio ipsam officiis neque doloremque totam!
+                            Welcome to Our Library, the ultimate destination for affordable online courses. We are dedicated to
+                            providing high-quality courses at discounted prices, making education accessible to a wider
+                            audience.
                         </div>
                         <div>Social Media</div>
                         <div class="social-media-icon">
@@ -71,29 +88,34 @@
                 <div class="col-md-4 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">COMPANY</div>
                     <div class="link">
-                        <div><a routerLink="#" class="link">About Us</a></div>
-                        <div><a routerLink="#" class="link">FAQs</a></div>
-                        <div><a routerLink="#" class="link">Contact Us</a></div>
+                        <div><a [routerLink]="['/aboutus']" class="link">About Us</a></div>
+                        <div><a routerLink="/faqs" class="link">FAQs</a></div>
+                        <div><a routerLink="#nine-step-section" class="link">Contact Us</a></div>
 
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">MY ACCOUNT</div>
                     <div class="link">
-                        <div><a routerLink="#" class="link">My Order</a></div>
-                        <div><a routerLink="#" class="link">My Wishlist</a></div>
-                       <div><a routerLink="#" class="link">Login/Register</a></div> 
+                        <div><a [routerLink]="['/myorder',loggedInUserID]" class="link" *ngIf="loggedInUserID">My
+                                Order</a></div>
+                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID">My Order</a></div>
+                        <div><a [routerLink]="['/add-to-wishlist',loggedInUserID]" class="link"
+                                *ngIf="loggedInUserID">My Wishlist</a></div>
+                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID">My Wishlist</a></div>
+                        <div><a [routerLink]="['/login']" class="link" *ngIf="!loggedInUserID">Login/Register</a></div>
+
 
                     </div>
-                    
+
                 </div>
                 <div class="col-md-6 col-lg-2 col-xl-2 col-xxl-2">
                     <div class="mid-title">CUSTOMER SERVICE</div>
                     <div class="link">
-                        <div><a routerLink="#" class="link">Privacy Policy</a></div> 
-                        <div><a routerLink="#" class="link">Terms and Condition</a></div> 
- 
-                     </div>
+                        <div><a [routerLink]="['/privacy-policy']" class="link">Privacy Policy</a></div>
+                        <div><a [routerLink]="['/request']" class="link">Request</a></div>
+
+                    </div>
                 </div>
             </div>
         </div>

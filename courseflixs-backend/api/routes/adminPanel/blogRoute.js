@@ -4,7 +4,7 @@ var crypto = require('crypto');
 const multer = require('multer');
 const fs = require('fs')
 var path = require('path')
-var { addBlog, retreiveBlog, updatingBlog, deletingBlog } = require('../../controllers/adminPanel/blogController');
+var { addBlog, retreiveBlog, updatingBlog, deletingBlog, getAllPublicBlog, getTopBlog } = require('../../controllers/adminPanel/blogController');
 var pathToCreate = "./public/images/blogs/";
 
 var Storage = multer.diskStorage({
@@ -55,6 +55,7 @@ var upload = multer({
 router.get('/get-blog/:id?', retreiveBlog);
 router.post('/add-blog', upload, addBlog);
 router.put('/update-blog/:id', upload, updatingBlog);
-router.delete('/delete-blog/:id', deletingBlog)
-
+router.delete('/delete-blog/:id', deletingBlog);
+router.get('/get-public-blog/:catOrVisiblity',getAllPublicBlog);
+router.get('/get-top-blog',getTopBlog)
 module.exports = router;

@@ -1,31 +1,25 @@
 const UserSchema = require('../../models/endUserSchema')
+const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 //############################################################################################//
 //<|========================= User GET method code  ======================|>
 //############################################################################################//
 exports.retreiveUser = (req, res, next) => {
-   //<|========================= Retreiving Single User Details Data ======================|>
 
-    var userID=req.params.id;
-    if(userID){
-      console.log("Single data cat")
-      UserSchema.findById(userID).then((data)=>{
+   const { loginUserEmail, loginUserPass } = req.body;
+   UserSchema.find({ email: loginUserEmail }).then(async (data) => {
+      console.log(data);
+      if (data.length > 0 && await bcrypt.compare(loginUserPass, data[0].password)) {
          res.status(200).send(data);
-         console.log(data)
-        }).catch((error)=>{
-         console.log(error);
-        })
-   //<|========================= Retreiving Single User Details Data{END} ======================|>
-
-    }else{
-   //<|========================= Retreiving Total User Details Data ======================|>
-
-   UserSchema.find().then((data) => {
-      res.status(200).send(data);
+      }
+      else {
+         res.status(200).send({ userMsg: "Invalid Username/Password" })
+      }
    }).catch((error) => {
-      console.log(error)
-   });
-    }
-   //<|========================= Retreiving Single User Details Data{END} ======================|>
+      console.log(error);
+   })
+
+
 }
 
 //<|========================= Retreive User Data {END}======================|>
@@ -35,18 +29,82 @@ exports.retreiveUser = (req, res, next) => {
 //<|========================= User POST method code  ======================|>
 //############################################################################################//
 exports.addUser = (req, res, next) => {
-   const { userName, email,password } = req.body;
+   const { userName, regUserEmail, regUserPass } = req.body;
    console.log(req.body)
-   var insertUser = new UserSchema({
-    name: userName.trim(),
-    email: email.trim(),
-    password: password.trim(),
-   });
-   console.log("request reached")
+   UserSchema.find({ email: regUserEmail }).then(async (result) => {
+      console.log(result.length)
+      if (result.length > 0) {
+         return res.status(200).send({ isAlreadyExist: true, userMsg: "This user is already exist please try another one!!!" })
+      } else {
+         var insertUser = new UserSchema({
+            name: userName.trim(),
+            email: regUserEmail.trim(),
+            password: await bcrypt.hash(regUserPass.trim(), 10),
+         });
+         insertUser.save().then(() => {
+            return res.status(200).send({ isAlreadyExist: false, userMsg: "User Registered Successfully!!!" });
+         });
+      }
+   })
 
-   insertUser.save().then(() => {
-      return res.status(200).send({ userMsg: "User details Inserted Successfully!!!" });
-   });
 }
 //<|========================= inserting User Data {END}======================|>
 
+
+//############################################################################################//
+//<|========================= User GET method code  ======================|>
+//############################################################################################//
+exports.getAllCustomer = (req, res, next) => {
+   UserSchema.find().then(async (result) => {
+      res.status(200).send(result)
+   })
+
+}
+//<|========================= inserting User Data {END}======================|>
+
+exports.forgotPassword = (req, res, next) => {
+   const { forgotUserEmail } = req.body;
+   UserSchema.find({ email: forgotUserEmail }).then(async (result) => {
+      console.log(result);
+      if (result) {
+         const resetToken = crypto.randomBytes(32).toString("hex");
+         const resetPasswordLink = `http://localhost:4200/reset-password/token=${resetToken}`;
+         await UserSchema.findByIdAndUpdate(result[0]._id, { token: resetToken });
+
+         const mailOptions = {
+            from: 'courseflixs@gmail.com',
+            to: forgotUserEmail,
+            subject: 'Reset Your Password',
+            text: `Please click on the link below to reset your password: ${resetPasswordLink}`
+         };
+
+         // Send the email
+         transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+               console.error('Error sending reset password email:', error);
+               res.status(500).json({status:'Error', message: 'Error sending reset password email' });
+            } else {
+               console.log('Reset password email sent successfully:', info.response);
+               res.status(200).json({status:'Succ', message: 'Reset password email sent successfully' });
+            }
+         });
+      } else {
+         res.status(200).json({status:'Error', message: 'You have provided wrong email!!!' })
+      }
+
+   })
+}
+
+exports.resetPassword = (req, res, next) => {
+const {newPassword,token}=req.body;
+UserSchema.findOne({token:token}).then((result)=>{
+   if(result){
+      UserSchema.findOneAndUpdate({token:token},{password:newPassword});
+      res.status(200).json({status:'Succ', message: 'Your Password has been reset successfully!!!' });
+
+   }else{
+      res.status(200).json({status:'Error', message: 'Your Password has not been reset please try once again!!!' });
+
+   }
+})
+}

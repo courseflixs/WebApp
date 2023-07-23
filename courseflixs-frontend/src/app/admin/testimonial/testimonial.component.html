@@ -69,8 +69,11 @@
                     </p>
                     <mat-form-field>
                       <mat-label>Enter Testimonial name</mat-label>
-                      <input matInput formControlName="testimonialName" required
-                        [ngModel]="getSingleTestiData?getSingleTestiData.testimonial_identifier:''">
+                        <mat-select [ngModel]="getSingleTestiData?getSingleTestiData.testimonial_identifier:''" placeholder="Source" formControlName="testimonialName" required>
+                        <mat-option value="Image">Image</mat-option>
+                        <mat-option value="Audio">Audio</mat-option>
+                        <mat-option value="Video">Video</mat-option>
+                      </mat-select>
                       <mat-error>{{"Enter valid testimonial name"}}</mat-error>
                     </mat-form-field>
                   </div>

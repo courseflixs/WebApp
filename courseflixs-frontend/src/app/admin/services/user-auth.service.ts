@@ -17,7 +17,7 @@ export class UserAuthService implements OnInit{
     console.log(data)
     if(data && data.email=="courseflix576@gmail.com" && data.password=="Courseflix@s1"){
       this.isAdminLoginError.emit(false)
-      localStorage.setItem('adminLogin',JSON.stringify(data.email))
+      sessionStorage.setItem('adminLogin',JSON.stringify(data.email))
       this.router.navigate(['/admin/home/dashboard'])
     }else{
       console.warn("login failed");
@@ -26,12 +26,12 @@ export class UserAuthService implements OnInit{
   }
 
   reloadAdminPanel(){
-    if(localStorage.getItem('adminLogin')){
+    if(sessionStorage.getItem('adminLogin')){
       this.router.navigate(['/admin/home/dashboard'])
     }
   }
   getAllEnduserService(){
-    return this.http.get<any>(`${environment.apiUrl}/user/get-user`)
+    return this.http.get<any>(`${environment.apiUrl}/user/get-all-user`)
   }
   getAllSubscribedUserService(){
     return this.http.get<any>(`${environment.apiUrl}/subscribed/get-subuser`)

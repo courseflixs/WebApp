@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ProductService } from '../../services/product.service';
 import { environment } from '../../../environments/environment';
@@ -13,34 +13,29 @@ import { Product } from '../../admin/data-type';
 
 
 export class ProductDetailsPageComponent implements OnInit {
-  proID: String | null='';
+  proID: String | null = '';
   getSinglePro: any;
   nextProduct: any;
   prevProduct: any;
-  getAllPro: Product[] ;
-  constructor(private route: ActivatedRoute, private endUserProService: ProductService) {    this.getAllPro=[];
+  getAllPro: Product[];
+  userID: String | null = '';
+  constructor(private route: ActivatedRoute, private endUserProService: ProductService, private router: Router) {
+    this.getAllPro = [];
   }
   ngOnInit(): void {
-
-    //  fetching parameter from product-details router to get the single product details
-    this.proID = this.route.snapshot.paramMap.get('proID');
-
-    this.endUserProService.getSingleProDetails(this.proID).subscribe((result) => {
-      this.getSinglePro = result;
-
+    console.log("clicked")
+    this.endUserProService.getAllProService().subscribe((result) => {
+      //  fetching parameter from product-details router to get the single product details
+      this.proID = this.route.snapshot.paramMap.get('proID');
+      this.getAllPro = result;
+      console.log(this.getAllPro);
+      this.getSinglePro = this.getProductById(this.proID);
+      this.nextProduct = this.getNextProduct(this.proID);
+      this.prevProduct = this.getPreviousProduct(this.proID);
+      this.userID = sessionStorage.getItem("userID");
+      console.log("User ID: " + this.userID);
     });
-    this.endUserProService.getAllProService().subscribe((result)=>{
-      this.getAllPro=result;
-      console.log(this.getAllPro)
-     console.log(this.getNextProduct(this.proID)) 
-    //  this.getNextProduct(this.proID);
-      // this.getPreviousProduct(this.proID);
-      console.log(this.getPreviousProduct(this.proID));
-    });
-   
-  
-
-
+    window.scrollTo(0, 0)
   }
   getProImageUrl(imageName: string) {
     return `${environment.apiUrl}/image/product/${imageName}`;
@@ -60,19 +55,30 @@ export class ProductDetailsPageComponent implements OnInit {
 
   };
 
-
+  getProductById(id: String | null): Product | undefined {
+    return this.getAllPro.find(product => product._id == id);
+  }
 
   getNextProduct(currentProductId: String | null) {
-    console.log(typeof(currentProductId))
     const currentIndex = this.getAllPro.findIndex((product) => product._id == currentProductId);
     const nextIndex = (currentIndex + 1) % this.getAllPro.length;
+    // this.getSinglePro=this.getAllPro[nextIndex];
     return this.getAllPro[nextIndex];
   }
 
   getPreviousProduct(currentProductId: String | null) {
     const currentIndex = this.getAllPro.findIndex((product) => product._id == currentProductId);
     const previousIndex = (currentIndex - 1 + this.getAllPro.length) % this.getAllPro.length;
+    // this.getSinglePro=this.getAllPro[previousIndex]
     return this.getAllPro[previousIndex];
+
   }
+
+  navigateNextAndPrevOnSamePageURL(proID: String) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/product-details', proID]) // Navigate to the same URL
+    })
+  }
+
 
 }

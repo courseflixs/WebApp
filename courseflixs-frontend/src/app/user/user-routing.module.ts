@@ -9,18 +9,32 @@ import { PrivacyPolicyPageComponent } from './privacy-policy-page/privacy-policy
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogDetailsPageComponent } from './blog-details-page/blog-details-page.component';
 import { AddToWishlistPageComponent } from './add-to-wishlist-page/add-to-wishlist-page.component';
+import { RequestPageComponent } from './request-page/request-page.component';
+import { MyOrderPageComponent } from './my-order-page/my-order-page.component';
+import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
+import { userAuthGuardGuard } from './auth-guard/user-auth-guard.guard';
+import { FourOfourComponent } from './four-ofour/four-ofour.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'all-products', component: ProductsPageComponent },
+  { path: 'login', component: LoginPageComponent,canActivate:[userAuthGuardGuard] },
+  { path: 'all-products/:whichPro', component: ProductsPageComponent },
   { path: 'product-details/:proID', component: ProductDetailsPageComponent },
   { path: 'faqs', component: FaqPageComponent },
   { path: 'privacy-policy', component: PrivacyPolicyPageComponent },
   { path: 'blogs', component: BlogPageComponent },
-  { path: 'blog-details', component: BlogDetailsPageComponent },
-  { path: 'add-to-wishlist', component: AddToWishlistPageComponent },
+  { path: 'blogs/:category', component: BlogPageComponent },
+  { path: 'blog-details/:blogID', component: BlogDetailsPageComponent },
+  { path: 'add-to-wishlist/:userID', component: AddToWishlistPageComponent},
+  { path: 'add-to-wishlist/:userID/:proID', component: AddToWishlistPageComponent},
+  { path: 'request', component: RequestPageComponent },
+  { path: 'myorder/:userID', component: MyOrderPageComponent},
+  { path: 'aboutus', component: AboutusPageComponent },
+  {path:'forgot-password',component:ForgotPasswordComponent},
+  {path:'reset-password/:token',component:ForgotPasswordComponent},
 
+  { path: '**', component: FourOfourComponent }
 ];
 
 @NgModule({

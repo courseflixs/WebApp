@@ -1,0 +1,11 @@
+@import url('../subscribed-users/subscribed-users.component.css');
+
+.change-btn {
+    background-color: rgb(37, 161, 210);
+    padding: 1rem;
+    color: white;
+}
+
+.change-btn mat-icon {
+    transform: scale(1);
+}

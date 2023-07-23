@@ -3,27 +3,50 @@
         <div class="myaccount-title">Login/Register</div>
         <div class="row">
             <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <!-- To give the operation confirmation Msg -->
+                <div class="alert alert-danger d-flex align-items-center" role="alert"
+                    *ngIf="isUserAuthLoginError!=undefined">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #e61919
+                            }
+                        </style>
+                        <path
+                            d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
+                    </svg>
+                    <div class="alert-msg">
+                        {{isUserAuthLoginError}}
+                    </div>
+                </div>
+                <!-- {{End}} -->
+
                 <div class="login-container">
                     <div class="title">Login</div>
-                    <form>
+                    <form [formGroup]="loginForm" (submit)="loginUser()">
                         <div class="login-form">
                             <p>ENTER EMAIL ADRESS*</p>
                             <mat-form-field>
                                 <mat-label>Enter your email</mat-label>
-                                <input matInput placeholder="Enter your email" formControlName="email" required>
+                                <input matInput placeholder="Enter your email" formControlName="loginUserEmail"
+                                    required>
+                                <mat-error>Enter Valid Email</mat-error>
                             </mat-form-field><br>
                             <p>PASSWORD*</p>
                             <mat-form-field>
                                 <mat-label>Enter your password</mat-label>
-                                <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password">
+                                <input matInput [type]="hide ? 'password' : 'text'" required
+                                    formControlName="loginUserPass">
                                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
-
+                                <mat-error>Password should contains 1 number, 1 lowercase,1 capital letter,1 Special
+                                    character and minimum length should be 8</mat-error>
                             </mat-form-field>
                             <div class="user-login-btn">
-                                <button type="submit" name="login" class="btn btn-danger btn-disabled">LOG IN</button>
+                                <button type="submit" name="login" class="btn btn-danger btn-disabled"
+                                    [disabled]="loginForm.invalid">LOG IN</button>
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">&nbsp;
                                 <label class="form-check-label" for="flexCheckDefault"
                                     style="color: white;padding: 0px 1px 2px 1px;">
@@ -41,29 +64,70 @@
                 </div>
             </div>
             <div class="col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <!-- To give the operation confirmation Msg -->
+                <div class="alert alert-success d-flex align-items-center" role="alert"
+                    *ngIf="isUserAuthRegSucMsg!=undefined">
+                    <svg style="fill: #042b03;" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                        <path
+                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" />
+                    </svg>
+                    <div class="alert-msg">
+                        {{isUserAuthRegSucMsg}}
+                    </div>
+                </div>
+
+                <div class="alert alert-danger d-flex align-items-center" role="alert"
+                    *ngIf="isUserAuthRegError!=undefined">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                        <style>
+                            svg {
+                                fill: #e61919
+                            }
+                        </style>
+                        <path
+                            d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
+                    </svg>
+                    <div class="alert-msg">
+                        {{isUserAuthRegError}}
+                    </div>
+                </div>
+                <!-- {{End}} -->
+
                 <div class="register-container">
                     <div class="title">Register</div>
-                    <form>
+                    <form [formGroup]="registerForm" (submit)="registerUser()">
                         <div class="register-form">
+                            <p>ENTER NAME*</p>
+                            <mat-form-field>
+                                <mat-label>Enter Name</mat-label>
+                                <input matInput placeholder="Enter Name" formControlName="userName" required>
+                                <mat-error>Enter Valid Name</mat-error>
+                            </mat-form-field>
                             <p>ENTER EMAIL ADRESS*</p>
                             <mat-form-field>
                                 <mat-label>Enter your email</mat-label>
-                                <input matInput placeholder="Enter your email"  required>
+                                <input matInput placeholder="Enter your email" required formControlName="regUserEmail">
+                                <mat-error>Enter Valid Email</mat-error>
                             </mat-form-field><br>
                             <p>PASSWORD*</p>
                             <mat-form-field>
                                 <mat-label>Enter your password</mat-label>
-                                <input matInput [type]="hide ? 'password' : 'text'" required >
+                                <input matInput [type]="hide ? 'password' : 'text'" required
+                                    formControlName="regUserPass">
                                 <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
+                                <mat-error>Password should contains 1 number, 1 lowercase,1 capital letter,1 Special
+                                    character and minimum length should be 8</mat-error>
                             </mat-form-field>
                             <div class="register-policy">
-                                Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.
+                                Your personal data will be used to support your experience throughout this website, to
+                                manage access to your account, and for other purposes described in our privacy policy.
                             </div>
                             <div class="user-register-btn">
-                                <button type="submit" name="login" class="btn btn-danger btn-disabled">Register</button>
+                                <button type="submit" name="login" class="btn btn-danger btn-disabled"
+                                    [disabled]="registerForm.invalid">Register</button>
                             </div>
 
 

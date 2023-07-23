@@ -30,7 +30,7 @@
 
 .login-form {
     padding: 3rem;
-    padding-bottom: 8rem;
+    padding-bottom: 14rem;
 
 }
 
@@ -45,11 +45,10 @@
     width: 100%;
 }
 
-.login-form mat-label {
-    color: #e1474d;
 
+.user-login-btn {
+    margin-top: 1.4rem;
 }
-
 .user-login-btn button {
     background-color: #e1474d;
 }
@@ -89,9 +88,7 @@
     width: 100%;
 }
 
-.register-form  mat-label {
-    color: #e1474d;
-}
+
 
 .user-register-btn button {
     background-color: #e1474d;
@@ -99,4 +96,5 @@
 .register-policy{
     color: white;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }

@@ -1,6 +1,5 @@
 import { Component,OnInit } from '@angular/core';
 import { UserAuthService } from '../services/user-auth.service';
-UserAuthService
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',

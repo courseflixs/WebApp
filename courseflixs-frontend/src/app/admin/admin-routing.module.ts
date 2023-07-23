@@ -14,6 +14,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { AddBlogsComponent } from './add-blogs/add-blogs.component';
 import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
 import { adminAuthGuard } from './auth-guard/admin-auth.guard';
+import { CourseRequestComponent } from './course-request/course-request.component';
 const routes: Routes = [
   {
     path: 'home', component: AdminHomeComponent, children: [
@@ -43,6 +44,7 @@ const routes: Routes = [
       },
       { path: 'customer-details', component: CustomerDetailsComponent },
       { path: 'subscribed-users', component: SubscribedUsersComponent },
+      {path:'request-course',component:CourseRequestComponent}
     ],
     canActivate:[adminAuthGuard],
   },

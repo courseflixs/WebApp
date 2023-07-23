@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="nine-step-section">
     <div class="main-new-course">
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
@@ -70,32 +70,13 @@
                 </div>
 
             </div>
-            <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg ">
-        <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Contact</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              
-           
-           
-            </div>
-            <div class="modal-footer">
-              <button type="button" #closebutton class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-      </div>
-    </div>
+        
 
             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div class="new-course-title">
                     Have Any Questions?
                 </div>
-                <div class="social-container" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="social-container">
                     <div class="social-icon-box">
                         <i class="fa fa-envelope-open social-icon"></i>
                     </div>
@@ -104,7 +85,7 @@
                         <div class="contact-title">testcourseflix@gmail.com</div>
                     </div>
                 </div>
-                <div class="social-container" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="social-container" >
                     <div class="social-icon-box">
                         <i class="fa fa-envelope-open social-icon"></i>
                     </div>
@@ -123,14 +104,16 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <mat-form-field class="example-full-width">
+                    <form [formGroup]="contactForm" (submit)="sendEmail()">
+                    <mat-form-field >
                         <mat-label>Enter name</mat-label>
-                        <input matInput placeholder="Name">
+                        <input matInput placeholder="Name" formControlName="name" required>
+                        <mat-error>Name is <strong>required</strong></mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput placeholder="Ex. pat@example.com">
+                        <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" required>
                         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                             Please enter a valid email address
                         </mat-error>
@@ -139,19 +122,22 @@
                         </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field >
                         <mat-label>Enter contact</mat-label>
-                        <input matInput placeholder="Number">
+                        <input matInput placeholder="Mobile number" formControlName="contact" required> 
+                        <mat-error>Contact is <strong>required</strong></mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                         <mat-label>Message</mat-label>
-                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="msg" required></textarea>
+                        <mat-error>Message is <strong>required</strong></mat-error>
+
                     </mat-form-field>
                     <div>
-                        <button mat-button class="send-msg-btn">Send Message</button>
+                        <button mat-button class="send-msg-btn btn-disabled" [disabled]="contactForm.invalid">Send Message</button>
                     </div>
-
+                </form>
                 </div>
 
             </div>

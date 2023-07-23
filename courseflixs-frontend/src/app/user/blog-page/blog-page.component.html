@@ -20,103 +20,36 @@
                         </span>
                     </div>
                     <div class="category-container">
-                        <div class="category-title">
+                        <div class="category-title" [routerLink]="['/blogs']">
                             Categories
                         </div>
                         <div class="category-items">
-                            <div class="category-item">
-                                <a href="#">Culture</a>
+                            <div class="category-item" *ngFor="let cat of getBlogCat">
+                                <a (click)="redirectToSamePageURL(cat.category_name)">{{cat.category_name}}</a>
+                                <hr>
                             </div>
-                            <hr>
-                            <div class="category-item">
-                                <a href="#"> Technology</a>
-                            </div>
-                            <hr>
-                            <div class="category-item">
-                                <a href="#">Sports</a>
-                            </div>
-                            <hr>
-                            <div class="category-item">
-                                <a href="#">Cooking</a>
-                            </div>
-                            <hr>
-                            <div class="category-item">
-                                <a href="#">Businesses</a>
-                            </div>
-                            <hr>
+                          
                         </div>
                     </div>
                     <div class="top-post-container">
                         <div class="top-post-title">
                             Top Posts
                         </div>
-                        <div class="top-posts-blog">
-                            <div class="top-bolg">
+                        <div class="top-posts-blog" *ngFor="let topBlog of getTopBlog;let topCounter=index">
+                            <div class="top-bolg" [routerLink]="['/blog-details',topBlog._id]">
                                 <div class="blog-post-num">
-                                    1
+                                    {{topCounter+1}}
                                 </div>
                                 <div class="blog-post-title">
-                                    Increase your productivity rapidly by followiing some steps
+                                    {{topBlog.blog_name}}
                                     <div class="blog-date-cat">
-                                        TECHNOLOGY 04/03/2023
+                                        {{topBlog.category+" "+(topBlog.createdAt | date:'dd-MM-yyyy')}}
 
                                     </div>
                                 </div>
                             </div>
                             <hr>
-                            <div class="top-bolg">
-                                <div class="blog-post-num">
-                                    2
-                                </div>
-                                <div class="blog-post-title">
-                                    Increase your productivity rapidly by followiing some steps
-                                    <div class="blog-date-cat">
-                                        TECHNOLOGY 04/03/2023
-
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="top-bolg">
-                                <div class="blog-post-num">
-                                    3
-                                </div>
-                                <div class="blog-post-title">
-                                    Increase your productivity rapidly by followiing some steps
-                                    <div class="blog-date-cat">
-                                        TECHNOLOGY 04/03/2023
-
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="top-bolg">
-                                <div class="blog-post-num">
-                                    4
-                                </div>
-                                <div class="blog-post-title">
-                                    Increase your productivity rapidly by followiing some steps
-                                    <div class="blog-date-cat">
-                                        TECHNOLOGY 04/03/2023
-
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="top-bolg">
-                                <div class="blog-post-num">
-                                    5
-                                </div>
-                                <div class="blog-post-title">
-                                    Increase your productivity rapidly by followiing some steps
-                                    <div class="blog-date-cat">
-                                        TECHNOLOGY 04/03/2023
-
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -124,24 +57,23 @@
                 <div class="blog-right-container">
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6"
-                          *ngFor="let blog of Blogs | paginate: { itemsPerPage: 6, currentPage: p }">
+                          *ngFor="let blog of getAllBlogs | paginate: { itemsPerPage: 6, currentPage: p }">
                             <div class="blog-post-container">
-                                <div class="blog-post">
+                                <div class="blog-post" [routerLink]="['/blog-details',blog._id]">
                                     <div class="blog-image">
-                                        <img [src]="blog.imageUrl" alt="img">
+                                        <img [src]="getImageUrl(blog.blog_image)" alt="img">
                                     </div>
                                     <div class="blog-post-details">
                                         <div class="blog-subtitle-cat-date">
-                                            {{blog.blog_date_cat}}
+                                            {{blog.category+" "+(blog.createdAt | date:'dd-MM-yyyy')}}
                                         </div>
                                         <div class="blog-title">
-                                            {{blog.blog_post_title}}
+                                            {{blog.blog_name}}
                                         </div>
-                                        <div class="blog-desc">
-                                            {{blog.blog_desc| slice:1:250}} ....
+                                        <div class="blog-desc" [innerHTML]="(blog.description| slice:1:250)+'...'">
+                                          
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

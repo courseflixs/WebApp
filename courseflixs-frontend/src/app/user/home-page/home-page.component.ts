@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { environment } from '../../../environments/environment';
 
@@ -21,6 +21,7 @@ export class HomePageComponent implements OnInit {
     });
 
   }
+ 
 
   getSliderImageUrl(imageName: string) {
     return `${environment.apiUrl}/image/product/${imageName}`;

@@ -42,7 +42,7 @@ exports.addSubsUser = (req, res, next) => {
    });
 
    insertUser.save().then(() => {
-      return res.status(200).send({ userMsg: "User details Inserted Successfully!!!" });
+      return res.status(200).send({ userMsg: "Subscribed newsletter Successfully!!!" });
    });
 }
 //<|========================= inserting User Data {END}======================|>

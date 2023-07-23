@@ -4,7 +4,7 @@
 
         <div class="col-md-6 col-lg-5 col-xl-5 col-xxl-5">
 
-            <div id="carouselExampleInterval" class="carousel slide left-hero" data-bs-ride="carousel">
+            <div id="carouselExampleInterval" class="carousel slide left-hero" data-bs-ride="carousel" >
                 <div class="buynow-badge">
                     <p>Buy <br>Now</p>
                 </div>
@@ -61,9 +61,9 @@
 
                 </div>
                 <div class="main-hero-btn">
-                    <button class="btn hero-buy-btn">BUY ONLINE</button>
+                    <button class="btn hero-buy-btn" data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue">BUY ONLINE</button>
 
-                    <button class="btn hero-about-btn">ABOUT US</button>
+                    <button class="btn hero-about-btn" routerLink="/aboutus">ABOUT US</button>
 
                 </div>
             </div>
@@ -71,6 +71,7 @@
         </div>
         <div class="col-lg-2 col-xl-0 col-xxl-2"></div>
     </div>
+
    <app-recommend-carousel></app-recommend-carousel>
    <app-newcourse-section></app-newcourse-section>
    <app-offer-section></app-offer-section>

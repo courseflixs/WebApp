@@ -5,6 +5,7 @@ const productSchema = require('../../models/productDetailsSchema');
 const endUserSchema = require('../../models/endUserSchema');
 const subscribeUserSchema = require('../../models/subscribedUserSchema');
 const testimonialSchema = require('../../models/testimonialSchema');
+const requestCourseSchema=require('../../models/requestCourseSchema')
 //############################################################################################//
 //<|========================= Dashboard GET method code  ======================|>
 //############################################################################################//
@@ -39,6 +40,9 @@ exports.retreiveDashboard = async (req, res, next) => {
                 await endUserSchema.find().countDocuments().then( (countCustomer) => { dashboardDetails.countOfCustomer =  countCustomer;});
                 await subscribeUserSchema.find().countDocuments().then( (countSubscriber) => { dashboardDetails.countOfSubscriber =  countSubscriber;});
                 await testimonialSchema.find().countDocuments().then( (countTestimonial) => { dashboardDetails.countOfTestimonial =  countTestimonial;});
+                await requestCourseSchema.find({status:'0'}).countDocuments().then( (countRequest) => { dashboardDetails.countPendingRequest =  countRequest;});
+                await requestCourseSchema.find({status:'1'}).countDocuments().then( (countRequest) => { dashboardDetails.countCompleteRequest =  countRequest;});
+
 
                 res.status(200).send(dashboardDetails);
 

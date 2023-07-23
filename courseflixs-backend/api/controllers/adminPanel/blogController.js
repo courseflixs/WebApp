@@ -75,7 +75,7 @@ exports.updatingBlog = (req, res, next) => {
     tags:JSON.parse(blogTags)
    });
    findingAndUpdatingBlog.exec().then((singleData) => {
-      console.log(singleData)
+      // console.log(singleData)
       res.status(200).send({ blogMsg: "Blog details Updated Successfully!!!" });
    }).catch((error) => {
 
@@ -117,3 +117,20 @@ exports.deletingBlog = (req, res, next) => {
 //############################################################################################//
    //<|========================= Blog DELETE method code{END}  ======================|>
    //############################################################################################//
+
+   exports.getAllPublicBlog=(req,res,next)=>{
+      const{catOrVisiblity}=req.params;
+      blogSchema.find({$or:[{visiblity:catOrVisiblity },{category:catOrVisiblity}]}).then((data)=>{
+         res.status(200).send(data);
+         // console.log(data)
+        }).catch((error)=>{
+         console.log(error);
+        })
+   }
+
+   exports.getTopBlog=(req,res,next)=>{
+      blogSchema.find({}).sort({ _id: -1 }).limit(5).exec().then((newBlogData) => {
+         res.status(200).send(newBlogData);
+     })
+
+   }
