@@ -1,6 +1,19 @@
 const UserSchema = require('../../models/endUserSchema')
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
+// Replace these configurations with your own SMTP settings
+const transporter = nodemailer.createTransport({
+   service: 'gmail',
+   host: 'smtp.gmail.com',
+   port: 465,
+   secure: true,
+   auth: {
+     user: process.env.EMAIL_USERNAME,
+     pass: process.env.EMAIL_PASSWORD
+   }
+ });
 //############################################################################################//
 //<|========================= User GET method code  ======================|>
 //############################################################################################//
@@ -65,14 +78,16 @@ exports.getAllCustomer = (req, res, next) => {
 exports.forgotPassword = (req, res, next) => {
    const { forgotUserEmail } = req.body;
    UserSchema.find({ email: forgotUserEmail }).then(async (result) => {
-      console.log(result);
+      // console.log(result);
+      console.log(process.env.EMAIL_USERNAME);
+      console.log(process.env.EMAIL_PASSWORD);
       if (result) {
-         const resetToken = crypto.randomBytes(32).toString("hex");
-         const resetPasswordLink = `http://localhost:4200/reset-password/token=${resetToken}`;
+         const resetToken = crypto.randomBytes(8).toString("hex");
+         const resetPasswordLink = `http://localhost:4200/reset-password/${resetToken}`;
          await UserSchema.findByIdAndUpdate(result[0]._id, { token: resetToken });
 
          const mailOptions = {
-            from: 'courseflixs@gmail.com',
+            from: process.env.EMAIL_USERNAME,
             to: forgotUserEmail,
             subject: 'Reset Your Password',
             text: `Please click on the link below to reset your password: ${resetPasswordLink}`
@@ -97,9 +112,12 @@ exports.forgotPassword = (req, res, next) => {
 
 exports.resetPassword = (req, res, next) => {
 const {newPassword,token}=req.body;
-UserSchema.findOne({token:token}).then((result)=>{
+console.log(req.body)
+UserSchema.findOne({token:{$eq: token}}).then(async(result)=>{
+   console.log("reset password result")
+   console.log(result)
    if(result){
-      UserSchema.findOneAndUpdate({token:token},{password:newPassword});
+    await  UserSchema.findOneAndUpdate({token:{$eq: token}},{password:await bcrypt.hash(newPassword,10) });
       res.status(200).json({status:'Succ', message: 'Your Password has been reset successfully!!!' });
 
    }else{

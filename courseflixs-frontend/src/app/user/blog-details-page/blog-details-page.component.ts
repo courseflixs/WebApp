@@ -42,7 +42,9 @@ export class BlogDetailsPageComponent implements OnInit {
 
     this.blogService.getTopBlog().subscribe((result) => {
       this.getTopBlog = result;
-    })
+    });
+    window.scrollTo(0, 0)
+
   }
 
   getImageUrl(filename: String) {
@@ -51,6 +53,7 @@ export class BlogDetailsPageComponent implements OnInit {
   
   redirectToSamePageURL(blogID:String){
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      window.scrollTo(0, 0)
       this.router.navigate(['/blog-details',blogID]) // Navigate to the same URL
     })
   }

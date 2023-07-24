@@ -163,6 +163,7 @@ export class AddProductComponent implements OnInit {
 
 
     this.proSevice.addProductService(formData).subscribe((event: HttpEvent<any>) => {
+      window.scrollTo(0, 0)
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -206,6 +207,8 @@ export class AddProductComponent implements OnInit {
     formData.append('proMainImg', this.productForm.get('proMainImg')?.value || '');
     formData.append('gifImage', this.productForm.get('gifImage')?.value || '');
     this.proSevice.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
+      window.scrollTo(0, 0)
+
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:

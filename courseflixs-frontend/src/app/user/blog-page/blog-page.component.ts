@@ -40,6 +40,8 @@ export class BlogPageComponent implements OnInit{
         console.log(this.getAllBlogs)
       });
     }
+    window.scrollTo(0, 0)
+
   }
 
   getImageUrl(filename: String) {
@@ -48,6 +50,7 @@ export class BlogPageComponent implements OnInit{
   
   redirectToSamePageURL(cat:String){
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      window.scrollTo(0, 0)
       this.router.navigate(['/blogs', cat]) // Navigate to the same URL
     })
   }
