@@ -91,6 +91,11 @@
 
 .social-media-icon {
     display: flex;
+    cursor: pointer;
+}
+.social-media-icon a{
+    text-decoration: none;
+    color: white;
 }
 
 .social-media-icon div {

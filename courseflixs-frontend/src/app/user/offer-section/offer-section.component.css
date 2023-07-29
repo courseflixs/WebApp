@@ -412,7 +412,7 @@
 }
 .offer-box-description a{
   text-decoration: none;
-  color: #e1474d;
+  color: #e1474d !important;
 }
 
 .offer-box-white .offer-box-description {

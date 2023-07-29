@@ -9,14 +9,16 @@
                         <div class="product-image-container">
                             <img [src]="getProImageUrl(pro?.main_product_image)" [title]="pro?.product_name" class="main-pro-image">
                             <a [routerLink]="['product-details',pro._id]" class="view-pro"><mat-icon>visibility</mat-icon></a>
+                            <span class="tooltiptext">Tooltip text</span>
                             <a  class="shop-pro"  data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
+
                         </div>
                         <div class="product-details">
                             <div class="product-name">
                                 <a [routerLink]="['product-details',pro._id]" >{{ pro?.product_name | slice:0:30 }}.. </a>
                             </div>
                             <div>
-                                <a [routerLink]="['product-details',pro._id]"  class="price-tag">{{pro?.sale_price | currency:'USD'}}</a>
+                              <a [routerLink]="['product-details',pro._id]"  class="price-tag"> <s>{{pro?.sale_price | currency:'USD'}}</s></a>
                             </div>
                         </div>
                     </div>  

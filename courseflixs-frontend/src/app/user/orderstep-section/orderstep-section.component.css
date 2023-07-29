@@ -110,7 +110,9 @@
     border: #e1474d solid 2px;
     padding: 1rem;
 }
-
+.social-icon-box svg{
+    fill:white;
+}
 .social-icon {
     color: white;
     font-size: 1.5rem;
@@ -119,7 +121,10 @@
 .contact-details {
     margin-left: 2rem;
 }
-
+.contact-details a{
+    text-decoration: none;
+    color: white;
+}
 .contact-title {
     font-size: 1.3rem;
     font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;

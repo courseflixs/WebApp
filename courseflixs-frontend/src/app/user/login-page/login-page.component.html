@@ -30,7 +30,7 @@
                                 <mat-label>Enter your email</mat-label>
                                 <input matInput placeholder="Enter your email" formControlName="loginUserEmail"
                                     required>
-                                <mat-error>Enter Valid Email</mat-error>
+                                <mat-error >Enter Valid Email</mat-error>
                             </mat-form-field><br>
                             <p>PASSWORD*</p>
                             <mat-form-field>
@@ -101,14 +101,16 @@
                             <mat-form-field>
                                 <mat-label>Enter Name</mat-label>
                                 <input matInput placeholder="Enter Name" formControlName="userName" required>
-                                <mat-error>Enter Valid Name</mat-error>
+                                <mat-error *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched">Enter Valid Name</mat-error>
                             </mat-form-field>
+
                             <p>ENTER EMAIL ADRESS*</p>
                             <mat-form-field>
                                 <mat-label>Enter your email</mat-label>
                                 <input matInput placeholder="Enter your email" required formControlName="regUserEmail">
-                                <mat-error>Enter Valid Email</mat-error>
+                                <mat-error *ngIf="registerForm.get('regUserEmail')?.invalid && registerForm.get('regUserEmail')?.touched">Enter Valid Email</mat-error>
                             </mat-form-field><br>
+
                             <p>PASSWORD*</p>
                             <mat-form-field>
                                 <mat-label>Enter your password</mat-label>
@@ -118,9 +120,11 @@
                                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
-                                <mat-error>Password should contains 1 number, 1 lowercase,1 capital letter,1 Special
+                                <mat-error *ngIf="registerForm.get('regUserPass')?.invalid && registerForm.get('regUserPass')?.touched">Password should contains 1 number, 1 lowercase,1 capital letter,1 Special
                                     character and minimum length should be 8</mat-error>
                             </mat-form-field>
+
+
                             <div class="register-policy">
                                 Your personal data will be used to support your experience throughout this website, to
                                 manage access to your account, and for other purposes described in our privacy policy.
