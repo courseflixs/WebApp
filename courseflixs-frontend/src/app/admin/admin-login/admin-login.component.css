@@ -1,12 +1,10 @@
  .main-login-form {
-     background-color:black;
+     background-color: #1e293b;
      margin: 1rem;
      padding: 1rem;
      border-radius: 1rem;
+     margin-top: 30%;
      text-align: center;
-     margin: auto;
-     width: 50%;
-     margin-top: 10%;
  }
 
  .main-login-form h2 {
@@ -26,7 +24,7 @@
      font-size: 40px;
  }
  .admin-login-btn .btn{
-    background-color: #dd3333;
+    background-color: brown;
     width: 8rem;
     font-size: 1.5rem;
  }

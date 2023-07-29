@@ -110,7 +110,6 @@ export class TestimonialComponent implements OnInit {
   }
 
   commonInAddUpdateDelete(msg: String) {
-    window.scrollTo(0, 0)
     this.isTestiCrudMsg = msg
     this.loadUpdatedTesti()
     setTimeout(() => {

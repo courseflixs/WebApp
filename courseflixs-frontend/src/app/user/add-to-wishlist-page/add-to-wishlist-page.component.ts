@@ -26,7 +26,6 @@ export class AddToWishlistPageComponent implements OnInit {
         this.wishlistService.addProIntoWishlistService({ "userID": this.userID, "proID": this.proID }).subscribe((result: any) => {
           if (result) {
             this.wishlistSuccMsg = result.wishMsg;
-            window.scrollTo(0, 0)
             setTimeout(() => {
               this.wishlistSuccMsg = undefined;
             }, 8000)
@@ -50,8 +49,6 @@ export class AddToWishlistPageComponent implements OnInit {
     this.wishlistService.deleteProFromWishlistService(id).subscribe((result: any) => {
       if (result) {
         this.wishlistSuccMsg = result.wishMsg;
-          window.scrollTo(0, 0)
-        
         setTimeout(() => {
           this.wishlistSuccMsg = undefined;
         }, 6000);

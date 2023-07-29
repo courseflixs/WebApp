@@ -52,7 +52,6 @@ export class BlogsComponent {
       this.loadUpdatedBlog()
 
     }, 180)
-    window.scrollTo(0, 0)
 
   }
 
@@ -83,8 +82,6 @@ export class BlogsComponent {
   commonInAddUpdateDelete(msg: String) {
     this.isBlogCrudMsg = msg
     this.loadUpdatedBlog()
-    window.scrollTo(0, 0)
-
     setTimeout(() => {
       this.isBlogCrudMsg = undefined;
 

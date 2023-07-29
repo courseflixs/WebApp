@@ -25,7 +25,6 @@ export class RequestPageComponent {
     this.requestCourseService.addRequestCourseService(this.requestCourseForm.value).subscribe((result:any) => {
         console.log(result)
         if(result){
-          window.scrollTo(0, 0)
           this.reqCourseSuccMsg=result.reqMsg;
           this.requestCourseForm.reset();
           setTimeout(()=>{

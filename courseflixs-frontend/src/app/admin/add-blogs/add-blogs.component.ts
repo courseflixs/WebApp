@@ -97,8 +97,6 @@ export class AddBlogsComponent {
     //Accessing sharedData to display default value at the time of update product
     this.getSingleBlog = this.blogService.sharedSingleBlogData;
     this.keywords = this.getSingleBlog?this.getSingleBlog.tags:[];
-    window.scrollTo(0, 0)
-
   }
 
   blogForm=new FormGroup({
@@ -138,48 +136,7 @@ export class AddBlogsComponent {
     formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
 
     this.blogService.addBlogService(formData).subscribe((event: HttpEvent<any>)=>{
-      window.scrollTo(0, 0)
       console.log(event);
-      switch (event.type) {
-        case HttpEventType.Sent:
-          console.log('Request has been made!');
-          break;
-        case HttpEventType.ResponseHeader:
-          console.log('Response header has been received!');
-          break;
-        case HttpEventType.UploadProgress:
-          this.progress = Math.round((event.loaded || 1) / (event.total || 1) * 100);
-          console.log(`Uploaded! ${this.progress}%`);
-          break;
-        case HttpEventType.Response:
-          console.log('User successfully created!', event.body.blogMsg);
-          sessionStorage.setItem("isBlogCrudMsg", event.body.blogMsg);
-
-          setTimeout(() => {
-            this.progress = 0;
-            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-              this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
-
-            })
-          }, 1500);
-      }
-    })
-
-  }
-  updateBlog(id:String){
-    const formData=new FormData();
-    formData.append("blogVisiblity",this.blogForm.get('blogVisiblity')?.value || '')
-    formData.append("blogName",this.blogForm.get('blogName')?.value || '')
-    formData.append("blogCategory",this.blogForm.get('blogCategory')?.value || '')
-    formData.append("blogDesc",this.blogForm.get('blogDesc')?.value || '')
-    formData.append('blogTags',JSON.stringify(this.keywords))
-    formData.append("blogImage",this.blogForm.get('blogImage')?.value || '')
-    formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
-
-    this.blogService.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
-      console.log(event);
-      window.scrollTo(0, 0)
-
       switch (event.type) {
         case HttpEventType.Sent:
           console.log('Request has been made!');
@@ -198,7 +155,42 @@ export class AddBlogsComponent {
             this.progress = 0;
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
+            })
+          }, 1500);
+      }
+    })
 
+  }
+  updateBlog(id:String){
+    const formData=new FormData();
+    formData.append("blogVisiblity",this.blogForm.get('blogVisiblity')?.value || '')
+    formData.append("blogName",this.blogForm.get('blogName')?.value || '')
+    formData.append("blogCategory",this.blogForm.get('blogCategory')?.value || '')
+    formData.append("blogDesc",this.blogForm.get('blogDesc')?.value || '')
+    formData.append('blogTags',JSON.stringify(this.keywords))
+    formData.append("blogImage",this.blogForm.get('blogImage')?.value || '')
+    formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
+
+    this.blogService.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
+      console.log(event);
+      switch (event.type) {
+        case HttpEventType.Sent:
+          console.log('Request has been made!');
+          break;
+        case HttpEventType.ResponseHeader:
+          console.log('Response header has been received!');
+          break;
+        case HttpEventType.UploadProgress:
+          this.progress = Math.round((event.loaded || 1) / (event.total || 1) * 100);
+          console.log(`Uploaded! ${this.progress}%`);
+          break;
+        case HttpEventType.Response:
+          console.log('User successfully created!', event.body.blogMsg);
+          sessionStorage.setItem("isBlogCrudMsg", event.body.blogMsg)
+          setTimeout(() => {
+            this.progress = 0;
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
             })
             }, 1500);
       }

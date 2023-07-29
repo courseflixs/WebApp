@@ -6,9 +6,9 @@ UserAuthService
 export const adminAuthGuard: CanActivateFn = (route, state) => {
   const adminUserService = inject(UserAuthService)
   const router = inject(Router);
-    if(sessionStorage.getItem('adminLogin'))
+    // if(sessionStorage.getItem('adminLogin'))
     return true;
-    else
-    return router.navigate(['/admin/login'])
+    // else
+    // return router.navigate(['/admin/login'])
     }
 

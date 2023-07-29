@@ -79,8 +79,6 @@ export class ProductsComponent implements OnInit {
   }
 
   commonInAddUpdateDelete(msg: String) {
-    window.scrollTo(0, 0)
-
     this.isProCrudMsg = msg
     this.loadUpdatedPro()
     setTimeout(() => {

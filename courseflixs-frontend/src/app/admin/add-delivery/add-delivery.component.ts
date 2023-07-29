@@ -125,7 +125,6 @@ export class AddDeliveryComponent implements OnInit {
   addDelivery() {
     console.log(this.deliveryForm.value)
     this.deliveryService.addDeliveryService(this.deliveryForm.value).subscribe((result)=>{
-      window.scrollTo(0, 0)
       sessionStorage.setItem("isDeliverCrudMsg", "Delivery details Inserted Successfully!!!")
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/admin/home/delivered-orders']) // Navigate to the same URL
@@ -134,7 +133,6 @@ export class AddDeliveryComponent implements OnInit {
   }
   updateOrders(id:String){
     this.deliveryService.updateDeliveryService(id,this.deliveryForm.value).subscribe((result)=>{
-      window.scrollTo(0, 0)
       sessionStorage.setItem("isDeliverCrudMsg", "Delivery details Updated Successfully!!!")
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/admin/home/delivered-orders']) // Navigate to the same URL

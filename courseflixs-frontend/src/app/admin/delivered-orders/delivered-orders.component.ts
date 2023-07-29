@@ -78,7 +78,6 @@ export class DeliveredOrdersComponent implements OnInit{
  }
 
  commonInAddUpdateDelete(msg: String) {
-  window.scrollTo(0, 0)
    this.isDeliverCrudMsg = msg
    this.loadUpdatedPro()
    setTimeout(() => {

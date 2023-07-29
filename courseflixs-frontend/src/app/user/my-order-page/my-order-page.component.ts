@@ -27,8 +27,6 @@ export class MyOrderPageComponent implements OnInit {
       this.loadUpdatedOrders()
 
     }, 180)
-    window.scrollTo(0, 0)
-
 
   }
 

@@ -29,7 +29,6 @@ export class CourseRequestComponent implements OnInit {
   }
   changeReqStatus(reqID: String) {
     this.courseReqService.changeReqStatusService(reqID).subscribe((result: any) => {
-      window.scrollTo(0, 0)
       if (result) {
         this.reqCourseSuccMsg = result.reqMsg;
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

@@ -23,22 +23,17 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(private forgotPassService: ForgotPasswordService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
     this.token = this.route.snapshot.paramMap.get('token');
-    window.scrollTo(0, 0)
   }
   sendEmailOnForgot() {
     this.forgotPassService.sendEmailOnForgotService(this.forgotPassForm.value).subscribe((result: any) => {
       if (result?.status == 'Succ') {
         this.forgotSuccMsg = result?.message;
-        window.scrollTo(0, 0)
-
         setTimeout(() => {
           this.forgotSuccMsg = undefined;
         }, 5000)
 
       } else {
         this.forgotErrorMsg = result?.message
-        window.scrollTo(0, 0)
-
         setTimeout(() => {
           this.forgotErrorMsg = undefined;
         }, 5000)
@@ -50,16 +45,12 @@ export class ForgotPasswordComponent implements OnInit {
     this.forgotPassService.setNewPasswordService({ token: this.token, newPassword: this.setNewPassForm.get('newPassword')?.value }).subscribe((result: any) => {
       if (result.status == 'Succ') {
         this.forgotSuccMsg = result.message;
-        window.scrollTo(0, 0)
-
         setTimeout(() => {
           this.forgotSuccMsg = undefined;
           this.router.navigate(['/login'])
         }, 2000)
       } else {
         this.forgotErrorMsg = result.message;
-        window.scrollTo(0, 0)
-
         setTimeout(() => {
           this.forgotErrorMsg = result.message;
           this.router.navigate(['/login'])
