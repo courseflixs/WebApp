@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ProductService } from '../../services/product.service';
@@ -18,6 +18,8 @@ export class ProductDetailsPageComponent implements OnInit {
   nextProduct: any;
   prevProduct: any;
   getAllPro: Product[];
+  @ViewChild('innerdiv1') innerDiv1!:ElementRef;
+
   userID: String | null = '';
   constructor(private route: ActivatedRoute, private endUserProService: ProductService, private router: Router) {
     this.getAllPro = [];
@@ -30,9 +32,11 @@ export class ProductDetailsPageComponent implements OnInit {
       this.getAllPro = result;
       console.log(this.getAllPro);
       this.getSinglePro = this.getProductById(this.proID);
+
       this.nextProduct = this.getNextProduct(this.proID);
       this.prevProduct = this.getPreviousProduct(this.proID);
       this.userID = sessionStorage.getItem("userID");
+      this.innerDiv1.nativeElement.innerHTML=this.getSinglePro.sale_page;
       console.log("User ID: " + this.userID);
     });
     window.scrollTo(0, 0)
@@ -47,8 +51,6 @@ export class ProductDetailsPageComponent implements OnInit {
     height: 'auto',
     minHeight: '0',
     maxHeight: 'auto',
-    width: 'auto',
-    minWidth: '0',
     translate: 'yes',
     enableToolbar: false,
     showToolbar: false,

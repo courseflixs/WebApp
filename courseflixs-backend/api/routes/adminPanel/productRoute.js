@@ -47,6 +47,7 @@ var Storage = multer.diskStorage({
 
 var upload = multer({
     storage: Storage,
+    limits: { fieldSize: 25 * 1024 * 1024 },
     fileFilter: function (req, files, callback) {
         var ext = path.extname(files.originalname);
         var extLower = ext.toLowerCase();
