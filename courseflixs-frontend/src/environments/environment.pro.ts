@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://courseflex.io/api',
+    apiUrl: 'https://courseflix.io/api',
     apiKey: 'your-api-key'
   };

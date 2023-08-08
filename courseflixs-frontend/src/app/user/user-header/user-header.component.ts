@@ -14,13 +14,13 @@ export class UserHeaderComponent implements OnInit {
   @ViewChild('openModelBtn') openbutton: any;
   @ViewChild('automaticCloseBtn') closebutton: any;
 
-
   loggedInUserID: String | null | undefined;
   proCategory: any
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   subscribedForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email])
   })
+  searchBy:string='';
   constructor(private router: Router, private catService: CategoryService, private endUserService: EndUserAuthService) { }
 
   ngOnInit(): void {
@@ -81,4 +81,7 @@ export class UserHeaderComponent implements OnInit {
       }
     })
   }
+  getSearchResult(){
+  this.router.navigate(['/search',this.searchBy])
+ }
 }

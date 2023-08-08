@@ -36,6 +36,7 @@ import { TawkToComponent } from './tawk.to/tawk.to.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { GetInTouchDialogueComponent } from './get-in-touch-dialogue/get-in-touch-dialogue.component';
 import {MatCardModule} from '@angular/material/card';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {MatCardModule} from '@angular/material/card';
     TawkToComponent,
     ForgotPasswordComponent,
     GetInTouchDialogueComponent,
+    SearchComponent,
 
   ],
   imports: [

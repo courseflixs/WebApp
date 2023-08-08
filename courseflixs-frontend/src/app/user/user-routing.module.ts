@@ -15,6 +15,7 @@ import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
 import { userAuthGuardGuard } from './auth-guard/user-auth-guard.guard';
 import { FourOfourComponent } from './four-ofour/four-ofour.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusPageComponent },
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'reset-password/:token',component:ForgotPasswordComponent},
+  {path:'search/:searchBy',component:SearchComponent},
 
   { path: '**', component: FourOfourComponent }
 ];

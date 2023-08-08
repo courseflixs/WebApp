@@ -33,8 +33,6 @@
                 <a href="https://www.reddit.com/u/vikki_456?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=3&utm_content=1" target="_blank"><mat-icon>reddit</mat-icon></a>
                 <a href="https://t.me/CourseGuy65 " target="_blank"><mat-icon>telegram</mat-icon></a>
                 <a href="mailto:courseflixs@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
-                <a href="#"><mat-icon>search</mat-icon></a>
-
 
             </div>
         </div>
@@ -61,8 +59,28 @@
                         routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
                     <a href="#nine-step-section"
                         routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
-                    <a href="#"><mat-icon>search</mat-icon>SEARCH</a>
 
+                        <ul class="navbar-nav mr-auto" >
+                            <li class="nav-item d-flex">
+                                <div class="collapse position-absolute w-50 px-3" id="searchForm" style="margin-left: 50%;">
+                                    <div class="d-flex shadow-sm align-items-center">
+                                        <input id="search" type="text" class="form-control form-control-lg bg-light border-0 " placeholder="search" [(ngModel)]="searchBy" (input)="getSearchResult()"/>
+                                        <a class="nav-link py-2 bg-light" 
+                                            href="#searchForm" 
+                                            data-bs-target="#searchForm" 
+                                            data-bs-toggle="collapse">
+                                            <mat-icon style="color: black;">close</mat-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a class="nav-link mr-auto" 
+                                    href="#searchForm" 
+                                    data-bs-target="#searchForm" 
+                                    data-bs-toggle="collapse">
+                                    <mat-icon>search</mat-icon>
+                                </a>
+                            </li>
+                        </ul>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -76,8 +94,8 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <div class="offcanvas-body pb-5">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-5">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" routerLink="/"
                                     routerLinkActive="list-item-active"><mat-icon>home</mat-icon>HOME</a>
@@ -117,9 +135,9 @@
 
                             <li class="nav-item">
                                 <a [routerLink]="['/add-to-wishlist',loggedInUserID]"
-                                    *ngIf="loggedInUserID"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                    *ngIf="loggedInUserID" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
                                 <a [routerLink]="['/login']"
-                                    *ngIf="!loggedInUserID"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                    *ngIf="!loggedInUserID" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
                             </li>
 
                             <li class="nav-item">
@@ -147,7 +165,18 @@
                                 <a class="nav-link" routerLink="/" (click)="logoutUser()"
                                     *ngIf="loggedInUserID"><mat-icon>logout</mat-icon> LOGOUT</a>
                             </li>
+                            <li class="nav-item d-flex">
+                                <div class="d-flex shadow-sm align-items-center">
+                                    <input id="search" type="text" class="form-control form-control-lg bg-light border-0 " placeholder="search" [(ngModel)]="searchBy" />
+                                    <a class="nav-link py-2 bg-light" 
+                                        data-bs-target="#searchForm" 
+                                        data-bs-toggle="collapse">
+                                        <mat-icon style="color: black;" (click)="getSearchResult()">search</mat-icon>
+                                    </a>
+                                </div>
+                        </li>
                         </ul>
+                           
 
                     </div>
                 </div>
