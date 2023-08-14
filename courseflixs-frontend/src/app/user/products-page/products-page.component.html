@@ -26,7 +26,8 @@
                             <a [routerLink]="['/product-details',pro._id]">{{ pro.product_name }} </a>
                         </div>
                         <div>
-                            <a [routerLink]="['/product-details',pro._id]" class="price-tag">{{"300" | currency:'$'}}</a>
+                            <!-- <a [routerLink]="['/product-details',pro._id]" class="price-tag">{{"300" | currency:'$'}}</a> -->
+                            <a [routerLink]="['product-details',pro._id]"  class="price-tag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         </div>
                     </div>
                 </div> 

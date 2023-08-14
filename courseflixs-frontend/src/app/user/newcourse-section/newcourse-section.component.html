@@ -14,10 +14,11 @@
                         </div>
                         <div class="product-details">
                             <div class="product-name">
-                                <a [routerLink]="['product-details',pro._id]" >{{ pro?.product_name | slice:0:30 }}.. </a>
+                                <a [routerLink]="['product-details',pro._id]" >{{ pro?.product_name | slice:0:1000 }} </a>
                             </div>
                             <div>
-                              <a [routerLink]="['product-details',pro._id]"  class="price-tag">{{pro?.sale_price | currency:'USD'}}</a>
+                              <!-- <a [routerLink]="['product-details',pro._id]"  class="price-tag">{{pro?.sale_price | currency:'USD'}}</a> -->
+                              <a [routerLink]="['product-details',pro._id]"  class="price-tag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                             </div>
                         </div>
                     </div>  

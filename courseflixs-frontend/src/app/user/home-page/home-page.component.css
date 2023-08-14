@@ -33,6 +33,9 @@
     overflow: hidden;
 
 }
+.buynow-badge a{
+    text-decoration: none;
+}
 @keyframes fadeInRight {
     from {
       opacity: 0;

@@ -246,8 +246,37 @@
   82.2341% {
     content: "BE A PART OF OUR ";
   }
-
   68.6945%,
+  81.8978% {
+    content: "BE A PART OF OUR F";
+  }
+
+  69.6563%,
+  80.7867% {
+    content: "BE A PART OF OUR FA";
+  }
+
+  70.9876%,
+  79.5634% {
+    content: "BE A PART OF OUR FAM";
+  }
+
+  71.8776%,
+  78.3376% {
+    content: "BE A PART OF OUR FAMI";
+  }
+
+  72.6567%,
+  77.1243% {
+    content: "BE A PART OF OUR FAMIL";
+  }
+
+  73.4543%,
+  76.1132% {
+    content: "BE A PART OF OUR FAMILY";
+  }
+
+  /* 68.6945%,
   81.8978% {
     content: "BE A PART OF OUR C";
   }
@@ -290,7 +319,7 @@
   76.1111%,
   73.6541% {
     content: "BE A PART OF OUR COMMUNITY";
-  }
+  } */
 
 
 }

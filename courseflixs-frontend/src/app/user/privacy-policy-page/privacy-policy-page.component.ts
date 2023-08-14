@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./privacy-policy-page.component.css']
 })
 export class PrivacyPolicyPageComponent {
-
+  ngOnInit(){
+    window.scroll(0,0);
+  }
 }

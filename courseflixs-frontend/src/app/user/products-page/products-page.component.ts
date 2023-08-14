@@ -35,6 +35,7 @@ export class ProductsPageComponent implements OnInit{
 
     })
    }
+   window.scroll(0,0);
   }
 
   getProImageUrl(imageName: string) {
