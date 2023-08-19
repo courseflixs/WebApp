@@ -1,6 +1,46 @@
 <app-get-in-touch-dialogue></app-get-in-touch-dialogue>
 
 <app-tawk></app-tawk>
+<!-- Button trigger modal -->
+<button type="button" [hidden]="true" #openModelBtn class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#automatic-open-dialogue">
+    Auto open dialogue
+</button>
+
+<!-- Modal -->
+<div class="automatic-open-dialogue">
+    <div class="modal fade" id="automatic-open-dialogue" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="top-close-btn">
+                    <button type="button" #automaticCloseBtn class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" style="color: white;"></button>
+                </div>
+                <div class="modal-body">
+                <div class="modal-title">
+                    SUBSCRIBE TO GET EXTRA 30% OFF
+                </div>
+                <div class="modal-form">
+                    <form [formGroup]="subscribedForm" (submit)="addSubscriber()">
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                            <mat-error style="color: white; font-weight: 800;">Enter Valid Email</mat-error>
+                        </mat-form-field>
+                        <div class="modal-subsribed-btn">
+                            <button type="submit" class="subscribe" [disabled]="subscribedForm.invalid">YES, LET ME IN</button>
+                        </div>
+                        <div class="bottom-modal-info">
+                            We don't spam! Read our <a routerLink="/privacy-policy">privacy policy</a> for more info.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid">
     <div class="row top-header">
@@ -30,7 +70,8 @@
         <div class="col-xl-2 col-lg-2 "></div>
         <div class="col-xl-2 col-lg-2">
             <div class="top-header-Social-link">
-                <a href="https://www.reddit.com/u/vikki_456?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=3&utm_content=1" target="_blank"><mat-icon>reddit</mat-icon></a>
+                <a href="https://www.reddit.com/u/vikki_456?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=3&utm_content=1"
+                    target="_blank"><mat-icon>reddit</mat-icon></a>
                 <a href="https://t.me/CourseGuy65 " target="_blank"><mat-icon>telegram</mat-icon></a>
                 <a href="mailto:courseflixs@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
 
@@ -41,7 +82,8 @@
     <div class="row " [ngClass]="{ 'fixed-menu ': isMenuFixed }">
         <nav class="navbar navbar-dark bg-dark" style="padding: 0px;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt="user-logo"  class="user-logo" style="height: 6rem;"></a>
+                <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt="user-logo" class="user-logo"
+                        style="height: 6rem;"></a>
 
                 <div class="main-menu">
                     <a routerLink="/" routerLinkActive="list-item-active">HOME</a>
@@ -55,32 +97,29 @@
                         </ul>
                     </div>
                     <a href="#offer-section" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
-                    <a routerLink="/request"
-                        routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
+                    <a routerLink="/request" routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
                     <a href="#nine-step-section"
                         routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
 
-                        <ul class="navbar-nav mr-auto" >
-                            <li class="nav-item d-flex">
-                                <div class="collapse position-absolute w-50 px-3" id="searchForm" style="margin-left: 50%;">
-                                    <div class="d-flex shadow-sm align-items-center">
-                                        <input id="search" type="text" class="form-control form-control-lg bg-light border-0 " placeholder="search" [(ngModel)]="searchBy" (input)="getSearchResult()"/>
-                                        <a class="nav-link py-2 bg-light" 
-                                            href="#searchForm" 
-                                            data-bs-target="#searchForm" 
-                                            data-bs-toggle="collapse">
-                                            <mat-icon style="color: black;">close</mat-icon>
-                                        </a>
-                                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item d-flex">
+                            <div class="collapse position-absolute w-50 px-3" id="searchForm" style="margin-left: 50%;">
+                                <div class="d-flex shadow-sm align-items-center">
+                                    <input id="search" type="text"
+                                        class="form-control form-control-lg bg-light border-0 " placeholder="search"
+                                        [(ngModel)]="searchBy" (input)="getSearchResult()" />
+                                    <a class="nav-link py-2 bg-light" href="#searchForm" data-bs-target="#searchForm"
+                                        data-bs-toggle="collapse">
+                                        <mat-icon style="color: black;">close</mat-icon>
+                                    </a>
                                 </div>
-                                <a class="nav-link mr-auto" 
-                                    href="#searchForm" 
-                                    data-bs-target="#searchForm" 
-                                    data-bs-toggle="collapse">
-                                    <mat-icon>search</mat-icon>
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                            <a class="nav-link mr-auto" href="#searchForm" data-bs-target="#searchForm"
+                                data-bs-toggle="collapse">
+                                <mat-icon>search</mat-icon>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -134,10 +173,10 @@
                             </li>
 
                             <li class="nav-item">
-                                <a [routerLink]="['/add-to-wishlist',loggedInUserID]"
-                                    *ngIf="loggedInUserID" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
-                                <a [routerLink]="['/login']"
-                                    *ngIf="!loggedInUserID" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                <a [routerLink]="['/add-to-wishlist',loggedInUserID]" *ngIf="loggedInUserID"
+                                    class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                <a [routerLink]="['/login']" *ngIf="!loggedInUserID"
+                                    class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
                             </li>
 
                             <li class="nav-item">
@@ -167,16 +206,17 @@
                             </li>
                             <li class="nav-item d-flex">
                                 <div class="d-flex shadow-sm align-items-center">
-                                    <input id="search" type="text" class="form-control form-control-lg bg-light border-0 " placeholder="search" [(ngModel)]="searchBy" />
-                                    <a class="nav-link py-2 bg-light" 
-                                        data-bs-target="#searchForm" 
+                                    <input id="search" type="text"
+                                        class="form-control form-control-lg bg-light border-0 " placeholder="search"
+                                        [(ngModel)]="searchBy" />
+                                    <a class="nav-link py-2 bg-light" data-bs-target="#searchForm"
                                         data-bs-toggle="collapse">
                                         <mat-icon style="color: black;" (click)="getSearchResult()">search</mat-icon>
                                     </a>
                                 </div>
-                        </li>
+                            </li>
                         </ul>
-                           
+
 
                     </div>
                 </div>

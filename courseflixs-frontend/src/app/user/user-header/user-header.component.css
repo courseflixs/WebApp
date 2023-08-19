@@ -187,24 +187,26 @@
 
 .automatic-open-dialogue .modal-content {
     background-color: #dd3333;
+    text-align: center;
 }
 
 .automatic-open-dialogue .modal-title {
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    line-height: 2.3rem;
+    line-height: 2.8rem;
     font-family: 'Roboto Slab' !important;
     color: white;
+    margin-bottom: 1rem;
 
 }
 
 .modal-form {
-    padding: 1.2rem 0rem;
+    padding: 1rem 1.2rem;
 }
 
 .modal-form mat-form-field {
-    width: 100%;
+    width: 100% !important;
 }
 
 .modal-subsribed-btn .subscribe {
@@ -215,6 +217,7 @@
     font-size: 1.3rem;
     font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
     font-weight: bold;
+    margin-bottom: 0.4rem;
 }
 
 .bottom-modal-info {
@@ -255,7 +258,9 @@
     .navbar-toggler {
         display: block;
     }
-
+    .modal-form {
+        padding: 1.2rem 0rem;
+    }
 
 }
 
@@ -271,6 +276,9 @@
 
     .navbar-toggler {
         display: block;
+    }
+    .modal-form {
+        padding: 1.2rem 0rem;
     }
 
 }

@@ -37,7 +37,7 @@ export class UserHeaderComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    if (sessionStorage.getItem('siteInit')) {
+    if (!sessionStorage.getItem('siteInit')) {
       setTimeout(() => {
         this.openbutton.nativeElement.click()
         sessionStorage.setItem('siteInit', 'true');

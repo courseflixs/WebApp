@@ -1,6 +1,17 @@
 const UserSchema = require('../../models/endUserSchema')
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+   host: 'smtp.gmail.com',
+   port: 587,
+   secure: false,
+   auth: {
+     user: process.env.EMAIL_USERNAME,
+     pass: process.env.EMAIL_PASSWORD
+   }
+ });
 //############################################################################################//
 //<|========================= User GET method code  ======================|>
 //############################################################################################//
@@ -8,7 +19,7 @@ exports.retreiveUser = (req, res, next) => {
 
    const { loginUserEmail, loginUserPass } = req.body;
    UserSchema.find({ email: loginUserEmail }).then(async (data) => {
-      console.log(data);
+      // console.log(data);
       if (data.length > 0 && await bcrypt.compare(loginUserPass, data[0].password)) {
          res.status(200).send(data);
       }
@@ -30,9 +41,9 @@ exports.retreiveUser = (req, res, next) => {
 //############################################################################################//
 exports.addUser = (req, res, next) => {
    const { userName, regUserEmail, regUserPass } = req.body;
-   console.log(req.body)
+   // console.log(req.body)
    UserSchema.find({ email: regUserEmail }).then(async (result) => {
-      console.log(result.length)
+      // console.log(result.length)
       if (result.length > 0) {
          return res.status(200).send({ isAlreadyExist: true, userMsg: "This user is already exist please try another one!!!" })
       } else {
@@ -65,10 +76,10 @@ exports.getAllCustomer = (req, res, next) => {
 exports.forgotPassword = (req, res, next) => {
    const { forgotUserEmail } = req.body;
    UserSchema.find({ email: forgotUserEmail }).then(async (result) => {
-      console.log(result);
+      // console.log(result);
       if (result) {
          const resetToken = crypto.randomBytes(32).toString("hex");
-         const resetPasswordLink = `http://localhost:4200/reset-password/token=${resetToken}`;
+         const resetPasswordLink = `http://localhost:4200/reset-password/${resetToken}`;
          await UserSchema.findByIdAndUpdate(result[0]._id, { token: resetToken });
 
          const mailOptions = {
@@ -97,9 +108,12 @@ exports.forgotPassword = (req, res, next) => {
 
 exports.resetPassword = (req, res, next) => {
 const {newPassword,token}=req.body;
-UserSchema.findOne({token:token}).then((result)=>{
+console.log("from reset password")
+console.log(req.body);
+UserSchema.findOne({token:token}).then(async(result)=>{
    if(result){
-      UserSchema.findOneAndUpdate({token:token},{password:newPassword});
+      console.log(result)
+     await UserSchema.findByIdAndUpdate(result._id,{password:await bcrypt.hash(newPassword.trim(), 10)});
       res.status(200).json({status:'Succ', message: 'Your Password has been reset successfully!!!' });
 
    }else{

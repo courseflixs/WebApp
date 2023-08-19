@@ -30,6 +30,7 @@ export class ForgotPasswordComponent implements OnInit {
         this.forgotSuccMsg = result?.message;
         setTimeout(() => {
           this.forgotSuccMsg = undefined;
+          this.forgotPassForm.reset()
         }, 5000)
 
       } else {
@@ -48,13 +49,13 @@ export class ForgotPasswordComponent implements OnInit {
         setTimeout(() => {
           this.forgotSuccMsg = undefined;
           this.router.navigate(['/login'])
-        }, 2000)
+        }, 5000)
       } else {
         this.forgotErrorMsg = result.message;
         setTimeout(() => {
           this.forgotErrorMsg = result.message;
           this.router.navigate(['/login'])
-        }, 2000)
+        }, 5000)
       }
     })
   }
