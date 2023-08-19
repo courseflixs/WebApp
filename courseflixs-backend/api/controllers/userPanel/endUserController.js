@@ -79,7 +79,7 @@ exports.forgotPassword = (req, res, next) => {
       // console.log(result);
       if (result) {
          const resetToken = crypto.randomBytes(32).toString("hex");
-         const resetPasswordLink = `http://localhost:4200/reset-password/${resetToken}`;
+         const resetPasswordLink = `${process.env.API_URL}/reset-password/${resetToken}`;
          await UserSchema.findByIdAndUpdate(result[0]._id, { token: resetToken });
 
          const mailOptions = {
