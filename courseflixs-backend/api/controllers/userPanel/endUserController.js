@@ -122,3 +122,35 @@ UserSchema.findOne({token:token}).then(async(result)=>{
    }
 })
 }
+
+exports.sendContactEmail=(req,res,next)=>{
+   const {name,email,contact,msg}=req.body;
+   console.log(req.body)
+   const contactOptions = {
+      from: 'courseflixs@gmail.com',
+      to: 'helpdeskcourseflix@gmail.com',
+      subject: 'Query asked from the '+name,
+      // text: `Please click on the link below to reset your password: ${resetPasswordLink}`,
+      html:`<html>
+      <body>
+         <h1>Query asked from the ${name}</h1>
+         <h3>Email: ${email}</h3>
+         <h3>Contact: ${contact}</h3>
+         <h3><b>Query asked by user:</b><br><br>${msg}</h3>
+      </body>
+      </html>
+      
+      `
+   };
+
+ // Send the email
+ transporter.sendMail(contactOptions, (error, info) => {
+   if (error) {
+      console.error('Error sending reset contact email:', error);
+      res.status(500).json({status:'Error', message: 'Error while sending contact email please try again' });
+   } else {
+      console.log('contat details email:', info.response);
+      res.status(200).json({status:'Succ', message: 'Your query has been sent successfully' });
+   }
+});
+}

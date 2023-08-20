@@ -75,3 +75,31 @@
     font-size: 1rem;
 
 }
+
+/* comment Area css */
+.msg-container{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.user-msg{
+    margin: auto 1rem;
+    color: white;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.user-msg span{
+    font-weight: 800;
+    color: #dd3333;
+}
+.comment-date{
+    font-size: 1rem;
+    color: #dd3333;
+}
+.add-comment{
+   text-align: end;
+   margin-bottom: 1rem;
+}
+.add-comment mat-form-field{
+    width: 50%;
+}

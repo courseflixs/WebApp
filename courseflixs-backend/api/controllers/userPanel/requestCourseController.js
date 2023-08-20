@@ -1,4 +1,5 @@
 const requestCourseSchema = require('../../models/requestCourseSchema')
+const commentSchema=require('../../models/commentSchema');
 //############################################################################################//
 //<|========================= RequestCourse GET method code  ======================|>
 //############################################################################################//
@@ -57,4 +58,24 @@ exports.updateRequestCourseStatus = (req, res, next) => {
         console.log(result);
         res.status(200).send({ reqMsg: "Requested course status has been changed successfully!!!" });
     })
+}
+
+exports.addComment=(req,res,next)=>{
+    const {name,msg}=req.body;
+    var addCommentData = new commentSchema({
+        name: name.trim(),
+        msg: msg.trim(),
+    });
+
+    addCommentData.save().then(() => {
+        return res.status(200).send({ status:'succ',message: "Your comment has been saved and displayed on the page" });
+    });
+}
+
+exports.getAllComment=(req,res,next)=>{
+    commentSchema.find().then((data) => {
+        res.status(200).send(data);
+    }).catch((error) => {
+        console.log(error)
+    });
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { CategoryService } from '../../admin/services/category.service';
 
 @Component({
   selector: 'app-products-page',
@@ -10,31 +11,41 @@ import { environment } from '../../../environments/environment';
 })
 export class ProductsPageComponent implements OnInit{
   getAllPro:any;
-  whichPro:String |null | undefined;
+  whichPro:any;
   totalPro:Number | undefined;
-  
+  catID:any;
+  catQoute:any;
   p: number = 1;
-  constructor(private endUserProService:ProductService,private router:Router,private route:ActivatedRoute){}
+  constructor(private endUserProService:ProductService,private router:Router,private catService:CategoryService,private route:ActivatedRoute){}
   ngOnInit(): void {
-   this.whichPro= this.route.snapshot.paramMap.get('whichPro');
-   if(this.whichPro=="New"){
+   this.catID= this.route.snapshot.paramMap.get('whichPro');
+    this.catService.getSingleCatService(this.catID).subscribe((res:any)=>{
+      this.whichPro= res.category_name;
+      this.catQoute=res.qoute;
+    })
+   if(this.catID=="New"){
     this.endUserProService.getAllNewProServices().subscribe((result)=>{
+      this.whichPro=this.catID
       this.getAllPro=result;
       this.totalPro=result.length;
     })
-   }else if(this.whichPro=="All"){
+   }else if(this.catID=="All"){
     this.endUserProService.getAllProService().subscribe((result)=>{
+      this.whichPro=this.catID
       this.getAllPro=result;
       this.totalPro=result.length;
 
     })
    }else{
+    this.catService.getSingleCatService(this.catID).subscribe(async(res:any)=>{
+      this.whichPro=await res.category_name;
     this.endUserProService.getCategoryWiseProService(this.whichPro).subscribe((result)=>{
       this.getAllPro=result;
       this.totalPro=result.length;
 
     })
-   }
+  })
+  }
    window.scroll(0,0);
   }
 

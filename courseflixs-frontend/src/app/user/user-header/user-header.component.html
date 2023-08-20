@@ -93,7 +93,7 @@
                         </a>
                         <ul class="dropdown-menu" *ngIf="proCategory">
                             <li *ngFor="let cat of proCategory"><a class="dropdown-item"
-                                    (click)="redirectToProducts(cat.category_name)">{{cat.category_name}}</a></li>
+                                    (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a></li>
                         </ul>
                     </div>
                     <a href="#offer-section" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
@@ -146,7 +146,7 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li *ngFor="let cat of proCategory">
                                         <a class="dropdown-item"
-                                            (click)="redirectToProducts(cat.category_name)">{{cat.category_name}}</a>
+                                            (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a>
                                         <hr class="dropdown-divider">
                                     </li>
 

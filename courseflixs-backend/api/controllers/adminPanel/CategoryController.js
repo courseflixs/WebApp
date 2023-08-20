@@ -54,11 +54,12 @@ exports.retreiveTypeCategory=(req,res,next)=>{
 //<|========================= Category POST method code  ======================|>
 //############################################################################################//
 exports.addCategory = (req, res, next) => {
-   const { categoryName, categoryType } = req.body;
+   const { categoryName, categoryType,qoute } = req.body;
    console.log(req.body)
    var insertCat = new categorySchema({
       type_of_category: categoryType.trim(),
       category_name: categoryName.trim(),
+      qoute:qoute.trim()
 
    });
    console.log("request reached")
@@ -75,7 +76,7 @@ exports.addCategory = (req, res, next) => {
 exports.updatingCategory = (req, res, next) => {
    //<|========================= Updating particular Category by its id ======================|>
    console.log("updating project");
-   const { categoryName, categoryType } = req.body;
+   const { categoryName, categoryType,qoute } = req.body;
    var id = req.params.id
    console.log(req.params);
    // console.log(req.body);
@@ -83,6 +84,7 @@ exports.updatingCategory = (req, res, next) => {
    var findingAndUpdatingCat = categorySchema.findOneAndUpdate({ _id: id }, {
       type_of_category: categoryType.trim(),
       category_name: categoryName.trim(),
+      qoute:qoute.trim()
    });
    findingAndUpdatingCat.exec().then((singleData) => {
       console.log(singleData)

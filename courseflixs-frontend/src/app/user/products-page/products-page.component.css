@@ -3,31 +3,40 @@
 
 }
 
-.page-title {
-    font-size: 2rem;
-    color: white;
-    font-weight: 600;
-    padding: 2rem 0rem;
+
+.title-container{
+    background-color: #dd3333;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
 }
-
-.navbar {
-    background-color: #FF3A2D !important;
-    margin-bottom: 1rem;
-
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
+.pro-heading{
+    font-size: 2rem !important;
+    position: relative;
+    line-height: 2.5rem;
+    font-family: "Roboto Condensed", Helvetica, Arial, Verdana, sans-serif !important;
     color: white !important;
+    text-align: center;
+    font-weight: bold !important;
 }
-
-.breadcrumb-item a {
-    text-decoration: none;
+.pro-heading::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 5%;
+    height: 3px;
+    background-color: black;
+  }
+  .pro-subtitle{
     color: white;
-    font-size: 1rem;
-
-
-}
-
+    text-align: center;
+    padding: 2rem 0rem !important;
+    font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500;
+  }
 .page-subtitle {
     color: white;
     font-size: 1rem;

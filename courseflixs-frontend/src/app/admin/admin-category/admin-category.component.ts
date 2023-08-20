@@ -53,6 +53,7 @@ export class AdminCategoryComponent implements OnInit {
   addCategoryForm = new FormGroup({
     categoryType: new FormControl(''),
     categoryName: new FormControl(''),
+    qoute:new FormControl('')
   })
   get categoryType() {
     return this.addCategoryForm.get('categoryType')
@@ -64,8 +65,7 @@ export class AdminCategoryComponent implements OnInit {
 
 
   clearInput() {
-    this.addCategoryForm.get('categoryType')?.reset()
-    this.addCategoryForm.get('categoryName')?.reset()
+      this.addCategoryForm.reset()
     this.getSingleCatData = null;
   }
 

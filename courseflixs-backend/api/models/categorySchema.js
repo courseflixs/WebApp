@@ -6,8 +6,10 @@ var categorySchema = new mongoose.Schema({
     },
     category_name: {
         type: String,
+    },
+    qoute:{
+        type:String
     }
-
 }, { timestamps: true });
 
 var category = mongoose.model('category', categorySchema);

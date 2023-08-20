@@ -5,7 +5,8 @@ export interface adminLogin {
 
 export interface Category {
   categoryType: String,
-  categoryName: String
+  categoryName: String,
+  qoute:String
 }
 export interface Product {
   _id:String,

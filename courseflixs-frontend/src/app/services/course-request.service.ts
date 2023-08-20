@@ -18,4 +18,12 @@ export class CourseRequestService {
     return this.http.put(`${environment.apiUrl}/end-user/request/update-req-course/${reqID}`, {})
 
   }
+  addCommentService(data:any){
+    return this.http.post(`${environment.apiUrl}/end-user/request/add-comment`, data)
+
+  }
+  getAllCommentService(){
+    return this.http.get(`${environment.apiUrl}/end-user/request/get-comment`)
+
+  }
 }

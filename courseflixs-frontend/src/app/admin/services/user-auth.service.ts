@@ -15,7 +15,7 @@ export class UserAuthService implements OnInit{
   }
   adminUserLogin(data:adminLogin){
     console.log(data)
-    if(data && data.email=="courseflix576@gmail.com" && data.password=="Courseflix@s1"){
+    if(data && data.email=="admin@courseflix.io" && data.password=="ZxcvbQwerty@0011"){
       this.isAdminLoginError.emit(false)
       sessionStorage.setItem('adminLogin',JSON.stringify(data.email))
       this.router.navigate(['/admin/home/dashboard'])
