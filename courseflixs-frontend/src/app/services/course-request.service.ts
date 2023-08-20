@@ -26,4 +26,8 @@ export class CourseRequestService {
     return this.http.get(`${environment.apiUrl}/end-user/request/get-comment`)
 
   }
+  deleteCommentService(id:String){
+    return this.http.delete(`${environment.apiUrl}/end-user/request/delete-comment/${id}`, {})
+
+  }
 }

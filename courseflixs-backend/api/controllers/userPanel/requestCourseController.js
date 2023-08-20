@@ -1,5 +1,5 @@
 const requestCourseSchema = require('../../models/requestCourseSchema')
-const commentSchema=require('../../models/commentSchema');
+const commentSchema = require('../../models/commentSchema');
 //############################################################################################//
 //<|========================= RequestCourse GET method code  ======================|>
 //############################################################################################//
@@ -60,22 +60,33 @@ exports.updateRequestCourseStatus = (req, res, next) => {
     })
 }
 
-exports.addComment=(req,res,next)=>{
-    const {name,msg}=req.body;
+exports.addComment = (req, res, next) => {
+    const { name, msg } = req.body;
     var addCommentData = new commentSchema({
         name: name.trim(),
         msg: msg.trim(),
     });
 
     addCommentData.save().then(() => {
-        return res.status(200).send({ status:'succ',message: "Your comment has been saved and displayed on the page" });
+        return res.status(200).send({ status: 'succ', message: "Your comment has been saved and displayed on the page" });
     });
 }
 
-exports.getAllComment=(req,res,next)=>{
+exports.getAllComment = (req, res, next) => {
     commentSchema.find().then((data) => {
         res.status(200).send(data);
     }).catch((error) => {
         console.log(error)
     });
+ 
+}
+
+exports.deleteComment = (req, res, next) => {
+    var id = req.params.id;
+    var findingAndDeletingComment = commentSchema.findOneAndDelete({ _id: id });
+    findingAndDeletingComment.exec().then((deleteData) => {
+        res.status(200).send({ status: "succ", message: "Comment deleted Successfully!!!" });
+    })
+
+
 }

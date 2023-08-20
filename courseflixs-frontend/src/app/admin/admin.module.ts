@@ -45,6 +45,7 @@ import { AddDeliveryComponent } from './add-delivery/add-delivery.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
 import { CourseRequestComponent } from './course-request/course-request.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { CourseRequestComponent } from './course-request/course-request.componen
     AddDeliveryComponent,
     DialogConfirmComponent,
     CourseRequestComponent,
+    CommentsComponent,
     
   ],
   imports: [
