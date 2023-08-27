@@ -18,7 +18,7 @@ export class AddToWishlistPageComponent implements OnInit {
 
   }
   ngOnInit(): void {
-
+      window.scroll(0,0);
       this.userID = this.route.snapshot.paramMap.get('userID');
       this.proID = this.route.snapshot.paramMap.get('proID');
       console.log(this.userID, this.proID)

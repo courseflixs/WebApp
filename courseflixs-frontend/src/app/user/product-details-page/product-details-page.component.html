@@ -51,16 +51,18 @@
                             Join us:
                         </div>
                         <div class="social-img">
+                            <a href="https://t.me/+dnOD6qDrEMEwMWI1" target="_blank">
                             <img src="../../../assets/telegram.gif" alt="">
+                            </a>
                         </div>
                     </div>
                     <div class="course-details">
                         <div class="course-title"><b>Name of course: </b>{{getSinglePro?.product_name}} <b>| Size:</b><span> {{getSinglePro?.file_size}} MB</span></div>
                         <div class="course-price"><b>Original Price: </b><s>{{getSinglePro?.original_price | currency:'$'}}</s> </div> 
                          <!-- | <b>Sale Price: </b><span>{{getSinglePro?.sale_price | currency:'$'}}</span> -->
+                         <div class="contact"><b>Contact for more details: </b><a href="mailto:courseflixs@gmail.com">contact@courseflix.io</a></div>
                         <div class="delivery-method"><b>Delivery Method: </b><span>Instant Download</span>(<span>Mega</span>)</div>
-                        <div class="contact"><b>Contact for more details: </b><a href="mailto:courseflixs@gmail.com">contact@courseflix.io</a></div>
-                        <div class="sale-page-link"><a href="{{getSinglePro?.sale_page_link}}" target="_blank">Sale Page</a></div>
+                        <div class="sale-page-link">Sale Page : <a href="{{getSinglePro?.sale_page_link}}" target="_blank">{{getSinglePro?.sale_page_link}}</a></div>
                     </div>
                     <hr>
                     <div class="container">

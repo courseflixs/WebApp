@@ -28,6 +28,7 @@ export class RequestPageComponent implements OnInit {
     msg: new FormControl('')
   })
   ngOnInit(): void {
+    window.scroll(0,0);
     this.requestCourseService.getAllCommentService().subscribe((res) => {
       this.getAllComment = res
     })
