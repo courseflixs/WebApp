@@ -39,4 +39,9 @@ ngOnInit(): void {
     }
    })
   }
+  // navigateToPage(link:any){
+  //   this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+  //     this.router.navigate(link) // Navigate to the same URL
+  //   })
+  // }
 }

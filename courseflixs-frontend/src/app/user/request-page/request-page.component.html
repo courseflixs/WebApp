@@ -1,4 +1,4 @@
-<div class="container-fluid main-request-section">
+<div class="container-fluid main-request-section" >
     <div class="title-container">
         <div class="request-heading">
             <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"
@@ -86,6 +86,24 @@
                 </div>
             </div>
             <div class="col-12">
+                <div class="msg-container" *ngFor="let request of getAllRequest">
+                    <div class="profile-img">
+                        <img src="../../../assets/user.png" alt="" width="80">
+                    </div>
+                    <div class="user-msg">
+                        <div class="user-name"><span>{{request.user_name}}</span> says:</div>
+                        <div class="user-query">
+                           <p>Auther- {{request.auther_name_of_course}}</p>
+                           <p>Email- {{request.email}}</p>
+                           <p>Course Link- <a href="{{request.ref_course_link}}">{{request.ref_course_link}}</a></p>
+
+
+
+                        </div>
+                        <div class="comment-date"> {{ request.createdAt | date: "long":"":"en" }}</div>
+                    </div>
+                    <hr>
+                </div>
                 <div class="msg-container" *ngFor="let comment of getAllComment">
                     <div class="profile-img">
                         <img src="../../../assets/user.png" alt="" width="80">
@@ -97,6 +115,8 @@
                     </div>
                     <hr>
                 </div>
+
+               
             </div>
             <div class="col-12">
                 <div class="add-comment">

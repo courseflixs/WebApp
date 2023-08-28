@@ -120,7 +120,7 @@
                       <input matInput type="number" class="example-right-align" placeholder="0"
                         formControlName="proOriginalPrice" name="proOriginalPrice" required
                         [ngModel]="getSinglePro?getSinglePro.original_price:''">
-                      <span matTextPrefix>{{ '₹'}}&nbsp;</span>
+                      <span matTextPrefix>{{ '$'}}&nbsp;</span>
                       <span matTextSuffix>.00</span>
                       <mat-error>{{"Enter valid original price"}}</mat-error>
 
@@ -137,7 +137,7 @@
                       <input matInput type="number" class="example-right-align" placeholder="0"
                         formControlName="proSalePrice" name="proSalePrice" required
                         [ngModel]="getSinglePro?getSinglePro.sale_price:''">
-                      <span matTextPrefix>{{ '₹'}}&nbsp;</span>
+                      <span matTextPrefix>{{ '$'}}&nbsp;</span>
                       <span matTextSuffix>.00</span>
                       <mat-error>{{"Enter valid sale price"}}</mat-error>
 

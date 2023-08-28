@@ -73,7 +73,7 @@
                 <a href="https://www.reddit.com/u/vikki_456?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=3&utm_content=1"
                     target="_blank"><mat-icon>reddit</mat-icon></a>
                 <a href="https://t.me/CourseGuy65 " target="_blank"><mat-icon>telegram</mat-icon></a>
-                <a href="mailto:courseflixs@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
+                <a href="mailto:helpdeskcourseflix@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
 
             </div>
         </div>
@@ -96,7 +96,7 @@
                                     (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a></li>
                         </ul>
                     </div>
-                    <a href="#offer-section" routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
+                    <a href="#offer-section" routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
                     <a routerLink="/request" routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
                     <a href="#nine-step-section"
                         routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
@@ -145,7 +145,7 @@
                                     aria-expanded="false"><mat-icon>category</mat-icon>CATEGORY</a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li *ngFor="let cat of proCategory">
-                                        <a class="dropdown-item"
+                                        <a class="dropdown-item" data-bs-dismiss="offcanvas" aria-label="Close" 
                                             (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -153,56 +153,58 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#offer-section"
+                                <a class="nav-link" href="#offer-section" 
                                     routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/request"
-                                    routerLinkActive="list-item-active"><mat-icon>accessible</mat-icon>REQUEST</a>
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>accessible</mat-icon>REQUEST</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#nine-step-section"
-                                    routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
+                                    routerLinkActive="list-item-active" ><mat-icon>contacts</mat-icon>CONTACT US</a>
                             </li>
 
                             <li class="nav-item">
                                 <a [routerLink]="['/myorder',loggedInUserID]" *ngIf="loggedInUserID"
-                                    class="nav-link"><mat-icon>shop</mat-icon>MYORDER</a>
+                                    class="nav-link" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>shop</mat-icon>MYORDER</a>
                                 <a [routerLink]="['/login']" *ngIf="!loggedInUserID"
-                                    class="nav-link"><mat-icon>shop</mat-icon>MYORDER</a>
+                                    class="nav-link"data-bs-dismiss="offcanvas"
+                                    aria-label="Close"><mat-icon>shop</mat-icon>MYORDER</a>
                             </li>
 
                             <li class="nav-item">
-                                <a [routerLink]="['/add-to-wishlist',loggedInUserID]" *ngIf="loggedInUserID"
-                                    class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                <a [routerLink]="['/add-to-wishlist',loggedInUserID]" *ngIf="loggedInUserID" data-bs-dismiss="offcanvas" aria-label="Close" class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
                                 <a [routerLink]="['/login']" *ngIf="!loggedInUserID"
-                                    class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close"   class="nav-link"><mat-icon>favorite</mat-icon>WISHLIST</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/blogs"
-                                    routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close"  routerLinkActive="list-item-active"><mat-icon>book</mat-icon>BLOG</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/faqs"
-                                    routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close"  routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>FAQ</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#testimonial-section"
-                                    routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                                 routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/aboutus"
-                                    routerLinkActive="list-item-active"><mat-icon>info</mat-icon>ABOUT US</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close" routerLinkActive="list-item-active"><mat-icon>info</mat-icon>ABOUT US</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/login" routerLinkActive="list-item-active"
-                                    *ngIf="!loggedInUserID"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close"  *ngIf="!loggedInUserID"><mat-icon>lock</mat-icon>LOGIN/REGISTER</a>
                                 <a class="nav-link" routerLink="/" (click)="logoutUser()"
-                                    *ngIf="loggedInUserID"><mat-icon>logout</mat-icon> LOGOUT</a>
+                                data-bs-dismiss="offcanvas" aria-label="Close"   *ngIf="loggedInUserID"><mat-icon>logout</mat-icon> LOGOUT</a>
                             </li>
                             <li class="nav-item d-flex">
                                 <div class="d-flex shadow-sm align-items-center">
@@ -210,7 +212,7 @@
                                         class="form-control form-control-lg bg-light border-0 " placeholder="search"
                                         [(ngModel)]="searchBy" />
                                     <a class="nav-link py-2 bg-light" data-bs-target="#searchForm"
-                                        data-bs-toggle="collapse">
+                                        data-bs-toggle="collapse" data-bs-dismiss="offcanvas" aria-label="Close" >
                                         <mat-icon style="color: black;" (click)="getSearchResult()">search</mat-icon>
                                     </a>
                                 </div>

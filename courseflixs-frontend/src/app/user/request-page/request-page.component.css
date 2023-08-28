@@ -1,5 +1,6 @@
 .main-request-section {
     background-color: black;
+    width: 100% !important;
 }
 
 .title-container {
@@ -103,3 +104,45 @@
 .add-comment mat-form-field{
     width: 50%;
 }
+
+/* =======================TOP RECOMMENDED COUSRSE SECTION CSS{{END}}========================== */
+
+/* ==========================================Media  query============================================== */
+/* X-Small devices (portrait phones, less than 576px,mobile) */
+
+@media (max-width: 575.98px) {
+    .request-heading {
+        font-size: 1.7rem !important;
+    
+    }
+    
+}
+
+/* Small devices (landscape phones, less than 768px,ipad) */
+@media (max-width: 767.98px) {
+   
+    .add-comment{
+        text-align: start;
+        margin-bottom: 1rem;
+     }
+     .add-comment mat-form-field{
+         width: 100%;
+     }
+}
+
+
+/* Medium devices (tablets, less than 992px,surface pro) */
+@media (max-width: 991.98px) {
+    
+}
+
+/* // Large devices (desktops=my laptop, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops bigger than my laptop, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/* ==================================={{END}}================================================= */

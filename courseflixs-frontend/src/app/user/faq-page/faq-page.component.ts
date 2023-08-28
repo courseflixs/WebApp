@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-faq-page',
@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./faq-page.component.css']
 })
 export class FaqPageComponent {
-  ngOnInit(){
-    window.scroll(0,0);
+
+  ngOnInit():void {
+    window.scroll(0,0)
   }
+
+  
 }

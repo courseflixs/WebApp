@@ -12,6 +12,7 @@ export class RequestPageComponent implements OnInit {
   reqCourseSuccMsg: String | undefined;
   commentSuccMsg: String | undefined;
   getAllComment: any
+  getAllRequest:any;
 
   constructor(private requestCourseService: CourseRequestService,private router:Router) { }
 
@@ -28,8 +29,12 @@ export class RequestPageComponent implements OnInit {
     msg: new FormControl('')
   })
   ngOnInit(): void {
+    window.scroll(0,0)
     this.requestCourseService.getAllCommentService().subscribe((res) => {
       this.getAllComment = res
+    })
+    this.requestCourseService.getAllRequestCourseService().subscribe((res)=>{
+      this.getAllRequest=res;
     })
   }
 

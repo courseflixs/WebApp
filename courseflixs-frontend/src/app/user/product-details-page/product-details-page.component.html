@@ -39,7 +39,7 @@
                 
                     <div class="gif-img">
                         <div class="gif-img-title">PROOF DOWNLOAD</div>
-                        <img src="../../../assets/gift.gif" alt="">
+                        <img [src]="getProImageUrl(getSinglePro?.gif_image)" alt="">
                     </div>
                     <div class="display-sale-page" #innerdiv1 style="float: left;margin: 0;padding: 0;">
 
@@ -59,7 +59,7 @@
                         <div class="course-price"><b>Original Price: </b><s>{{getSinglePro?.original_price | currency:'$'}}</s> </div> 
                          <!-- | <b>Sale Price: </b><span>{{getSinglePro?.sale_price | currency:'$'}}</span> -->
                         <div class="delivery-method"><b>Delivery Method: </b><span>Instant Download</span>(<span>Mega</span>)</div>
-                        <div class="contact"><b>Contact for more details: </b><a href="mailto:courseflixs@gmail.com">contact@courseflix.io</a></div>
+                        <div class="contact"><b>Contact for more details: </b><a href="mailto:helpdeskcourseflix@gmail.com">contact@courseflix.io</a></div>
                         <div class="sale-page-link"><a href="{{getSinglePro?.sale_page_link}}" target="_blank">Sale Page</a></div>
                     </div>
                     <hr>

@@ -40,6 +40,7 @@ exports.retreiveUser = (req, res, next) => {
 //<|========================= User POST method code  ======================|>
 //############################################################################################//
 exports.addUser = (req, res, next) => {
+   console.log(req.body)
    const { userName, regUserEmail, regUserPass } = req.body;
    // console.log(req.body)
    UserSchema.find({ email: regUserEmail }).then(async (result) => {
@@ -55,7 +56,7 @@ exports.addUser = (req, res, next) => {
          insertUser.save().then(() => {
             const subscribeOptions = {
                from: 'helpdeskcourseflix@gmail.com',
-               to: email,
+               to: regUserEmail,
                subject: "Welcome to CourseFlix- Your Journey Begins Here!",
                // text: `Please click on the link below to reset your password: ${resetPasswordLink}`,
                html:`
@@ -82,7 +83,7 @@ exports.addUser = (req, res, next) => {
                <body>
                   <h1 class="email-heading">Welcome to CourseFlix- Your Journey Begins Here!</h1>
                   <div class="email-details">
-                  <span>Dear ${name},</span><br>
+                  <span>Dear ${userName},</span><br>
                   <p>We're absolutely thrilled to have you join our community. 🎉</p>
       
          <p>Here are the benefits you will have in our Family:-</p>

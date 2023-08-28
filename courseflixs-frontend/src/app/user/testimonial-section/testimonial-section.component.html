@@ -12,16 +12,22 @@
                 <div class="col-12">
                     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
                         data-bs-interval="false">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" *ngFor="let tetimo of getAllTetimoData">
-                                <img [src]="getAudioVideoURL(tetimo.testimonial_image)"
-                                    *ngIf="tetimo.testimonial_identifier=='Image'" class="d-block w-100" alt="...">
-                                <video *ngIf="tetimo.testimonial_identifier!='Image'" autoplay muted controls>
-                                    class="d-block w-100" loop="true">
-                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="video/mp4">
-                                </video>
+                        <div class="carousel-inner" *ngFor="let tetimo of getAllTetimoData">
+                            <div class="carousel-item active"  *ngIf="tetimo.testimonial_identifier=='Image'">
+                                <img [src]="getAudioVideoURL(tetimo.testimonial_image)" class="d-block w-100" alt="...">
                             </div>
-
+                            <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Video'">
+                                <video  autoplay muted controls  class="d-block w-100">
+                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="video/mp4/">
+                                </video>
+                             </div>
+                             <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Audio'">
+                                <audio controls  class="d-block w-100">
+                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="audio/ogg">
+                                    Your browser does not support the audio tag.
+                                  </audio>
+                             </div>
+                            
                         </div>
                         <button class="carousel-control-prev" type="button"
                             data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">

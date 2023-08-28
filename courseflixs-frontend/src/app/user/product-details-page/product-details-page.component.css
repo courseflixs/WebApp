@@ -278,8 +278,8 @@
     }
     .prev-course-img img,
     .next-course-img img {
-        width: 40%;
-        height: 40%;
+        width: 40% !important;
+        height: 40% !important;
 
     }
     .prev-course-title {

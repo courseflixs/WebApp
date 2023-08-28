@@ -16,6 +16,7 @@ import { userAuthGuardGuard } from './auth-guard/user-auth-guard.guard';
 import { FourOfourComponent } from './four-ofour/four-ofour.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SearchComponent } from './search/search.component';
+import { OrderstepSectionComponent } from './orderstep-section/orderstep-section.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
