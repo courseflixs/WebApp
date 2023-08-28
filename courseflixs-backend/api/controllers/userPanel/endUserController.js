@@ -46,7 +46,7 @@ exports.addUser = (req, res, next) => {
    UserSchema.find({ email: regUserEmail }).then(async (result) => {
       // console.log(result.length)
       if (result.length > 0) {
-         return res.status(200).send({ isAlreadyExist: true, userMsg: "This user is already exist please try another one!!!" })
+         return res.status(200).send({ isAlreadyExist: true, userMsg: "This email already exists, please try with another email!!!" })
       } else {
          var insertUser = new UserSchema({
             name: userName.trim(),

@@ -20,6 +20,7 @@ export class MyOrderPageComponent implements OnInit {
   dtOptions: any = {};
   constructor(private deliveryService: DeliverService, private route: ActivatedRoute,) { }
   ngOnInit(): void {
+    window.scroll(0,0)
     this.dtOptions = {
       responsive: true,
     };
