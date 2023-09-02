@@ -59,7 +59,15 @@ exports.updateRequestCourseStatus = (req, res, next) => {
         res.status(200).send({ reqMsg: "Requested course status has been changed successfully!!!" });
     })
 }
+exports.deleteRequest = (req, res, next) => {
+    var id = req.params.reqID;
+    var findingAndDeletingComment = requestCourseSchema.findOneAndDelete({ _id: id });
+    findingAndDeletingComment.exec().then((deleteData) => {
+        res.status(200).send({ status: "succ", message: "Request deleted Successfully!!!" });
+    })
 
+
+}
 exports.addComment = (req, res, next) => {
     const { name, msg } = req.body;
     var addCommentData = new commentSchema({

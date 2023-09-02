@@ -48,19 +48,7 @@ var Storage = multer.diskStorage({
 var upload = multer({
     storage: Storage,
     limits: { fieldSize: 25 * 1024 * 1024 },
-    fileFilter: function (req, files, callback) {
-        var ext = path.extname(files.originalname);
-        var extLower = ext.toLowerCase();
-        if (extLower == '.jpeg' || extLower == '.png' || extLower == '.jpg') {
-            callback(null, true)
-        } else {
-            callback({
-                message: 'Invalid file Type. Only jpg, png and jpeg are allowed.'
-            }, false);
-
-        }
-    },
-
+    
 }).fields([{ name: "proMainImg", maxCount: 1 },
 { name: "gifImage", maxCount: 1 }]);
 

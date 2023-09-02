@@ -18,6 +18,10 @@ export class CourseRequestService {
     return this.http.put(`${environment.apiUrl}/end-user/request/update-req-course/${reqID}`, {})
 
   }
+  deleteReqCourseService(reqID:String){
+    return this.http.delete(`${environment.apiUrl}/end-user/request/delete-request/${reqID}`, {})
+
+  }
   addCommentService(data:any){
     return this.http.post(`${environment.apiUrl}/end-user/request/add-comment`, data)
 

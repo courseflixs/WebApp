@@ -178,7 +178,7 @@
                     <div style="display: flex;">
                       <input class="form-control upload-file" type="file" (change)="onFileChange($event,'gifImage')"
                         placeholder="Upload gif image" formControlName="gifImage" name="gifImage"  [required]="!getSinglePro"
-                        accept=".png, .jpg, .jpeg">
+                        accept=".png, .jpg, .jpeg, .gif">
                       <a mat-stroked-button type="button"
                         (click)="getImageUrl(getSinglePro?getSinglePro.gif_image:'','Gif Image')" class="view-btn"
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop" *ngIf="getSinglePro">

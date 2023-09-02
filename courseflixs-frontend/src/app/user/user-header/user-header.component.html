@@ -137,7 +137,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-5">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" routerLink="/"
-                                    routerLinkActive="list-item-active"><mat-icon>home</mat-icon>HOME</a>
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"><mat-icon>home</mat-icon>HOME</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" routerLinkActive="list-item-active" role="button"
@@ -154,7 +154,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#offer-section" 
-                                    routerLinkActive="list-item-active"><mat-icon>help</mat-icon>WHY US?</a>
+                                    routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/request"
@@ -213,7 +213,7 @@
                                         [(ngModel)]="searchBy" />
                                     <a class="nav-link py-2 bg-light" data-bs-target="#searchForm"
                                         data-bs-toggle="collapse" data-bs-dismiss="offcanvas" aria-label="Close" >
-                                        <mat-icon style="color: black;" (click)="getSearchResult()">search</mat-icon>
+                                        <mat-icon style="color: black;" (click)="getSearchResult()" data-bs-dismiss="offcanvas">search</mat-icon>
                                     </a>
                                 </div>
                             </li>

@@ -44,4 +44,8 @@ ngOnInit(): void {
   //     this.router.navigate(link) // Navigate to the same URL
   //   })
   // }
+  scrollToTop(el:any){
+    document.getElementsByClassName("container")[0].scrollTo(0,0);
+     
+  }
 }

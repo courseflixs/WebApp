@@ -8,7 +8,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class FaqPageComponent {
 
   ngOnInit():void {
-    window.scroll(0,0)
+    document.getElementsByClassName("container")[0].scrollTo(0,0);
   }
 
   

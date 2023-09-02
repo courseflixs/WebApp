@@ -44,11 +44,13 @@
 }
 
 .tetimo-container .carousel-inner {
-    padding: 0rem 10rem;
+    padding: 0rem 8rem;
     width: 100%;
     height: 100%;
 }
-
+.carousel-control-next, .carousel-control-prev {
+    width: 3% !important;
+}
 .tetimo-container .carousel-control-prev {
     color: #FF3A2D !important;
 }
