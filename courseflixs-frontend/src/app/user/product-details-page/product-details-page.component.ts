@@ -38,8 +38,9 @@ export class ProductDetailsPageComponent implements OnInit {
       this.userID = sessionStorage.getItem("userID");
       this.innerDiv1.nativeElement.innerHTML=this.getSinglePro.sale_page;
       console.log("User ID: " + this.userID);
+      document.getElementsByClassName("container")[0].scrollTo(0,0);
+
     });
-    window.scrollTo(0, 0)
   }
   getProImageUrl(imageName: string) {
     return `${environment.apiUrl}/image/product/${imageName}`;

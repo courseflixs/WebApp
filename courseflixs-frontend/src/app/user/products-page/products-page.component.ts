@@ -22,6 +22,8 @@ export class ProductsPageComponent implements OnInit{
     this.catService.getSingleCatService(this.catID).subscribe((res:any)=>{
       this.whichPro= res.category_name;
       this.catQoute=res.qoute;
+      document.getElementsByClassName("container")[0].scrollTo(0,0);
+
     })
    if(this.catID=="New"){
     this.endUserProService.getAllNewProServices().subscribe((result)=>{
@@ -46,7 +48,10 @@ export class ProductsPageComponent implements OnInit{
     })
   })
   }
-   window.scroll(0,0);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
   }
 
   getProImageUrl(imageName: string) {

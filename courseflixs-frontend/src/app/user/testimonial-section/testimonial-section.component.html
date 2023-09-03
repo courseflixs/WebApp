@@ -17,8 +17,8 @@
                                 <img [src]="getAudioVideoURL(tetimo.testimonial_image)" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Video'">
-                                <video  autoplay muted controls  class="d-block w-100">
-                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="video/mp4/">
+                                <video  controls  class="d-block w-100">
+                                    <source [src]="getAudioVideoURL(tetimo.testimonial_image)" type="video/mp4">
                                 </video>
                              </div>
                              <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Audio'">

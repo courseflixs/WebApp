@@ -9,4 +9,5 @@ export class AboutusPageComponent {
   ngOnInit(){
     document.getElementsByClassName("container")[0].scrollTo(0,0);
   }
+  
 }
