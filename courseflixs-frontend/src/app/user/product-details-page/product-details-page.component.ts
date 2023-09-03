@@ -25,6 +25,7 @@ export class ProductDetailsPageComponent implements OnInit {
     this.getAllPro = [];
   }
   ngOnInit(): void {
+    window.scroll(0,0);
     console.log("clicked")
     this.endUserProService.getAllProService().subscribe((result) => {
       //  fetching parameter from product-details router to get the single product details
