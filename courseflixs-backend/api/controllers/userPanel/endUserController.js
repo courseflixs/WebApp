@@ -93,7 +93,7 @@ exports.addUser = (req, res, next) => {
       
          2. You will be provided Complimentary Courses Every Month.<br>
       
-         3. Detailed Reviews on Courses will be provided <a href="https://courseflix.io/blogs">here</a>.<br>
+         3. Detailed Reviews on Courses will be provided <a href="https://docs.google.com/document/d/1SHa-101EudLdSJ5OJgsIsnz_eAFItf_lTHVl7w8KZ9s/edit">here</a>.<br>
       
          4. 24/7 Support-Do <a href="https://courseflix.io/#nine-step-section">Contact Us</a>,if you have any questions related to anything.
          </p>

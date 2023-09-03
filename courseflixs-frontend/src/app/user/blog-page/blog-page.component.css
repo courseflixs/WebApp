@@ -34,6 +34,7 @@
     padding: 2rem 0rem !important;
     font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
     font-size: 1.5rem !important;
+    line-height: 2rem;
     font-weight: 500;
   }
 /* Search box css on bolgs page */
