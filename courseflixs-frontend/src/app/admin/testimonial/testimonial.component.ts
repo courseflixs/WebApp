@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { environment } from '../../../environments/environment';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-testimonial',
@@ -31,7 +32,7 @@ export class TestimonialComponent implements OnInit {
   viewDialogueTitle: String = ''
   progress: number = 0;
 
-  constructor(private testimoService: TestimonialService, private router: Router, private dialog: MatDialog) { }
+  constructor(private testimoService: TestimonialService, private router: Router, private dialog: MatDialog,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -100,8 +101,10 @@ export class TestimonialComponent implements OnInit {
     this.viewImgDialogue = ''
   }
   loadUpdatedTesti() {
+    this._commonService.showLoader()
     this.testimoService.getAllTestimonialService().subscribe(async (result) => {
       // console.log(result)
+      this._commonService.hideLoader()
       this.getTestiData = await result;
       // console.log(this.getTestiData)
       this.reloadDataTable();
@@ -126,9 +129,9 @@ export class TestimonialComponent implements OnInit {
     formData.append('testimonialName', this.testimonialForm.get("testimonialName")?.value || '')
     formData.append('updatedTestimonialImg', this.testimonialForm.get("updatedTestimonialImg")?.value || '')
     formData.append('testimonialImage', this.testimonialForm.get("testimonialImage")?.value || '')
-
+    this._commonService.showLoader()
     this.testimoService.saveTestimonialService(formData).subscribe((event: HttpEvent<any>) => {
-
+      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -157,7 +160,9 @@ export class TestimonialComponent implements OnInit {
 
   deleteTesti(id: String) {
     console.log("delete id" + id);
+    this._commonService.showLoader()
     this.testimoService.deleteTastiService(id).subscribe(async (deResult) => {
+      this._commonService.hideLoader()
       console.log(deResult)
       this.commonInAddUpdateDelete("Testimonial deleted successfully!!")
     })
@@ -166,7 +171,9 @@ export class TestimonialComponent implements OnInit {
 
   getSingleTesti(id: String) {
     this.progress = 0;
+    this._commonService.showLoader()
     this.testimoService.getSingleTestiService(id).subscribe((result) => {
+      this._commonService.hideLoader()
       console.log("this is single cat result")
       console.log(result)
       this.testimonialForm.get('testimonialName')?.setValue('')
@@ -183,7 +190,9 @@ export class TestimonialComponent implements OnInit {
     formData.append('testimonialImage', this.testimonialForm.get("testimonialImage")?.value || '')
 
     console.log("update console")
+    this._commonService.showLoader()
     this.testimoService.updateTestiService(id, formData).subscribe((event: HttpEvent<any>) => {
+      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:

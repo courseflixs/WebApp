@@ -6,6 +6,7 @@ import { DeliverService } from '../services/deliver.service';
 import { MatDialog } from '@angular/material/dialog';
 import { environment } from '../../../environments/environment';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-delivered-orders',
@@ -23,7 +24,7 @@ export class DeliveredOrdersComponent implements OnInit{
 
  isDeliverCrudMsg: String | undefined;
  getAllDeliverData: any;
- constructor(private router: Router, private deliverService: DeliverService,private dialog: MatDialog) { }
+ constructor(private router: Router, private deliverService: DeliverService,private dialog: MatDialog,private _commonService:CommonService) { }
 
  dtOptions: any = {};
 
@@ -71,7 +72,9 @@ export class DeliveredOrdersComponent implements OnInit{
 
 
  loadUpdatedPro() {
+  this._commonService.showLoader()
    this.deliverService.getAllDeliveryService().subscribe((result) => {
+    this._commonService.hideLoader()
      this.getAllDeliverData = result;
      this.reloadDataTable();
    })
@@ -89,7 +92,9 @@ export class DeliveredOrdersComponent implements OnInit{
 
 
  deleteProduct(id: String) {
+  this._commonService.showLoader()
    this.deliverService.deleteDeliveryService(id).subscribe((result) => {
+    this._commonService.hideLoader()
      this.commonInAddUpdateDelete("Order deleted successfully")
    })
  }
@@ -112,7 +117,9 @@ export class DeliveredOrdersComponent implements OnInit{
  }
 
  getSinglePro(id: String) {
+  this._commonService.showLoader()
    this.deliverService.getSingleDeliveryService(id).subscribe((result) => {
+    this._commonService.hideLoader()
      console.log(result);
      this.deliverService.sharedSingleDeliveryData = result;
      this.router.navigate(['/admin/home/delivered-orders/add-delivery'])

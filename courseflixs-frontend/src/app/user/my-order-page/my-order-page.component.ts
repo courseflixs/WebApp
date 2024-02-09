@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { DeliverService } from '../../admin/services/deliver.service';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-my-order-page',
@@ -18,7 +19,7 @@ export class MyOrderPageComponent implements OnInit {
   datatableElement!: DataTableDirective;
   dtTrigger: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   dtOptions: any = {};
-  constructor(private deliveryService: DeliverService, private route: ActivatedRoute,) { }
+  constructor(private deliveryService: DeliverService, private route: ActivatedRoute,private _commonService:CommonService) { }
   ngOnInit(): void {
     window.scroll(0,0)
     this.dtOptions = {
@@ -33,7 +34,9 @@ export class MyOrderPageComponent implements OnInit {
 
   loadUpdatedOrders() {
     this.userID = this.route.snapshot.paramMap.get("userID");
+    this._commonService.showLoader()
     this.deliveryService.getSpecificUserOrder(this.userID).subscribe(async (result: any) => {
+      this._commonService.hideLoader()
       this.getUserOrder = await result;
       result.forEach((element: any) => {
         this.totalPoints += element.points

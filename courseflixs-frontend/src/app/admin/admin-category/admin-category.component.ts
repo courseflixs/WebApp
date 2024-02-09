@@ -7,6 +7,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { BehaviorSubject } from 'rxjs';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-admin-category',
   templateUrl: './admin-category.component.html',
@@ -24,7 +25,7 @@ export class AdminCategoryComponent implements OnInit {
   getCatData: any;
   getSingleCatData: any;
   dtOptions: any = {};
-  constructor(private catService: CategoryService, private router: Router, private dialog: MatDialog) { }
+  constructor(private catService: CategoryService, private router: Router, private dialog: MatDialog,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -70,8 +71,10 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   loadUpdatedCat() {
+    this._commonService.showLoader()
     this.catService.getAllCategoryService().subscribe(async (result) => {
       // console.log(result)
+      this._commonService.hideLoader()
       this.getCatData = await result;
       // console.log(this.getCatData)
       this.reloadDataTable();
@@ -90,10 +93,14 @@ export class AdminCategoryComponent implements OnInit {
   }
 
   addCategory() {
+    this._commonService.showLoader()
     this.catService.saveCategoryService(<Category>this.addCategoryForm.value).subscribe((result) => {
       if (result) {
+        this._commonService.hideLoader()
         this.closebutton.nativeElement.click();
         this.commonInAddUpdateDelete("Category added successfully!!")
+      }else{
+        this._commonService.hideLoader()
       }
     })
   }
@@ -101,7 +108,9 @@ export class AdminCategoryComponent implements OnInit {
 
   deleteCat(id: String) {
     console.log("delete id" + id);
+    this._commonService.showLoader()
     this.catService.deleteCatService(id).subscribe(async (deResult) => {
+      this._commonService.hideLoader()
       console.log(deResult)
       this.commonInAddUpdateDelete("Category deleted successfully!!")
     })
@@ -109,7 +118,9 @@ export class AdminCategoryComponent implements OnInit {
 
 
   getSingleCat(id: String) {
+    this._commonService.showLoader()
     this.catService.getSingleCatService(id).subscribe((result) => {
+      this._commonService.hideLoader()
       console.log("this is single cat result")
       console.log(result)
       this.addCategoryForm.get('categoryName')?.setValue(' ')
@@ -121,7 +132,9 @@ export class AdminCategoryComponent implements OnInit {
 
   updateCat(id: String) {
     console.log("update console")
+    this._commonService.showLoader()
     this.catService.updateCatService(id, <Category>this.addCategoryForm.value).subscribe((result) => {
+      this._commonService.hideLoader()
       console.log(result)
       this.closebutton.nativeElement.click();
       this.commonInAddUpdateDelete("Category updated successfully!!")

@@ -7,6 +7,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { environment } from '../../../environments/environment';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from '../../services/common.service';
 ProductService
 @Component({
   selector: 'app-products',
@@ -22,7 +23,7 @@ export class ProductsComponent implements OnInit {
   isProCrudMsg: String | undefined;
   changeProductContenArea = 'products';
   getAllProData: any;
-  constructor(private router: Router, private proServices: ProductService,private dialog: MatDialog) { }
+  constructor(private router: Router, private proServices: ProductService,private dialog: MatDialog,private _commonService:CommonService) { }
 
   dtOptions: any = {};
 
@@ -72,7 +73,9 @@ export class ProductsComponent implements OnInit {
 
 
   loadUpdatedPro() {
+    this._commonService.showLoader()
     this.proServices.getAllProService().subscribe((result) => {
+      this._commonService.hideLoader()
       this.getAllProData = result;
       this.reloadDataTable();
     })
@@ -90,7 +93,9 @@ export class ProductsComponent implements OnInit {
 
 
   deleteProduct(id: String) {
+    this._commonService.showLoader()
     this.proServices.deleteProService(id).subscribe((result) => {
+      this._commonService.hideLoader()
       this.commonInAddUpdateDelete("Product deleted successfully")
     })
   }
@@ -113,7 +118,9 @@ export class ProductsComponent implements OnInit {
   }
 
   getSinglePro(id: String) {
+    this._commonService.showLoader()
     this.proServices.getSingleProServices(id).subscribe((result) => {
+      this._commonService.hideLoader()
       console.log(result);
       this.proServices.sharedSingleProData = result;
       this.router.navigate(['/admin/home/products/add-product'])
@@ -126,7 +133,9 @@ export class ProductsComponent implements OnInit {
 
 
   lockPro(id: String,lockStatus:String) {
+    this._commonService.showLoader()
     this.proServices.lockUnlockProService(id,lockStatus).subscribe((result)=>{
+      this._commonService.hideLoader()
       this.commonInAddUpdateDelete("Product lock/unlock status changeg successfully")
 
     })

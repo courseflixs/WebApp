@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { ProductService } from '../../services/product.service';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-newcourse-section',
@@ -9,9 +10,11 @@ import { ProductService } from '../../services/product.service';
 })
 export class NewcourseSectionComponent implements OnInit{
   newPro:any;
-  constructor(private endUserProService:ProductService){}
+  constructor(private endUserProService:ProductService,private _commonService:CommonService){}
   ngOnInit(): void {
+    this._commonService.showLoader()
     this.endUserProService.getAllNewProServices().subscribe((result)=>{
+      this._commonService.hideLoader()
       this.newPro=result.slice(0,8)
     })
   }

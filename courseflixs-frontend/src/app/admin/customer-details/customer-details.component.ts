@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { UserAuthService } from '../services/user-auth.service';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-customer-details',
   templateUrl: './customer-details.component.html',
@@ -8,7 +9,7 @@ import { UserAuthService } from '../services/user-auth.service';
 export class CustomerDetailsComponent implements OnInit{
   dtOptions: any = {};
   getAllEnduserData:any;
-  constructor(private userService:UserAuthService){}
+  constructor(private userService:UserAuthService,private _commonService: CommonService){}
 
   ngOnInit(): void {
     // angular data-table  responsive  settings
@@ -20,7 +21,9 @@ export class CustomerDetailsComponent implements OnInit{
     ]
     };
         // {{END}}
+        this._commonService.showLoader()
         this.userService.getAllEnduserService().subscribe((result)=>{
+          this._commonService.hideLoader()
           this.getAllEnduserData=result
         })
 

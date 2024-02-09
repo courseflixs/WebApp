@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from '../services/category.service';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-add-blogs',
   templateUrl: './add-blogs.component.html',
@@ -87,11 +88,13 @@ export class AddBlogsComponent {
   viewImgDialogue: String = ''
   viewDialogueTitle: String = ''
 
-  constructor(private catService: CategoryService, private blogService:BlogService , private router: Router) { }
+  constructor(private catService: CategoryService, private blogService:BlogService , private router: Router,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     // Fetching all the  category for displaying in category combobox
+    this._commonService.showLoader()
     this.catService.getTypeWiseCatService("Blog").subscribe(async (result) => {
+      this._commonService.hideLoader()
       this.getAllCatCombobox = await result;
     })
     //Accessing sharedData to display default value at the time of update product
@@ -134,8 +137,9 @@ export class AddBlogsComponent {
     formData.append('blogTags',JSON.stringify(this.keywords))
     formData.append("blogImage",this.blogForm.get('blogImage')?.value || '')
     formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
-
+    this._commonService.showLoader()
     this.blogService.addBlogService(formData).subscribe((event: HttpEvent<any>)=>{
+      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -170,8 +174,9 @@ export class AddBlogsComponent {
     formData.append('blogTags',JSON.stringify(this.keywords))
     formData.append("blogImage",this.blogForm.get('blogImage')?.value || '')
     formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
-
+    this._commonService.showLoader()
     this.blogService.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
+      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:

@@ -26,8 +26,8 @@ exports.retreiveDashboard = async (req, res, next) => {
 
                 // Access the aggregation result
                 if(result){
-                const sum = result[0].totalSum;
-                const count = result[0].totalCount;
+                const sum = result[0]?.totalSum;
+                const count = result[0]?.totalCount;
                 dashboardDetails.orderPriceSum = sum;
                 dashboardDetails.numOfOrder = count;
                 }

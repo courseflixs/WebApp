@@ -4,6 +4,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { BehaviorSubject } from 'rxjs';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-comments',
@@ -20,7 +21,7 @@ export class CommentsComponent {
   dtTrigger: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
 
-constructor(private courseRequestService:CourseRequestService,private dialog: MatDialog){}
+constructor(private courseRequestService:CourseRequestService,private dialog: MatDialog,private _commonService:CommonService){}
   ngOnInit(): void {
     this.dtOptions = {
       responsive: true,
@@ -60,19 +61,25 @@ constructor(private courseRequestService:CourseRequestService,private dialog: Ma
   }
 
   deleteComment(id:String){
+    this._commonService.showLoader()
     this.courseRequestService.deleteCommentService(id).subscribe((res:any)=>{
       if(res.status=="succ"){
+        this._commonService.hideLoader()
         this.getAllComments()
         this.commentSuccMsg=res.message;
         setTimeout(()=>{
           this.commentSuccMsg=undefined
         },4000)
+      }else{
+        this._commonService.hideLoader()
       }
     })
   }
 
   getAllComments(){
+    this._commonService.showLoader()
     this.courseRequestService.getAllCommentService().subscribe((res)=>{
+      this._commonService.hideLoader()
       this.getAllCommentData=res
       this.reloadDataTable();
 

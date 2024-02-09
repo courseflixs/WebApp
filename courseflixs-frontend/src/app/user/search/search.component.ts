@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-search',
@@ -15,10 +16,11 @@ export class SearchComponent {
   filterData:any
   
   p: number = 1;
-  constructor(private endUserProService:ProductService,private router:Router,private route:ActivatedRoute){}
+  constructor(private endUserProService:ProductService,private router:Router,private route:ActivatedRoute,private _commonService:CommonService){}
   ngOnInit(): void {
-  
+    this._commonService.showLoader()
     this.endUserProService.getAllProService().subscribe((result)=>{
+      this._commonService.hideLoader()
       this.getAllPro=result;
 
     })

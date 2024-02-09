@@ -64,7 +64,6 @@ import { SearchComponent } from './search/search.component';
     ForgotPasswordComponent,
     GetInTouchDialogueComponent,
     SearchComponent,
-
   ],
   imports: [
     CommonModule,

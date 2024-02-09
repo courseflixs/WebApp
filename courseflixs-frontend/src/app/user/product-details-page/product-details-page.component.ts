@@ -4,6 +4,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ProductService } from '../../services/product.service';
 import { environment } from '../../../environments/environment';
 import { Product } from '../../admin/data-type';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -21,14 +22,15 @@ export class ProductDetailsPageComponent implements OnInit {
   @ViewChild('innerdiv1') innerDiv1!:ElementRef;
 
   userID: String | null = '';
-  constructor(private route: ActivatedRoute, private endUserProService: ProductService, private router: Router) {
+  constructor(private route: ActivatedRoute, private endUserProService: ProductService, private router: Router,private _commonService:CommonService) {
     this.getAllPro = [];
   }
   ngOnInit(): void {
     window.scroll(0,0);
-    console.log("clicked")
+    this._commonService.showLoader()
     this.endUserProService.getAllProService().subscribe((result) => {
       //  fetching parameter from product-details router to get the single product details
+      this._commonService.hideLoader()
       this.proID = this.route.snapshot.paramMap.get('proID');
       this.getAllPro = result;
       console.log(this.getAllPro);

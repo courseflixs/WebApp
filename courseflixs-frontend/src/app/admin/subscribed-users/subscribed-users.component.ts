@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { UserAuthService } from '../services/user-auth.service';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-subscribed-users',
@@ -9,12 +10,14 @@ import { UserAuthService } from '../services/user-auth.service';
 export class SubscribedUsersComponent implements OnInit{
   dtOptions: any = {};
   getAllSubsUserData:any
-constructor(private userService:UserAuthService){}
+constructor(private userService:UserAuthService,private _commonService:CommonService){}
   ngOnInit(): void {
     this.dtOptions = {
       responsive: true
     };
+    this._commonService.showLoader()
     this.userService.getAllSubscribedUserService().subscribe((result)=>{
+      this._commonService.hideLoader()
       this.getAllSubsUserData=result
     })
   }

@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="msg-container" *ngFor="let request of getAllRequest">
+                <div class="msg-container" *ngFor="let request of getAllRequest?.reverse()">
                     <div class="profile-img">
                         <img src="../../../assets/user.png" alt="" width="80">
                     </div>
@@ -100,7 +100,7 @@
 
 
                         </div>
-                        <div class="comment-date"> {{ request.createdAt | date: "long":"":"en" }}</div>
+                        <div class="comment-date"> {{ request.createdAt | date: "medium":"":"en" }}</div>
                     </div>
                     <hr>
                 </div>
@@ -111,7 +111,7 @@
                     <div class="user-msg">
                         <div class="user-name"><span>{{comment.name}}</span> says:</div>
                         <div class="user-query">{{comment.msg}}</div>
-                        <div class="comment-date"> {{ comment.createdAt | date: "long":"":"en" }}</div>
+                        <div class="comment-date"> {{ comment.createdAt | date: "medium":"":"en" }}</div>
                     </div>
                     <hr>
                 </div>

@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { CategoryService } from '../../admin/services/category.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EndUserAuthService } from '../../services/end-user-auth.service';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-user-header',
@@ -21,7 +22,7 @@ export class UserHeaderComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email])
   })
   searchBy:string='';
-  constructor(private router: Router, private catService: CategoryService, private endUserService: EndUserAuthService) { }
+  constructor(private router: Router, private catService: CategoryService, private endUserService: EndUserAuthService,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     // Login user info
@@ -30,7 +31,9 @@ export class UserHeaderComponent implements OnInit {
         this.loggedInUserID = sessionStorage.getItem('userID')
       }
     });
+    this._commonService.showLoader()
     this.catService.getTypeWiseCatService('Product').subscribe((result) => {
+      this._commonService.hideLoader()
       console.log(result)
       this.proCategory = result;
     })
@@ -75,9 +78,13 @@ export class UserHeaderComponent implements OnInit {
   }
 
   addSubscriber() {
+    this._commonService.showLoader()
     this.endUserService.addSubscriberService(this.subscribedForm.value).subscribe((result: any) => {
       if (result) {
+        this._commonService.hideLoader()
         this.closebutton.nativeElement.click()
+      }else{
+        this._commonService.hideLoader()
       }
     })
   }

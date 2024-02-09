@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { UserAuthService } from '../services/user-auth.service';
 import { adminLogin } from '../data-type';
+import { CommonService } from '../../services/common.service';
 
 UserAuthService
 @Component({
@@ -20,7 +21,7 @@ UserAuthService
 export class AdminLoginComponent implements OnInit {
   hide = true;
   adminAuthError:String='';
-  constructor(private router: Router, private adminUserService: UserAuthService) {
+  constructor(private router: Router, private adminUserService: UserAuthService,private _commonService:CommonService) {
 
   }
   ngOnInit(): void {
@@ -53,8 +54,10 @@ export class AdminLoginComponent implements OnInit {
   }
   // ============================================{{END}}====================================================================================================================================
   adminLoginData() {
+    this._commonService.showLoader()
     this.adminUserService.adminUserLogin(<adminLogin>this.adminLoginForm.value)
     this.adminUserService.isAdminLoginError.subscribe((isAdminLoginError)=>{
+      this._commonService.hideLoader()
       if(isAdminLoginError){
         this.adminAuthError="Invalid username and password!!!"
       }

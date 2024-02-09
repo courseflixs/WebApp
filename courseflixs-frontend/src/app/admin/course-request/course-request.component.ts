@@ -3,6 +3,7 @@ import { CourseRequestService } from '../../services/course-request.service';
 import { Router } from '@angular/router';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-course-request',
@@ -13,7 +14,7 @@ export class CourseRequestComponent implements OnInit {
   dtOptions: any = {};
   getAllCourseReqData: any;
   reqCourseSuccMsg: String | undefined;
-  constructor(private courseReqService: CourseRequestService, private router: Router, private dialog: MatDialog) { }
+  constructor(private courseReqService: CourseRequestService, private router: Router, private dialog: MatDialog,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     // angular data-table  responsive  settings
@@ -24,14 +25,18 @@ export class CourseRequestComponent implements OnInit {
         { responsivePriority: 2, targets: -1 }
       ]
     };
+    this._commonService.showLoader()
     this.courseReqService.getAllRequestCourseService().subscribe((result) => {
+      this._commonService.hideLoader()
       this.getAllCourseReqData = result;
     })
 
   }
   changeReqStatus(reqID: String) {
+    this._commonService.showLoader()
     this.courseReqService.changeReqStatusService(reqID).subscribe((result: any) => {
       if (result) {
+        this._commonService.hideLoader()
         this.reqCourseSuccMsg = result.reqMsg;
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/admin/home/request-course']) // Navigate to the same URL
@@ -39,6 +44,8 @@ export class CourseRequestComponent implements OnInit {
         setTimeout(() => {
           this.reqCourseSuccMsg = undefined;
         }, 8000)
+      }else{
+        this._commonService.hideLoader()
       }
     })
   }
@@ -61,8 +68,10 @@ export class CourseRequestComponent implements OnInit {
     });
   }
   deleteRequest(id: String) {
+    this._commonService.showLoader()
     this.courseReqService.deleteReqCourseService(id).subscribe((result:any) => {
       if (result) {
+        this._commonService.hideLoader()
         this.reqCourseSuccMsg = result.reqMsg;
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/admin/home/request-course']) // Navigate to the same URL
@@ -70,6 +79,8 @@ export class CourseRequestComponent implements OnInit {
         setTimeout(() => {
           this.reqCourseSuccMsg = undefined;
         }, 8000)
+      }else{
+        this._commonService.hideLoader()
       }
     })
   }

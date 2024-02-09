@@ -8,6 +8,7 @@ import { UserAuthService } from '../services/user-auth.service';
 import { ProductService } from '../services/product.service';
 import { DeliverService } from '../services/deliver.service';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { CommonService } from '../../services/common.service';
 export interface User {
   name: string ;
   email:string
@@ -42,14 +43,17 @@ export class AddDeliveryComponent implements OnInit {
     productName:new FormControl('')
   });
 
-  constructor(private router: Router, private userService: UserAuthService, private proService: ProductService, private deliveryService: DeliverService) { }
+  constructor(private router: Router, private userService: UserAuthService, private proService: ProductService, private deliveryService: DeliverService,private _commonService:CommonService) { }
 
   ngOnInit() {
-
+    this._commonService.showLoader()
     this.userService.getAllEnduserService().subscribe((result) => {
+      this._commonService.hideLoader()
       this.optionsUser = result
     })
+    this._commonService.showLoader()
     this.proService.getAllProService().subscribe((result) => {
+      this._commonService.hideLoader()
       this.optionsProduct = <any>result
     })
     this.getSingleDelivery=this.deliveryService.sharedSingleDeliveryData;
@@ -124,7 +128,9 @@ export class AddDeliveryComponent implements OnInit {
   }
   addDelivery() {
     console.log(this.deliveryForm.value)
+    this._commonService.showLoader()
     this.deliveryService.addDeliveryService(this.deliveryForm.value).subscribe((result)=>{
+      this._commonService.hideLoader()
       sessionStorage.setItem("isDeliverCrudMsg", "Delivery details Inserted Successfully!!!")
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/admin/home/delivered-orders']) // Navigate to the same URL
@@ -132,7 +138,9 @@ export class AddDeliveryComponent implements OnInit {
     })
   }
   updateOrders(id:String){
+    this._commonService.showLoader()
     this.deliveryService.updateDeliveryService(id,this.deliveryForm.value).subscribe((result)=>{
+      this._commonService.hideLoader()
       sessionStorage.setItem("isDeliverCrudMsg", "Delivery details Updated Successfully!!!")
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/admin/home/delivered-orders']) // Navigate to the same URL

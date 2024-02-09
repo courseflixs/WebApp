@@ -6,6 +6,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { environment } from '../../../environments/environment';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
@@ -17,7 +18,7 @@ export class BlogsComponent {
   datatableElement!: DataTableDirective;
   dtTrigger: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  constructor(private router: Router, private blogService: BlogService, private dialog: MatDialog) { }
+  constructor(private router: Router, private blogService: BlogService, private dialog: MatDialog,private _commonService:CommonService) { }
 
   isBlogCrudMsg: String | undefined;
   changeBlogContenArea = 'blogs'
@@ -74,7 +75,9 @@ export class BlogsComponent {
   }
 
   loadUpdatedBlog() {
+    this._commonService.showLoader()
     this.blogService.getAllBlogsService().subscribe((result) => {
+      this._commonService.hideLoader()
       this.getAllBlogData = result;
       this.reloadDataTable();
     })
@@ -90,7 +93,9 @@ export class BlogsComponent {
   }
 
   deleteBlog(id: String) {
+    this._commonService.showLoader()
     this.blogService.deleteBlogService(id).subscribe((result) => {
+      this._commonService.hideLoader()
       this.commonInAddUpdateDelete("Blog deleted Successfully")
     })
   }
@@ -113,7 +118,9 @@ export class BlogsComponent {
   }
 
   getSingleBlog(id: String) {
+    this._commonService.showLoader()
     this.blogService.getSingleBlogServices(id).subscribe((result) => {
+      this._commonService.hideLoader()
            this.blogService.sharedSingleBlogData=result;
            this.router.navigate(['/admin/home/blogs/add-blog'])
  

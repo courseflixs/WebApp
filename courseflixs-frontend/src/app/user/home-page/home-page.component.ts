@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common.service';
 
 
 
@@ -13,13 +14,13 @@ import { environment } from '../../../environments/environment';
 
 export class HomePageComponent implements OnInit {
   getAllShowSliderPro: any;
-  constructor(private endUserProService: ProductService) { }
+  constructor(private endUserProService: ProductService,private _commonService:CommonService) { }
   ngOnInit(): void {
+    this._commonService.showLoader()
     this.endUserProService.getAllShowSliderProServices().subscribe((result) => {
+      this._commonService.hideLoader()
       this.getAllShowSliderPro = result;
-      console.log(result);
     });
-
   }
  
 

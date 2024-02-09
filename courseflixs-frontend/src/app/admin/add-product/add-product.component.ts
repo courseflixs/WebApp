@@ -10,6 +10,7 @@ import { HttpEvent, HttpEventType } from '@angular/common/http';
 import { CategoryService } from '../services/category.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-add-product',
@@ -86,11 +87,13 @@ export class AddProductComponent implements OnInit {
   getSinglePro: any
   viewImgDialogue: String = ''
   viewDialogueTitle: String = ''
-  constructor(private proSevice: ProductService, private catService: CategoryService, private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private proSevice: ProductService, private catService: CategoryService, private router: Router, private activeRoute: ActivatedRoute,private _commonService:CommonService) { }
 
   ngOnInit(): void {
     // Fetching all the  category for displaying in category combobox
+    this._commonService.showLoader()
     this.catService.getTypeWiseCatService("Product").subscribe(async (result) => {
+      this._commonService.hideLoader()
       this.getAllCatCombobox = await result;
     })
     //Accessing sharedData to display default value at the time of update product
@@ -161,8 +164,9 @@ export class AddProductComponent implements OnInit {
     formData.append('proMainImg', this.productForm.get('proMainImg')?.value || '');
     formData.append('gifImage', this.productForm.get('gifImage')?.value || '');
 
-
+    this._commonService.showLoader()
     this.proSevice.addProductService(formData).subscribe((event: HttpEvent<any>) => {
+      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -205,8 +209,9 @@ export class AddProductComponent implements OnInit {
 
     formData.append('proMainImg', this.productForm.get('proMainImg')?.value || '');
     formData.append('gifImage', this.productForm.get('gifImage')?.value || '');
+    this._commonService.showLoader()
     this.proSevice.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
-      console.log(event);
+      this._commonService.hideLoader()
       switch (event.type) {
         case HttpEventType.Sent:
           console.log('Request has been made!');
