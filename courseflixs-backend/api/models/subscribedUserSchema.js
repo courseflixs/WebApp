@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
-var conn = mongoose.Collection;
-var subscribedUserSchema = new mongoose.Schema({
-    email: {
-        type: String,
-    }
+const mongoose = require('mongoose');
+
+const conn = mongoose.Collection;
+const subscribedUserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+  },
 
 }, { timestamps: true });
 
-var SubscribedUser = mongoose.model('subscribed_user', subscribedUserSchema);
+const SubscribedUser = mongoose.model('subscribed_user', subscribedUserSchema);
 module.exports = SubscribedUser;

@@ -1,42 +1,42 @@
-require("dotenv").config();
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var connection = require('./connection');
-var cors = require('cors');
+require('dotenv').config();
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
+const connection = require('./connection');
 // ================================{{Admin Routers}}===========================================
-var categoryRouter = require("./api/routes/adminPanel/categoryRoute");
-var getImageRouter = require('./api/routes/getAllImages')
-var productRouter = require("./api/routes/adminPanel/productRoute");
-var blogRouter = require('./api/routes/adminPanel/blogRoute');
-var testimonialRouter = require('./api/routes/adminPanel/testimonialRoute');
-var deliveryOrderRouter = require('./api/routes/adminPanel/deliveryRoute');
-var userRouter = require('./api/routes/userPanel/endUserRoute')
-var subscribedUserRouter = require('./api/routes/userPanel/subscribedUserRouter');
-var dashboardRouter = require('./api/routes/adminPanel/dashboardRouter')
+const categoryRouter = require('./api/routes/adminPanel/categoryRoute');
+const getImageRouter = require('./api/routes/getAllImages');
+const productRouter = require('./api/routes/adminPanel/productRoute');
+const blogRouter = require('./api/routes/adminPanel/blogRoute');
+const testimonialRouter = require('./api/routes/adminPanel/testimonialRoute');
+const deliveryOrderRouter = require('./api/routes/adminPanel/deliveryRoute');
+const userRouter = require('./api/routes/userPanel/endUserRoute');
+const subscribedUserRouter = require('./api/routes/userPanel/subscribedUserRouter');
+const dashboardRouter = require('./api/routes/adminPanel/dashboardRouter');
 // ================================{{[END] Of Admin Routers}}===========================================
 
 // ===================================={EndUser Router}===================================================
-var endUserProductsRouter = require('./api/routes/userPanel/endUserProductDetailsRoute')
-var wishlistRouter = require('./api/routes/userPanel/wishlistRoute');
-var requestCourseRouter = require('./api/routes/userPanel/requestCourseRoute')
+const endUserProductsRouter = require('./api/routes/userPanel/endUserProductDetailsRoute');
+const wishlistRouter = require('./api/routes/userPanel/wishlistRoute');
+const requestCourseRouter = require('./api/routes/userPanel/requestCourseRoute');
 
 // ===================================={{[END] Of EndUser Routers}}=======================================
 
-var app = express();
-//importing database connection
+const app = express();
+// importing database connection
 (async () => await connection())();
 const corsOptions = {
-    origin: '*',            //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
-    secure: false,
-}
+  origin: '*', // access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+  secure: false,
+};
 
 app.use(cors(corsOptions));
 app.use(logger('dev'));
-app.use("/images", express.static(path.join("public/images/products")));
+app.use('/images', express.static(path.join('public/images/products')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -53,11 +53,11 @@ app.use('/api/dashboard', dashboardRouter);
 // ================================{{[END] Of Admin Routers}}===========================================
 
 // ===================================={EndUser Router}===================================================
-app.use('/api/end-user/products', endUserProductsRouter)
-app.use('/api/end-user/wishlist', wishlistRouter)
+app.use('/api/end-user/products', endUserProductsRouter);
+app.use('/api/end-user/wishlist', wishlistRouter);
 app.use('/api/end-user/request', requestCourseRouter);
 // ===================================={{[END] Of EndUser Routers}}=======================================
 
-app.listen(process.env.PORT | '3000', () => console.log(`App Listning on ${process.env.PORT || '3000'}`))
+app.listen(process.env.PORT | '3000', () => console.log(`App Listning on ${process.env.PORT || '3000'}`));
 
 module.exports = app;

@@ -1,14 +1,15 @@
-const mongoose = require("mongoose");
-var conn = mongoose.Collection;
-var commentSchema = new mongoose.Schema({
-    name: {
-        type: String,
-    },
-    msg: {
-        type: String,
-    },
-  
+const mongoose = require('mongoose');
+
+const conn = mongoose.Collection;
+const commentSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
+  msg: {
+    type: String,
+  },
+
 }, { timestamps: true });
 
-var comment = mongoose.model('comment', commentSchema);
+const comment = mongoose.model('comment', commentSchema);
 module.exports = comment;

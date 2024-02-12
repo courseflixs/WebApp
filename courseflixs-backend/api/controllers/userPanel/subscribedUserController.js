@@ -1,64 +1,62 @@
-const subscribedUserSchema = require('../../models/subscribedUserSchema')
 const nodemailer = require('nodemailer');
+const subscribedUserSchema = require('../../models/subscribedUserSchema');
 
 const transporter = nodemailer.createTransport({
-   host: 'smtp.gmail.com',
-   port: 587,
-   secure: false,
-   auth: {
-     user: process.env.EMAIL_USERNAME,
-     pass: process.env.EMAIL_PASSWORD
-   }
- });
-//############################################################################################//
-//<|========================= User GET method code  ======================|>
-//############################################################################################//
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
+// ############################################################################################//
+// <|========================= User GET method code  ======================|>
+// ############################################################################################//
 exports.retreiveSubsUser = (req, res, next) => {
-   //<|========================= Retreiving Single User Details Data ======================|>
+  // <|========================= Retreiving Single User Details Data ======================|>
 
-    var userID=req.params.id;
-    if(userID){
-      console.log("Single data cat")
-      subscribedUserSchema.findById(userID).then((data)=>{
-         res.status(200).send(data);
-         console.log(data)
-        }).catch((error)=>{
-         console.log(error);
-        })
-   //<|========================= Retreiving Single User Details Data{END} ======================|>
-
-    }else{
-   //<|========================= Retreiving Total User Details Data ======================|>
-
-   subscribedUserSchema.find().then((data) => {
+  const userID = req.params.id;
+  if (userID) {
+    console.log('Single data cat');
+    subscribedUserSchema.findById(userID).then((data) => {
       res.status(200).send(data);
-   }).catch((error) => {
-      console.log(error)
-   });
-    }
-   //<|========================= Retreiving Single User Details Data{END} ======================|>
-}
+      console.log(data);
+    }).catch((error) => {
+      console.log(error);
+    });
+    // <|========================= Retreiving Single User Details Data{END} ======================|>
+  } else {
+    // <|========================= Retreiving Total User Details Data ======================|>
 
-//<|========================= Retreive User Data {END}======================|>
+    subscribedUserSchema.find().then((data) => {
+      res.status(200).send(data);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+  // <|========================= Retreiving Single User Details Data{END} ======================|>
+};
 
+// <|========================= Retreive User Data {END}======================|>
 
-//############################################################################################//
-//<|========================= User POST method code  ======================|>
-//############################################################################################//
+// ############################################################################################//
+// <|========================= User POST method code  ======================|>
+// ############################################################################################//
 exports.addSubsUser = (req, res, next) => {
-   const { email } = req.body;
-   console.log(req.body)
-   var insertUser = new subscribedUserSchema({
+  const { email } = req.body;
+  console.log(req.body);
+  const insertUser = new subscribedUserSchema({
     email: email.trim(),
-   });
+  });
 
-   insertUser.save().then(() => {
-      const subscribeOptions = {
-         from: 'helpdeskcourseflix@gmail.com',
-         to: email,
-         subject: "Welcome to CourseFlix- Your Journey Begins Here!",
-         // text: `Please click on the link below to reset your password: ${resetPasswordLink}`,
-         html:`
+  insertUser.save().then(() => {
+    const subscribeOptions = {
+      from: 'helpdeskcourseflix@gmail.com',
+      to: email,
+      subject: 'Welcome to CourseFlix- Your Journey Begins Here!',
+      // text: `Please click on the link below to reset your password: ${resetPasswordLink}`,
+      html: `
          <html>
          <head>
          <style>
@@ -107,17 +105,16 @@ CourseFlix Team!</span></p>
          </html>
 
          
-         `
-      };
-      transporter.sendMail(subscribeOptions, (error, info) => {
-         if (error) {
-            console.error('Error sending reset contact email:', error);
-         } else {
-            console.log('contat details email:', info.response);
-         }
-      });
-      return res.status(200).send({ userMsg: "Subscribed newsletter Successfully!!!" });
-   });
-}
-//<|========================= inserting User Data {END}======================|>
-
+         `,
+    };
+    transporter.sendMail(subscribeOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending reset contact email:', error);
+      } else {
+        console.log('contat details email:', info.response);
+      }
+    });
+    return res.status(200).send({ userMsg: 'Subscribed newsletter Successfully!!!' });
+  });
+};
+// <|========================= inserting User Data {END}======================|>

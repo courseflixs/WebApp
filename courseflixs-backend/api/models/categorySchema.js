@@ -1,16 +1,17 @@
-const mongoose = require("mongoose");
-var conn = mongoose.Collection;
-var categorySchema = new mongoose.Schema({
-    type_of_category: {
-        type: String,
-    },
-    category_name: {
-        type: String,
-    },
-    qoute:{
-        type:String
-    }
+const mongoose = require('mongoose');
+
+const conn = mongoose.Collection;
+const categorySchema = new mongoose.Schema({
+  type_of_category: {
+    type: String,
+  },
+  category_name: {
+    type: String,
+  },
+  qoute: {
+    type: String,
+  },
 }, { timestamps: true });
 
-var category = mongoose.model('category', categorySchema);
+const category = mongoose.model('category', categorySchema);
 module.exports = category;
