@@ -15,7 +15,7 @@
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4" *ngFor="let pro of getAllPro | paginate: { itemsPerPage: 8, currentPage: p }">
                 <div class="product-item">
                     <div class="product-image-container">
-                        <img [src]="getProImageUrl(pro.main_product_image)" [title]="pro.product_name" class="main-pro-image">
+                        <img [src]="getProImageUrl(pro.main_product_image)" [title]="pro.product_name" class="main-pro-image" [alt]="pro.product_name" loading="lazy">
                         <a [routerLink]="['/product-details',pro._id]" class="view-pro"><mat-icon>visibility</mat-icon></a>
                         <a  class="shop-pro"  data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
                     </div>

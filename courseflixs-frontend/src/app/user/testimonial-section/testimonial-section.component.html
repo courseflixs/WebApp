@@ -14,7 +14,7 @@
                         data-bs-interval="false">
                         <div class="carousel-inner" *ngFor="let tetimo of getAllTetimoData">
                             <div class="carousel-item active"  *ngIf="tetimo.testimonial_identifier=='Image'">
-                                <img [src]="getAudioVideoURL(tetimo.testimonial_image)" class="d-block w-100" alt="...">
+                                <img [src]="getAudioVideoURL(tetimo.testimonial_image)" class="d-block w-100" alt="{{tetimo.testimonial_identifier}}" loading="lazy">
                             </div>
                             <div class="carousel-item" *ngIf="tetimo.testimonial_identifier=='Video'">
                                 <video  controls  class="d-block w-100">

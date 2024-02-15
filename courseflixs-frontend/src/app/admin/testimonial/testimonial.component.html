@@ -38,7 +38,7 @@
                 <video autoplay muted *ngIf="viewVideoUrl" controls style="width: 100%;">
                   <source [src]="viewVideoUrl" type="video/mp4">
                 </video>
-                <img [src]="viewImgDialogue" alt="img" class="img-dialogue" *ngIf="viewImgDialogue">
+                <img [src]="viewImgDialogue" alt="{{viewDialogueTitle}}" class="img-dialogue" *ngIf="viewImgDialogue" loading="lazy">
               </div>
               <div class="modal-footer" *ngIf="viewImgDialogue">
                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Back to
@@ -139,7 +139,7 @@
         <tbody>
           <tr *ngFor="let testi of getTestiData">
             <td>
-              <img [src]="getImageUrl(testi.testimonial_image)" alt="{{testi.testimonial_identifier}}">
+              <img [src]="getImageUrl(testi.testimonial_image)" alt="{{testi.testimonial_identifier}}" loading="lazy">
              
             </td>
             <td>{{testi.testimonial_identifier}}</td>

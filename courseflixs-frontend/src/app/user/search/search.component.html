@@ -14,7 +14,7 @@
                     <div class="product-item">
                         <div class="product-image-container">
                             <img [src]="getProImageUrl(pro.main_product_image)" [title]="pro.product_name"
-                                class="main-pro-image">
+                                class="main-pro-image" loading="lazy" [alt]="pro.product_name">
                             <a [routerLink]="['/product-details',pro._id]"
                                 class="view-pro"><mat-icon>visibility</mat-icon></a>
                             <a class="shop-pro" data-bs-toggle="modal"

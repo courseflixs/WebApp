@@ -27,7 +27,7 @@
                 <div class="product-item">
                     <div class="product-image-container">
                         <img [src]="getProImageUrl(wishlist.main_product_image)" [title]="wishlist.product_name"
-                            class="main-pro-image">
+                            class="main-pro-image" [alt]="wishlist.product_nam" loading="lazy">
                         <a [routerLink]="['/product-details',wishlist.proID]"
                             class="view-pro"><mat-icon>visibility</mat-icon></a>
                         <a class="shop-pro" data-bs-toggle="modal"

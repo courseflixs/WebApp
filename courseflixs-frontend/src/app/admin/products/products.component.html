@@ -53,7 +53,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let pro of getAllProData">
-              <td><img [src]="getImageUrl(pro.main_product_image)" alt="{{pro.product_name}}"></td>
+              <td><img [src]="getImageUrl(pro.main_product_image)" alt="{{pro.product_name}}" loading="lazy"></td>
               <td>{{pro.product_name}}</td>
               <td>{{pro.category_name}}</td>
               <td>{{pro.original_price}}</td>

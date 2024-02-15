@@ -12,7 +12,7 @@
                     <ng-container *ngFor="let recPro of recomProducts">
                         <ng-template carouselSlide [id]="recPro?._id" class="product-item">
                             <div class="pro-image-container">
-                                <img [src]="getSliderImageUrl(recPro?.main_product_image)" [title]="recPro?.name" class="main-pro-image">
+                                <img [src]="getSliderImageUrl(recPro?.main_product_image)" [title]="recPro?.name" [alt]="recPro?.name" class="main-pro-image" loading="lazy">
                                 <a [routerLink]="['product-details',recPro._id]"  class="view-pro"><mat-icon>visibility</mat-icon></a>
                                 <a  class="shop-pro"  data-bs-toggle="modal" data-bs-target="#getInTocuhDialogue"><mat-icon>shop</mat-icon></a>
                             </div>

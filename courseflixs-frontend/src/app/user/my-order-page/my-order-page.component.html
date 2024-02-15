@@ -37,7 +37,7 @@
               <td>
                 <div class="order-image">
                   <img [src]="getProImageUrl(order?.ProductData?.main_product_image)"
-                    [alt]="getUserOrder?.product_name">
+                    [alt]="getUserOrder?.product_name" loading="lazy">
                 </div>
               </td>
               <td>{{order?.product_name}}</td>

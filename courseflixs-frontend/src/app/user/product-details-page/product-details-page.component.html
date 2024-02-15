@@ -7,7 +7,7 @@
                       {{getSinglePro?.product_name | uppercase}}
                     </div>
                     <div class="pro-main-image">
-                        <img [src]="getProImageUrl(getSinglePro?.main_product_image)" alt="">
+                        <img [src]="getProImageUrl(getSinglePro?.main_product_image)" [alt]="getSinglePro?.main_product_image" loading="lazy">
                     </div>
                     <i class="fa-regular fa-angles-right" style="color: white;"></i>
                     <div class="puchase-title-container">
@@ -39,7 +39,7 @@
                 
                     <div class="gif-img">
                         <div class="gif-img-title">PROOF DOWNLOAD</div>
-                        <img [src]="getProImageUrl(getSinglePro?.gif_image)" alt="">
+                        <img [src]="getProImageUrl(getSinglePro?.gif_image)" alt="proof image" loading="lazy">
                     </div>
                     <div class="display-sale-page" #innerdiv1 style="float: left;margin: 0;padding: 0;">
 
@@ -52,7 +52,7 @@
                         </div>
                         <div class="social-img">
                             <a href="https://t.me/CourseFlix" target="_blank">
-                            <img src="../../../assets/telegram.gif" alt="">
+                            <img src="../../../assets/telegram.gif" alt="Gift image" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 prev-column">
                                 <div class="pro-prev-container" *ngIf="prevProduct" (click)="navigateNextAndPrevOnSamePageURL(prevProduct?._id)">
                                     <div class="prev-left-icon"><i class="fa fa-chevron-left"></i></div>
-                                    <div class="prev-course-img"> <a > <img [src]="getProImageUrl(prevProduct?.main_product_image)"  [alt]="prevProduct?.product_name"></a></div>
+                                    <div class="prev-course-img"> <a > <img [src]="getProImageUrl(prevProduct?.main_product_image)"  [alt]="prevProduct?.product_name" loading="lazy"></a></div>
                                     <div class="prev-course-title"><a>{{prevProduct?.product_name}}   </a></div>
                                   
                                 </div>
@@ -80,7 +80,7 @@
                             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <div class="pro-next-container" *ngIf="nextProduct" (click)="navigateNextAndPrevOnSamePageURL(nextProduct?._id)">
                                     <div class="next-course-title"><a >{{nextProduct?.product_name}}</a></div>
-                                    <div class="next-course-img"><a><img [src]="getProImageUrl(nextProduct?.main_product_image)" [alt]="nextProduct?.product_name"></a></div>
+                                    <div class="next-course-img"><a><img [src]="getProImageUrl(nextProduct?.main_product_image)" [alt]="nextProduct?.product_name" loading="lazy"></a></div>
                                     <div class="next-right-icon"><i class="fa fa-chevron-right"></i></div>
                                 </div>
                             </div>

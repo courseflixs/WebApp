@@ -45,7 +45,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let blog of getAllBlogData">
-              <td><img [src]="getImageUrl(blog.blog_image)" alt="{{blog.blog_name}}"></td>
+              <td><img [src]="getImageUrl(blog.blog_image)" alt="{{blog.blog_name}}" loading="lazy"></td>
               <td>{{blog.visiblity}}</td>
               <td>{{blog.blog_name}}</td>
               <td>{{blog.category}}</td>

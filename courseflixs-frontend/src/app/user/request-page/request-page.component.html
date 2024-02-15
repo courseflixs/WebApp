@@ -88,7 +88,7 @@
             <div class="col-12">
                 <div class="msg-container" *ngFor="let request of getAllRequest?.reverse()">
                     <div class="profile-img">
-                        <img src="../../../assets/user.png" alt="" width="80">
+                        <img src="../../../assets/user.png" alt="User image" width="80" loading="lazy">
                     </div>
                     <div class="user-msg">
                         <div class="user-name"><span>{{request.user_name}}</span> says:</div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="msg-container" *ngFor="let comment of getAllComment">
                     <div class="profile-img">
-                        <img src="../../../assets/user.png" alt="" width="80">
+                        <img src="../../../assets/user.png" alt="user image" width="80" loading="lazy">
                     </div>
                     <div class="user-msg">
                         <div class="user-name"><span>{{comment.name}}</span> says:</div>

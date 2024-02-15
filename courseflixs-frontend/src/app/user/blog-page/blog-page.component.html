@@ -63,7 +63,7 @@
                             <div class="blog-post-container">
                                 <div class="blog-post" [routerLink]="['/blog-details',blog._id]">
                                     <div class="blog-image">
-                                        <img [src]="getImageUrl(blog.blog_image)" alt="img">
+                                        <img [src]="getImageUrl(blog.blog_image)" alt=" {{blog.blog_name}}" loading="lazy">
                                     </div>
                                     <div class="blog-post-details">
                                         <div class="blog-subtitle-cat-date">

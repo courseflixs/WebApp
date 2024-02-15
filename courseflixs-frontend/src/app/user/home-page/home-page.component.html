@@ -13,7 +13,7 @@
                
                 <div class="carousel-inner">
                     <div class="carousel-item"  data-bs-interval="2000" *ngFor="let slider of getAllShowSliderPro;let j=index" [ngClass]="[j==0 ? 'active' : '']">
-                        <a [routerLink]="['/product-details',slider._id]"><img [src]="getSliderImageUrl(slider.main_product_image)" class="d-block w-100" alt="..."></a>
+                        <a [routerLink]="['/product-details',slider._id]"><img [src]="getSliderImageUrl(slider.main_product_image)" class="d-block w-100" alt="..." loading="lazy"></a>
                     </div>
                    
                 </div>
