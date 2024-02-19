@@ -139,7 +139,6 @@ export class AddBlogsComponent {
     formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
     this._commonService.showLoader()
     this.blogService.addBlogService(formData).subscribe((event: HttpEvent<any>)=>{
-      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -160,6 +159,7 @@ export class AddBlogsComponent {
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
             })
+            this._commonService.hideLoader()
           }, 1500);
       }
     })
@@ -176,7 +176,6 @@ export class AddBlogsComponent {
     formData.append("updatedBlogImg",this.blogForm.get('updatedBlogImg')?.value || '')
     this._commonService.showLoader()
     this.blogService.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
-      this._commonService.hideLoader()
       console.log(event);
       switch (event.type) {
         case HttpEventType.Sent:
@@ -197,6 +196,7 @@ export class AddBlogsComponent {
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/admin/home/blogs']) // Navigate to the same URL
             })
+            this._commonService.hideLoader()
             }, 1500);
       }
     })

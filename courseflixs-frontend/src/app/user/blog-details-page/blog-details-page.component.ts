@@ -39,6 +39,7 @@ export class BlogDetailsPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    window.scroll(0,0)
     this.blogID = this.route.snapshot.paramMap.get('blogID');
     this._commonService.showLoader()
     this.blogService.getSingleBlogServices(this.blogID).subscribe((result) => {

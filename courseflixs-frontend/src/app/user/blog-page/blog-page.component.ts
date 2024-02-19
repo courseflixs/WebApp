@@ -25,6 +25,7 @@ export class BlogPageComponent implements OnInit{
     private route:ActivatedRoute){}
 
   ngOnInit(): void {
+    window.scroll(0,0)
     this._commonService.showLoader()
     this.catService.getTypeWiseCatService('Blog').subscribe((result)=>{
       this._commonService.hideLoader()

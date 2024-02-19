@@ -24,19 +24,16 @@ const Storage = multer.diskStorage({
     console.log(req.body);
     if (req.body.updateMainImg && files.fieldname == 'proMainImg') {
       console.log('pro main image');
-      fs.unlinkSync(`./public/images/products/${req.body.updateMainImg}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/products/${req.body.updateMainImg}`))
+      {
+      fs?.unlinkSync(`./public/images/products/${req.body.updateMainImg}`);
+      }
       cb(null, req.body.updateMainImg.toString().split('.')[0] + path.extname(files.originalname));
     } else if (req.body.updateGifImg && files.fieldname == 'gifImage') {
       console.log('gif image');
-      fs.unlinkSync(`./public/images/products/${req.body.updateGifImg}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/products/${req.body.updateGifImg}`)){
+      fs?.unlinkSync(`./public/images/products/${req.body.updateGifImg}`);
+      }
       cb(null, req.body.updateGifImg.toString().split('.')[0] + path.extname(files.originalname));
     } else cb(null, 'product' + `_${crypto.randomBytes(5).toString('hex')}${path.extname(files.originalname)}`);
   },

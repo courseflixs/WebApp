@@ -114,16 +114,10 @@ exports.deletingProduct = (req, res, next) => {
   productSchema.findById(id).then((data) => {
     const findingAndDeletingPro = productSchema.findOneAndDelete({ _id: id });
     findingAndDeletingPro.exec().then((deleteData) => {
-      fs.unlinkSync(`./public/images/products/${data.main_product_image}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
-      fs.unlinkSync(`./public/images/products/${data.gif_image}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/products/${data.main_product_image}`))
+      fs.unlinkSync(`./public/images/products/${data.main_product_image}`);
+      if(fs.existsSync(`./public/images/products/${data.gif_image}`))
+      fs.unlinkSync(`./public/images/products/${data.gif_image}`);
       res.status(200).send({ proMsg: 'Product details deleted Successfully!!!' });
     });
   })

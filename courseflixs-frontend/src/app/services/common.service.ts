@@ -14,4 +14,5 @@ export class CommonService {
   hideLoader(): void {
     this.isLoading = false;
   }
+  
 }

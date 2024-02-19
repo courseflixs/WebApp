@@ -18,6 +18,7 @@ export class SearchComponent {
   p: number = 1;
   constructor(private endUserProService:ProductService,private router:Router,private route:ActivatedRoute,private _commonService:CommonService){}
   ngOnInit(): void {
+    window.scroll(0,0)
     this._commonService.showLoader()
     this.endUserProService.getAllProService().subscribe((result)=>{
       this._commonService.hideLoader()

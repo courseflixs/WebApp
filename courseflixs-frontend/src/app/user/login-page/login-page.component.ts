@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit {
     private _commonService:CommonService,
     private router:Router) { }
   ngOnInit(): void {
-    document.getElementsByClassName("container")[0].scrollTo(0,0);
+    window.scroll(0,0)
   }
   registerForm = new FormGroup({
     userName: new FormControl(''),

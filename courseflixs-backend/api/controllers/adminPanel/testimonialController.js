@@ -85,11 +85,8 @@ exports.deletingTestimonial = (req, res, next) => {
   testimonialSchema.findById(id).then((data) => {
     const findingAndDeletingPro = testimonialSchema.findOneAndDelete({ _id: id });
     findingAndDeletingPro.exec().then((deleteData) => {
-      fs.unlinkSync(`./public/images/testimonial/${data.testimonial_image}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/testimonial/${data.testimonial_image}`))
+      fs.unlinkSync(`./public/images/testimonial/${data.testimonial_image}`);
       res.status(200).send({ TestimonialMsg: 'Testimonial details deleted Successfully!!!' });
     });
   })

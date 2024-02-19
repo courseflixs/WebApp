@@ -91,4 +91,11 @@ export class UserHeaderComponent implements OnInit {
   getSearchResult(){
   this.router.navigate(['/search',this.searchBy])
  }
+
+ navigateToSection(fragment:any){
+  setTimeout(()=>{
+    this.router.navigate([], {fragment:fragment });
+ },1000)
+
+ }
 }

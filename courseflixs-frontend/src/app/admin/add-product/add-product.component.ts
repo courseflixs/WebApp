@@ -187,6 +187,7 @@ export class AddProductComponent implements OnInit {
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/admin/home/products']) // Navigate to the same URL
             })
+            this._commonService.hideLoader()
           }, 1500);
       }
     })
@@ -211,7 +212,6 @@ export class AddProductComponent implements OnInit {
     formData.append('gifImage', this.productForm.get('gifImage')?.value || '');
     this._commonService.showLoader()
     this.proSevice.updateProService(id,formData).subscribe((event: HttpEvent<any>)=>{
-      this._commonService.hideLoader()
       switch (event.type) {
         case HttpEventType.Sent:
           console.log('Request has been made!');
@@ -230,7 +230,8 @@ export class AddProductComponent implements OnInit {
             this.progress = 0;
             this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
               this.router.navigate(['/admin/home/products']) // Navigate to the same URL
-            })          
+            }) 
+            this._commonService.hideLoader()
           }, 1500);
       }
     })

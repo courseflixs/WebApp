@@ -59,7 +59,7 @@
 
                 <a routerLink="/blogs"><mat-icon>book</mat-icon>BLOG</a>
                 <a routerLink="/faqs"><mat-icon>quiz</mat-icon>FAQ</a>
-                <a href="#testimonial-section"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                <a href="#testimonial-section" (click)="navigateToSection('testimonial-section')"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                 <a routerLink="/aboutus"><mat-icon>info</mat-icon>About Us</a>
 
 
@@ -72,7 +72,7 @@
             <div class="top-header-Social-link">
                 <a href="https://www.reddit.com/user/Chillax905/"
                     target="_blank"><mat-icon>reddit</mat-icon></a>
-                <a href="https://t.me/CourseGuy65" target="_blank"><mat-icon>telegram</mat-icon></a>
+                <a href="https://t.me/courseflix2" target="_blank"><mat-icon>telegram</mat-icon></a>
                 <a href="mailto:helpdeskcourseflix@gmail.com" target="_blank"><mat-icon>email</mat-icon></a>
             </div>
         </div>
@@ -95,9 +95,9 @@
                                     (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a></li>
                         </ul>
                     </div>
-                    <a href="#offer-section" routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
+                    <a href="#offer-section" routerLinkActive="list-item-active" (click)="navigateToSection('offer-section')"><mat-icon>help</mat-icon>WHY US?</a>
                     <a routerLink="/request" routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
-                    <a href="#nine-step-section"
+                    <a href="#nine-step-section" (click)="navigateToSection('nine-step-section')"
                         routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
 
                     <ul class="navbar-nav mr-auto">
@@ -152,7 +152,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#offer-section" 
+                                <a class="nav-link" href="#offer-section"  (click)="navigateToSection('offer-section')"
                                     routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
                             </li>
                             <li class="nav-item">
@@ -161,7 +161,7 @@
                                     aria-label="Close"><mat-icon>accessible</mat-icon>REQUEST</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nine-step-section"
+                                <a class="nav-link" href="#nine-step-section" (click)="navigateToSection('nine-step-section')"
                                     routerLinkActive="list-item-active" ><mat-icon>contacts</mat-icon>CONTACT US</a>
                             </li>
 
@@ -191,7 +191,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#testimonial-section"
+                                <a class="nav-link" href="#testimonial-section" (click)="navigateToSection('testimonial-section')"
                                  routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                             </li>
 

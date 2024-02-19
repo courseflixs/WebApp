@@ -53,4 +53,11 @@ ngOnInit(): void {
     document.getElementsByClassName("container")[0].scrollTo(0,0);
      
   }
+
+  navigateToSection(fragment:any){
+    setTimeout(()=>{
+      this.router.navigate([], {fragment:fragment });
+   },1000)
+  
+   }
 }

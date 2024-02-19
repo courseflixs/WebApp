@@ -24,11 +24,8 @@ const Storage = multer.diskStorage({
     console.log(req.body);
     if (req.body.updatedBlogImg && files.fieldname == 'blogImage') {
       console.log('pro main image');
-      fs.unlinkSync(`./public/images/blogs/${req.body.updatedBlogImg}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/blogs/${req.body.updatedBlogImg}`))
+      fs.unlinkSync(`./public/images/blogs/${req.body.updatedBlogImg}`);
       cb(null, req.body.updatedBlogImg.toString().split('.')[0] + path.extname(files.originalname));
     } else cb(null, 'Blog' + `_${crypto.randomBytes(5).toString('hex')}${path.extname(files.originalname)}`);
   },

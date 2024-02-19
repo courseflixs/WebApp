@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AboutusPageComponent {
   ngOnInit(){
-    document.getElementsByClassName("container")[0].scrollTo(0,0);
+    window.scroll(0,0);
   }
 }

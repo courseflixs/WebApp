@@ -98,11 +98,8 @@ exports.deletingBlog = (req, res, next) => {
   blogSchema.findById(id).then((data) => {
     const findingAndDeletingPro = blogSchema.findOneAndDelete({ _id: id });
     findingAndDeletingPro.exec().then((deleteData) => {
-      fs.unlinkSync(`./public/images/blogs/${data.blog_image}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/blogs/${data.blog_image}`))
+      fs.unlinkSync(`./public/images/blogs/${data.blog_image}`);
       res.status(200).send({ blogMsg: 'Blog details deleted Successfully!!!' });
     });
   })

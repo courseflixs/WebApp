@@ -24,11 +24,8 @@ const Storage = multer.diskStorage({
     console.log(req.body);
     if (req.body.updatedTestimonialImg && files.fieldname == 'testimonialImage') {
       console.log('pro main image');
-      fs.unlinkSync(`./public/images/testimonial/${req.body.updatedTestimonialImg}`, (error) => {
-        if (error) {
-          console.log(error);
-        }
-      });
+      if(fs.existsSync(`./public/images/testimonial/${req.body.updatedTestimonialImg}`))
+      fs.unlinkSync(`./public/images/testimonial/${req.body.updatedTestimonialImg}`);
       cb(null, req.body.updatedTestimonialImg.toString().split('.')[0] + path.extname(files.originalname));
     } else cb(null, 'Testimonial' + `_${crypto.randomBytes(5).toString('hex')}${path.extname(files.originalname)}`);
   },
