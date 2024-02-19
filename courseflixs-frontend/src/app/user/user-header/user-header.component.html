@@ -6,7 +6,6 @@
     data-bs-target="#automatic-open-dialogue">
     Auto open dialogue
 </button>
-
 <!-- Modal -->
 <div class="automatic-open-dialogue">
     <div class="modal fade" id="automatic-open-dialogue" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -59,7 +58,7 @@
 
                 <a routerLink="/blogs"><mat-icon>book</mat-icon>BLOG</a>
                 <a routerLink="/faqs"><mat-icon>quiz</mat-icon>FAQ</a>
-                <a href="#testimonial-section" (click)="navigateToSection('testimonial-section')"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                <a (click)="navigateToSection('testimonialSection')" class="pointer"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                 <a routerLink="/aboutus"><mat-icon>info</mat-icon>About Us</a>
 
 
@@ -95,9 +94,9 @@
                                     (click)="redirectToProducts(cat._id)">{{cat.category_name}}</a></li>
                         </ul>
                     </div>
-                    <a href="#offer-section" routerLinkActive="list-item-active" (click)="navigateToSection('offer-section')"><mat-icon>help</mat-icon>WHY US?</a>
+                    <a  routerLinkActive="list-item-active" (click)="navigateToSection('offerSection')" class="pointer"><mat-icon>help</mat-icon>WHY US?</a>
                     <a routerLink="/request" routerLinkActive="list-item-active"><mat-icon>hail</mat-icon>REQUEST</a>
-                    <a href="#nine-step-section" (click)="navigateToSection('nine-step-section')"
+                    <a  (click)="navigateToSection('nineStepSection')" class="pointer"
                         routerLinkActive="list-item-active"><mat-icon>contacts</mat-icon>CONTACT US</a>
 
                     <ul class="navbar-nav mr-auto">
@@ -152,8 +151,8 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#offer-section"  (click)="navigateToSection('offer-section')"
-                                    routerLinkActive="list-item-active" ><mat-icon>help</mat-icon>WHY US?</a>
+                                <a class="nav-link pointer"  (click)="navigateToSection('offerSection')"
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"><mat-icon>help</mat-icon>WHY US?</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" routerLink="/request"
@@ -161,8 +160,8 @@
                                     aria-label="Close"><mat-icon>accessible</mat-icon>REQUEST</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#nine-step-section" (click)="navigateToSection('nine-step-section')"
-                                    routerLinkActive="list-item-active" ><mat-icon>contacts</mat-icon>CONTACT US</a>
+                                <a class="nav-link pointer"  (click)="navigateToSection('nineStepSection')"
+                                    routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"><mat-icon>contacts</mat-icon>CONTACT US</a>
                             </li>
 
                             <li class="nav-item">
@@ -191,8 +190,8 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#testimonial-section" (click)="navigateToSection('testimonial-section')"
-                                 routerLinkActive="list-item-active"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
+                                <a class="nav-link pointer" (click)="navigateToSection('testimonialSection')"
+                                 routerLinkActive="list-item-active" data-bs-dismiss="offcanvas"><mat-icon>quiz</mat-icon>TESTIMONIAL</a>
                             </li>
 
                             <li class="nav-item">

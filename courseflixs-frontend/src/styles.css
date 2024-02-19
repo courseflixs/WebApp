@@ -6,6 +6,8 @@ body {
   font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif !important;
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: auto;
+
 }
 
 .modal-backdrop.show {
@@ -70,4 +72,8 @@ body {
     100% {
         transform: rotate(360deg);
     }
+
+}
+.pointer{
+  cursor: pointer;
 }

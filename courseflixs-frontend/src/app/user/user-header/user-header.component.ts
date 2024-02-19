@@ -93,9 +93,12 @@ export class UserHeaderComponent implements OnInit {
  }
 
  navigateToSection(fragment:any){
+  this.router.navigate(['/'], {fragment:fragment });
   setTimeout(()=>{
-    this.router.navigate([], {fragment:fragment });
- },1000)
+    this.router.navigate(['/'], {fragment:fragment });
+    
+ },150)
 
  }
+
 }
